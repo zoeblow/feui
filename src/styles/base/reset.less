@@ -1,0 +1,29 @@
+@import "fn";
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+body, html {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+body {
+    line-height: 1.6;
+    font-family: @nuimFontDefault;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a img {
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+    .setTapColor();
+}

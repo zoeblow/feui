@@ -1,0 +1,16 @@
+{
+  "button": "./src/components/button/index.js",
+  "header": "./src/components/header/index.js",
+  "cell": "./src/components/cell/index.js",
+  "divider": "./src/components/divider/index.js",
+  "inline-desc":"./src/components/inline-desc/index.js",
+  "cell-box":"./src/components/cell-box/index.js",
+  "icon": "./src/components/icon/index.js",
+  "input": "./src/components/input/index.js",
+  "switch": "./src/components/switch/index.js",
+  "indexlist": "./src/components/indexlist/index.js",
+  "search": "./src/components/search/index.js",
+  "count": "./src/components/count/index.js",
+  "group": "./src/components/group/index.js",
+  "toast": "./src/components/toast/index.js"
+}

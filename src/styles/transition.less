@@ -1,0 +1,33 @@
+.nuim-fade-enter-active,.nuim-fade-leave-active {
+  opacity: 1;
+  transition: opacity linear 0.2s
+}
+
+.nuim-fade-enter, .nuim-fade-leave-to {
+  opacity: 0;
+}
+
+.nuim-dialog-enter-active, .nuim-dialog-leave-active {
+  opacity: 1;
+  transition-duration: 400ms;
+  transform: translate(-50%, -50%) scale(1)!important;
+  transition-property: transform, opacity!important;
+}
+.nuim-dialog-leave-active {
+  transition-duration: 300ms;
+}
+.nuim-dialog-enter {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1.185)!important;
+}
+.nuim-dialog-leave-active {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.85)!important;
+}
+
+.nuim-mask-enter, .nuim-mask-leave-active {
+  opacity: 0;
+}
+.nuim-mask-leave-active, .nuim-mask-enter-active {
+  transition: opacity 300ms;
+}

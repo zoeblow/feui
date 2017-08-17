@@ -1,0 +1,14 @@
+build/
+dist/
+node_modules/
+test/
+example/
+favicon.ico
+logo.png
+CNAME
+circle.yml
+bower.json
+components.json
+.babelrc
+docs/
+yarn.lock

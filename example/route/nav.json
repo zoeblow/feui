@@ -1,0 +1,78 @@
+[
+  {
+    "groupTitle": "表单",
+    "navItems": [
+      {
+        "path": "/button",
+        "name": "Button",
+        "description": "按钮",
+        "icon": "buttonminus"
+      },
+      {
+        "path": "/header",
+        "name": "Header",
+        "description": "头部",
+        "icon": "buttonminus"
+      },
+      {
+        "path": "/cell",
+        "name": "Cell",
+        "description": "Cell",
+        "icon": "buttonminus"
+      },
+      {
+        "path": "/icons",
+        "name": "Icons",
+        "description": "图标",
+        "icon": "icon"
+      },
+      {
+        "path": "/input",
+        "name": "Input",
+        "description": "输入",
+        "icon": "input"
+      },
+      {
+        "path": "/switch",
+        "name": "Switch",
+        "description": "开关",
+        "icon": "switch"
+      },
+      {
+        "path": "/indexlist",
+        "name": "Indexlist",
+        "description": "地址列表",
+        "icon": "Indexlist"
+      },
+      {
+        "path": "/search",
+        "name": "Search",
+        "description": "搜索",
+        "icon": "search"
+      },
+      {
+        "path": "/searchstatic",
+        "name": "SearchStatic",
+        "description": "搜索2",
+        "icon": "search"
+      },
+      {
+        "path": "/count",
+        "name": "Count",
+        "description": "记数",
+        "icon": "count"
+      }
+    ]
+  },
+  {
+    "groupTitle": "反馈",
+    "navItems": [
+      {
+        "path": "/toast",
+        "name": "Toast",
+        "description": "吐司",
+        "icon": "toast"
+      }
+    ]
+  }
+]
