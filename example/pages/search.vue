@@ -14,10 +14,10 @@
       @on-submit="onSubmit"
       ref="search"></fe-search>
       <div style="padding:15px;">
-        <fe-button @click.native="setFocus" type="primary">set focus</fe-button>
+        <fe-button @click.native="setFocus" type="primary">获取焦点</fe-button>
       </div>
       <fe-group>
-        <fe-cell title="static position demo" is-link link="/searchstatic"></fe-cell>
+        <fe-cell title="定位演示" is-link link="/searchstatic"></fe-cell>
       </fe-group>
     </div>
   </div>

@@ -1,26 +1,28 @@
 <template>
   <div class="page">
     <br>
-    <fe-header>This is the page title.</fe-header>
+    <fe-header>这是一个标题</fe-header>
     <br>
-    <fe-header :left-options="{showBack: false}">do not show Back</fe-header>
+    <fe-header style="background-color:#f00;"  @on-click-back='clickBack' :left-options="{preventGoBack: true}" >自定义返回事件</fe-header>
     <br>
-    <fe-header :left-options="{backText: ''}">set empty back text</fe-header>
+    <fe-header :left-options="{showBack: false}">不显示返回按钮</fe-header>
     <br>
-    <fe-header :right-options="{showMore: true}" @on-click-more="showMenus = true">with more menu</fe-header>
+    <fe-header :left-options="{backText: ''}">不显示文字</fe-header>
     <br>
-    <fe-header>with right link<a slot="right">Feedback</a></fe-header>
+    <fe-header :right-options="{showMore: true}" @on-click-more="showMenus = true">显示更多按钮</fe-header>
     <br>
-    <fe-header>long long long long long long long text<a slot="right">Feedback</a></fe-header>
+    <fe-header>右边连接<a slot="right">Feedback</a></fe-header>
     <br>
-    <fe-header>with left slot<a slot="left">Close</a></fe-header>
+    <fe-header>标题要长长长长长长长长长长长长长长长长长长长长长长长<a slot="right">Feedback</a></fe-header>
+    <br>
+    <fe-header>左边也能现实点啥<a slot="left">Close</a></fe-header>
     <br>
     <fe-header>
-      <span>overwrite-left</span>
+      <span>重写左边</span>
       <fe-icon slot="overwrite-left" type="navicon" size="35" style="fill:#fff;position:relative;top:-8px;left:-3px;"></fe-icon>
     </fe-header>
     <br>
-    <fe-header style="background-color:#000;">custom background color</fe-header>
+    <fe-header style="background-color:#000;">自定义背景颜色</fe-header>
   </div>
 </template>
 
@@ -38,6 +40,9 @@
     methods: {
       onHeaderClick () {
         console.log('header clicked')
+      },
+      clickBack () {
+        alert('自定义返回事件')
       }
     }
   }

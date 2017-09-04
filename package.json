@@ -1,6 +1,6 @@
 {
   "name": "feui",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "description": "",
   "main": "lib/feui.common.js",
   "style": "lib/style.css",
@@ -53,6 +53,7 @@
     "webpack-shell-plugin": "^0.4.3"
   },
   "dependencies": {
+    "iscroll": "^4.2.5",
     "lodash.debounce": "^4.0.8",
     "validator": "^8.0.0",
     "vue": "^2.0.0-rc.5"

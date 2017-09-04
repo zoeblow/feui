@@ -12,10 +12,10 @@
         </div>
         <label :for="`search_input_${uuid}`" class="weui-search-bar__label" v-show="!isFocus && !value">
           <i class="weui-icon-search"></i>
-          <span>{{placeholder }}</span>
+          <span>{{placeholder || '搜索' }}</span>
         </label>
       </form>
-      <a href="javascript:" class="weui-search-bar__cancel-btn" @click="cancel">{{cancelText}}</a>
+      <a href="javascript:" class="weui-search-bar__cancel-btn" @click="cancel">{{cancelText || '取消' }}</a>
       <slot name="right"></slot>
     </div>
     <div class="weui-cells nuim-search_show" v-show="isFixed">
@@ -152,6 +152,7 @@ export default {
 </script>
 
 <style lang="less">
+@import '../../styles/weui/icon/weui_icon_font';
 @import '../../styles/weui/widget/weui_searchbar/weui_searchbar';
 @import '../../styles/weui/widget/weui_cell/weui_cell_global';
 @import '../../styles/weui/widget/weui_cell/weui_access';

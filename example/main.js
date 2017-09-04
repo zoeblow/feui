@@ -7,7 +7,7 @@ import Feui from '../src/index.js'
 
 Vue.use(VueRouter)
 Vue.use(Feui)
-
+console.log(Feui)
 import '../src/styles/index.less';
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -15,18 +15,16 @@ document.addEventListener('DOMContentLoaded', function () {
 }, false)
 
 const router = new VueRouter({
-  mode: 'history',
-  base: '/',
+  // mode: 'history',
+  // base: '/',
   routes
 })
 
 router.beforeEach((to, from, next) => {
-
   next()
 })
 
 router.afterEach((to, from) => {
-
   document.title = to.meta.title
 })
 

@@ -1,6 +1,6 @@
 <template>
   <div class="page page-with-padding">
-    <fe-header slot="header" style="width:100%;position:absolute;left:0;top:0;z-index:100;">button</fe-header>
+    <fe-header slot="header" style="width:100%;position:absolute;left:0;top:0;z-index:100;" @on-click-back='clickBack' :left-options="{preventGoBack: true}" >button</fe-header>
     <div class="fe-content">
       <divider>大按钮</divider>
       <div class="buttons-big">
@@ -32,6 +32,19 @@
   </div>
 </template>
 
+<script>
+export default {
+  data () {
+    return {
+    }
+  },
+  methods:{
+    clickBack () {
+      this.$router.push({path:'/'});
+    }
+  }
+}
+</script>
 <style scoped lang="less">
   .page-with-padding{
     padding: 10px;

@@ -8,7 +8,6 @@
 
 ## Todo List
 
-- [ ] Loading
 - [ ] Calendar
 - [ ] Datetime
 - [ ] Tab
@@ -17,9 +16,10 @@
 - [ ] Popup
 - [ ] Picker
 - [x] Toast
-- [ ] Confirm
-- [ ] Actionsheet
-- [ ] Alert
+- [x] Loading
+- [x] Dialog
+- [x] Actionsheet
+- [x] Pullrefresh
 - [x] BUtton
 - [x] Count
 - [x] Search
@@ -34,6 +34,14 @@
 - [x] Divider
 
 <br/><br/><br/>
+## V 0.0.9
+### 已完成
+> Actionsheet<br/>
+
+## V 0.0.8
+### 已完成
+> Loading<br/>
+  Dialog<br/>
 
 ## V 0.0.7
 ### 已完成

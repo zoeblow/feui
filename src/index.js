@@ -12,8 +12,12 @@ import Search from './components/search/index'
 import Count from './components/count/index'
 import Group from './components/group/index'
 import Toast from './components/toast/index'
+import Loading from './components/loading/index'
+import Dialog from './components/dialog/index'
+import Actionsheet from './components/actionsheet/index'
+import Pullrefresh from './components/pullrefresh/index'
 
-const version = '0.0.7'
+const version = '0.0.9'
 const install = function (Vue, config = {}) {
   if (install.installed) return
   Vue.component(Button.name, Button)
@@ -29,8 +33,12 @@ const install = function (Vue, config = {}) {
   Vue.component(Search.name, Search)
   Vue.component(Count.name, Count)
   Vue.component(Group.name, Group)
+  Vue.component(Actionsheet.name, Actionsheet)
+  Vue.component(Pullrefresh.name, Pullrefresh)
   
   Vue.$toast = Vue.prototype.$toast = Toast
+  Vue.$dialog = Vue.prototype.$dialog = Dialog
+  Vue.$loading = Vue.prototype.$loading = Loading
 }
 
 // auto install
@@ -54,5 +62,9 @@ export default {
   Search,
   Count,
   Group,
-  Toast
+  Toast,
+  Loading,
+  Dialog,
+  Actionsheet,
+  Pullrefresh
 }

@@ -15,6 +15,8 @@ const install = function (Vue, config = {}) {
 {{install}}
   
   Vue.$toast = Vue.prototype.$toast = Toast
+  Vue.$dialog = Vue.prototype.$dialog = Dialog
+  Vue.$loading = Vue.prototype.$loading = Loading
 }
 
 // auto install
@@ -45,6 +47,8 @@ ComponentNames.forEach(name => {
 
   if ([
     'Toast',
+    'Dialog',
+    'Loading',
   ].indexOf(componentName) === -1) {
     installTemplate.push(render(ISNTALL_COMPONENT_TEMPLATE, {
       name: componentName,

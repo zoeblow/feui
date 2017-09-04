@@ -5,7 +5,6 @@
         <fe-button @click="showSuccess">成功提示</fe-button>
         <fe-button @click="showError">失败提示</fe-button>
         <fe-button @click="showText">提示文字</fe-button>
-        <fe-button @click="loading">加载中</fe-button>
       </div>  
     </div>
 </template>
@@ -36,15 +35,8 @@ export default {
     showText(){
       Toast({
         duration: 1500,
-        message: '操作失败',
+        message: '显示文字咯咯咯..',
         type: 'text'
-      })
-    },
-    loading(){
-      Toast({
-        duration: 1500,
-        message: '加载中...',
-        type: 'loading'
       })
     }
   }
@@ -53,6 +45,6 @@ export default {
 
 <style scoped lang="less">
   .fe-content{
-    padding: 0 10px;
+    margin: 0 10px;
   }
 </style>

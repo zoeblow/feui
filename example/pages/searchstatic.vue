@@ -5,7 +5,7 @@
       <!-- <img src="../assets/demo/filter_bg.jpg" style="width: 100%"> -->
       <br>
       <fe-search @on-submit="onSubmit" :auto-fixed="autoFixed" @on-focus="onFocus" @on-cancel="onCancel"></fe-search>
-      <divider>set value</divider>
+      <divider>设定默认值</divider>
       <fe-search @on-submit="onSubmit" :auto-fixed="false" v-model="value2" @on-focus="onFocus" @on-cancel="onCancel"></fe-search>
     </div>
   </div>

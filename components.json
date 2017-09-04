@@ -12,5 +12,9 @@
   "search": "./src/components/search/index.js",
   "count": "./src/components/count/index.js",
   "group": "./src/components/group/index.js",
-  "toast": "./src/components/toast/index.js"
+  "toast": "./src/components/toast/index.js",
+  "loading": "./src/components/loading/index.js",
+  "dialog": "./src/components/dialog/index.js",
+  "actionsheet": "./src/components/actionsheet/index.js",
+  "pullrefresh": "./src/components/pullrefresh/index.js"
 }

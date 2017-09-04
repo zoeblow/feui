@@ -61,6 +61,12 @@
         "name": "Count",
         "description": "记数",
         "icon": "count"
+      },
+      {
+        "path": "/pullrefresh",
+        "name": "pullrefresh",
+        "description": "下拉刷新上拉加载",
+        "icon": "pullrefresh"
       }
     ]
   },
@@ -68,10 +74,28 @@
     "groupTitle": "反馈",
     "navItems": [
       {
+        "path": "/actionsheet",
+        "name": "Actionsheet",
+        "description": "上拉菜单",
+        "icon": "actionsheet"
+      },
+      {
         "path": "/toast",
         "name": "Toast",
         "description": "吐司",
         "icon": "toast"
+      },
+      {
+        "path": "/loading",
+        "name": "Loading",
+        "description": "loading",
+        "icon": "loading"
+      },
+      {
+        "path": "/dialog",
+        "name": "Dialog",
+        "description": "弹窗",
+        "icon": "dialog"
       }
     ]
   }
