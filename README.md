@@ -1,13 +1,13 @@
 <p align="center">
   <a href="http://feui.oschina.io">
-    <img src="https://git.oschina.net/zoeblow/feui/raw/master/static/feui.png" width="180" alt="">
+    <img src="./static/feui.png" width="180" alt="">
   </a>
 </p>
 <p align="center">Feui 是爱信诺前端组移动组依据现有业务逻辑，基于VUE制作的一套UI组件</p>
 
 <p align="center">
    <a href="http://feui.oschina.io">
-    <img src="https://git.oschina.net/zoeblow/feui/raw/master/static/feui-qrcode.png" width="180" alt="">
+    <img src="./static/feui-qrcode.png" width="180" alt="">
   </a>
   <br>
   <a href="http://feui.oschina.io">
