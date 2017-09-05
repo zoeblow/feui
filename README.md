@@ -1,9 +1,21 @@
-<div align="center" >  
-<h1> feui </h1>
-<img src='https://git.oschina.net/zoeblow/feui/raw/master/static/feui.png' width='100px;' /> 
-<h3> feui 是爱信诺前端组移动组依据现有业务逻辑，基于VUE制作的一套UI组件</h3>
-</div>   
-<br/><br/><br/>
+<p align="center">
+  <a href="http://feui.oschina.io">
+    <img src="https://git.oschina.net/zoeblow/feui/raw/master/static/feui.png" width="180" alt="">
+  </a>
+</p>
+<p align="center">Feui 是爱信诺前端组移动组依据现有业务逻辑，基于VUE制作的一套UI组件</p>
+
+<p align="center">
+   <a href="http://feui.oschina.io">
+    <img src="https://git.oschina.net/zoeblow/feui/raw/master/static/feui-qrcode.png" width="180" alt="">
+  </a>
+  <br>
+  <a href="http://feui.oschina.io">
+    Live Demo >>
+  </a>
+  <br>
+  <br>
+</p>
 
 
 ## Todo List
