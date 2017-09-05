@@ -1,6 +1,6 @@
 {
   "name": "feui",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "",
   "main": "lib/feui.common.js",
   "style": "lib/style.css",
@@ -14,6 +14,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "autosize": "^4.0.0",
     "babel": "^6.23.0",
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.5",

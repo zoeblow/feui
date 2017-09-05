@@ -7,7 +7,7 @@ cooking.set({
   dist: './dist',
   template: './example/index.html',
   devServer: {
-    port: 8080,
+    port: 8888,
     host: require('my-local-ip')(),
     publicPath: '/',
     log: false

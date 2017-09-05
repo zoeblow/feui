@@ -2,8 +2,7 @@
   <div class="page page-with-padding">
     <fe-header slot="header" style="width:100%;position:absolute;left:0;top:0;z-index:100;">Loading</fe-header>
     <div class="fe-content">
-        <fe-button type="primary" @click="showLoading">show Loading</fe-button>
-        <fe-button type="primary" @click="hideLoading">hide Loading</fe-button>
+        <fe-button type="primary" @click="showLoading">show Loading(2秒后关闭)</fe-button>
     </div>
   </div>
 </template>
@@ -15,14 +14,13 @@
     }
   },
   created:function(){
-    // console.log(Loading)
   },
   methods:{
     showLoading () {
-      Loading.show('loading...')
-    },
-    hideLoading () {
-      Loading.hide()
+      Loading.show({text:'显示咯',solt:'<a slot="right">Feedback</a>'});
+      setTimeout(function(){
+         Loading.hide()
+      },20001)
     }
   }
 }

@@ -6,6 +6,7 @@ import InlineDesc from './components/inline-desc/index'
 import CellBox from './components/cell-box/index'
 import Icon from './components/icon/index'
 import Input from './components/input/index'
+import Textarea from './components/textarea/index'
 import Switch from './components/switch/index'
 import Indexlist from './components/indexlist/index'
 import Search from './components/search/index'
@@ -17,7 +18,7 @@ import Dialog from './components/dialog/index'
 import Actionsheet from './components/actionsheet/index'
 import Pullrefresh from './components/pullrefresh/index'
 
-const version = '0.0.9'
+const version = '0.0.10'
 const install = function (Vue, config = {}) {
   if (install.installed) return
   Vue.component(Button.name, Button)
@@ -28,6 +29,7 @@ const install = function (Vue, config = {}) {
   Vue.component(CellBox.name, CellBox)
   Vue.component(Icon.name, Icon)
   Vue.component(Input.name, Input)
+  Vue.component(Textarea.name, Textarea)
   Vue.component(Switch.name, Switch)
   Vue.component(Indexlist.name, Indexlist)
   Vue.component(Search.name, Search)
@@ -57,6 +59,7 @@ export default {
   CellBox,
   Icon,
   Input,
+  Textarea,
   Switch,
   Indexlist,
   Search,

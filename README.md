@@ -29,11 +29,15 @@
 - [x] Cell
 - [x] Group
 - [x] Input
+- [x] Textarea
 - [x] Icon
-- [x] Cell
 - [x] Divider
 
 <br/><br/><br/>
+## V 0.0.10
+### 已完成
+> Textarea <br/>
+
 ## V 0.0.9
 ### 已完成
 > Actionsheet<br/>

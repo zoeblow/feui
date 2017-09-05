@@ -7,6 +7,7 @@
   "cell-box":"./src/components/cell-box/index.js",
   "icon": "./src/components/icon/index.js",
   "input": "./src/components/input/index.js",
+  "textarea": "./src/components/textarea/index.js",
   "switch": "./src/components/switch/index.js",
   "indexlist": "./src/components/indexlist/index.js",
   "search": "./src/components/search/index.js",

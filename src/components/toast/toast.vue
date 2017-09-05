@@ -56,6 +56,7 @@ export default {
 
 .weui-toast .weui-icon_toast {
   font-size: 55px;
+  display: inline-block;
 }
 
 .weui-toast_text {
@@ -64,7 +65,6 @@ export default {
   max-width: 80%;
   padding: .5em 0;
   margin: 0 auto;
-
   .weui-toast__content {
     margin: 0;
   }

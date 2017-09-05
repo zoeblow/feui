@@ -33,6 +33,12 @@
         "icon": "input"
       },
       {
+        "path": "/textarea",
+        "name": "Textarea",
+        "description": "文本域",
+        "icon": "textarea"
+      },
+      {
         "path": "/switch",
         "name": "Switch",
         "description": "开关",
@@ -64,7 +70,7 @@
       },
       {
         "path": "/pullrefresh",
-        "name": "pullrefresh",
+        "name": "Pullrefresh",
         "description": "下拉刷新上拉加载",
         "icon": "pullrefresh"
       }
