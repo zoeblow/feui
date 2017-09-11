@@ -17,8 +17,12 @@ import Loading from './components/loading/index'
 import Dialog from './components/dialog/index'
 import Actionsheet from './components/actionsheet/index'
 import Pullrefresh from './components/pullrefresh/index'
+import Radio from './components/radio/index'
+import Checkicon from './components/checkicon/index'
+import Range from './components/range/index'
+import Rater from './components/rater/index'
 
-const version = '0.0.10'
+const version = '0.0.11'
 const install = function (Vue, config = {}) {
   if (install.installed) return
   Vue.component(Button.name, Button)
@@ -37,6 +41,10 @@ const install = function (Vue, config = {}) {
   Vue.component(Group.name, Group)
   Vue.component(Actionsheet.name, Actionsheet)
   Vue.component(Pullrefresh.name, Pullrefresh)
+  Vue.component(Radio.name, Radio)
+  Vue.component(Checkicon.name, Checkicon)
+  Vue.component(Range.name, Range)
+  Vue.component(Rater.name, Rater)
   
   Vue.$toast = Vue.prototype.$toast = Toast
   Vue.$dialog = Vue.prototype.$dialog = Dialog
@@ -69,5 +77,9 @@ export default {
   Loading,
   Dialog,
   Actionsheet,
-  Pullrefresh
+  Pullrefresh,
+  Radio,
+  Checkicon,
+  Range,
+  Rater
 }

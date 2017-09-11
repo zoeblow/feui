@@ -17,5 +17,11 @@
   "loading": "./src/components/loading/index.js",
   "dialog": "./src/components/dialog/index.js",
   "actionsheet": "./src/components/actionsheet/index.js",
-  "pullrefresh": "./src/components/pullrefresh/index.js"
+  "pullrefresh": "./src/components/pullrefresh/index.js",
+  "radio": "./src/components/radio/index.js",
+  "checkicon": "./src/components/checkicon/index.js",
+  "range": "./src/components/range/index.js",
+  "rater": "./src/components/rater/index.js"
+          
+
 }

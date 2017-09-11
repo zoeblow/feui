@@ -9,7 +9,7 @@ cooking.set({
   format: 'cjs',
   moduleName: 'FEUI',
   extractCSS: 'style.css',
-  extends: ['vue2', , 'less', 'autoprefixer'],
+  extends: ['vue2', 'less', 'autoprefixer'],
   alias: config.alias,
   externals: config.pkg
 });

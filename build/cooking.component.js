@@ -10,7 +10,7 @@ cooking.set({
   template: false,
   format: 'cjs',
   extractCSS: '[name]/style.css',
-  extends: ['vue2', , 'less', 'autoprefixer'],
+  extends: ['vue2', 'less', 'autoprefixer'],
   alias: config.alias,
   externals: config.externals
 });

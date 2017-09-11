@@ -8,6 +8,7 @@ import Feui from '../src/index.js'
 Vue.use(VueRouter)
 Vue.use(Feui)
 console.log(Feui)
+import './assets/iconfont/iconfont.css';
 import '../src/styles/index.less';
 
 document.addEventListener('DOMContentLoaded', function () {

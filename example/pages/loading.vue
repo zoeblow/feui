@@ -17,10 +17,10 @@
   },
   methods:{
     showLoading () {
-      Loading.show({text:'显示咯',solt:'<a slot="right">Feedback</a>'});
+      Loading.show({text:'显示咯'});
       setTimeout(function(){
          Loading.hide()
-      },20001)
+      },2000)
     }
   }
 }

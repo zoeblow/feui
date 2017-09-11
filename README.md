@@ -1,11 +1,11 @@
-<p align="center">
+<div align="center">
   <a href="http://feui.oschina.io">
     <img src="./static/feui.png" width="180" alt="">
   </a>
-</p>
-<p align="center">Feui 是爱信诺前端组移动组依据现有业务逻辑，基于VUE制作的一套UI组件</p>
-
-<p align="center">
+</div>
+<div align="center">Feui 是爱信诺前端组移动组依据现有业务逻辑，基于VUE制作的一套UI组件</div>
+  <br>
+<div align="center">
    <a href="http://feui.oschina.io">
     <img src="./static/feui-qrcode.png" width="180" alt="">
   </a>
@@ -15,7 +15,7 @@
   </a>
   <br>
   <br>
-</p>
+</div>
 
 
 ## Todo List
@@ -24,9 +24,12 @@
 - [ ] Datetime
 - [ ] Tab
 - [ ] Scroller
-- [ ] Radio
 - [ ] Popup
 - [ ] Picker
+- [x] Rater
+- [x] Range
+- [x] Radio
+- [x] Check-icon
 - [x] Toast
 - [x] Loading
 - [x] Dialog
@@ -46,6 +49,13 @@
 - [x] Divider
 
 <br/><br/><br/>
+## V 0.0.11
+### 已完成
+> Rater <br/>
+> Range <br/>
+> Radio <br/>
+> Check-icon
+
 ## V 0.0.10
 ### 已完成
 > Textarea <br/>

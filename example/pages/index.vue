@@ -5,14 +5,11 @@
       <h1 class="page__title">Feui</h1>
     </div>
     <fe-group :title="navGroup.groupTitle" v-for="navGroup in navs" :key="navGroup.index">
-      
-      <fe-cell v-for="nav in navGroup.navItems" :key="nav.name" :link="nav.path" is-link :title="nav.name">
-        <i class="cell-icon iconfont" :class="'icon-' + nav.icon" slot="icon"></i>
-        <!-- <fe-badge slot="ft" v-if="nav.status === 'todo'">Todo</fe-badge> -->
+      <fe-cell v-for="nav in navGroup.navItems" :key="nav.name" :link="nav.path" is-link :title="nav.name" >
+        <i class="cell-icon iconfont" :class="'feui-' + nav.icon" slot="icon"></i>
+        <p slot="inline-desc" style="color: #b3b3b3">{{nav.description}}</p>
       </fe-cell>
     </fe-group>
-    
-
   </div>
 </template>
 
@@ -79,12 +76,15 @@
   .cell-icon {
     display: block;
     margin-right: 5px;
-    color: #2196f3;
+    color: #41b883;
     overflow: hidden;
     font-size: 20px;
   }
 
   .footer-copyright {
     margin: 40px 0 20px;
+  }
+  .nuim-tap-active{
+    // align-items: baseline;
   }
 </style>

@@ -6,19 +6,19 @@
         "path": "/button",
         "name": "Button",
         "description": "按钮",
-        "icon": "buttonminus"
+        "icon": "button"
       },
       {
         "path": "/header",
         "name": "Header",
         "description": "头部",
-        "icon": "buttonminus"
+        "icon": "header"
       },
       {
         "path": "/cell",
         "name": "Cell",
         "description": "Cell",
-        "icon": "buttonminus"
+        "icon": "list"
       },
       {
         "path": "/icons",
@@ -48,7 +48,7 @@
         "path": "/indexlist",
         "name": "Indexlist",
         "description": "地址列表",
-        "icon": "Indexlist"
+        "icon": "indexlist"
       },
       {
         "path": "/search",
@@ -72,7 +72,31 @@
         "path": "/pullrefresh",
         "name": "Pullrefresh",
         "description": "下拉刷新上拉加载",
-        "icon": "pullrefresh"
+        "icon": "Pullrefresh"
+      },
+      {
+        "path": "/radio",
+        "name": "Radio",
+        "description": "单选",
+        "icon": "radio"
+      },
+      {
+        "path": "/checkicon",
+        "name": "checkicon",
+        "description": "带图标单选",
+        "icon": "checknormal"
+      },
+      {
+        "path": "/range",
+        "name": "Range",
+        "description": "滑块",
+        "icon": "range"
+      },
+      {
+        "path": "/rater",
+        "name": "Rater",
+        "description": "评分",
+        "icon": "star"
       }
     ]
   },
