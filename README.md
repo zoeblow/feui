@@ -26,6 +26,7 @@
 - [ ] Scroller
 - [ ] Popup
 - [ ] Picker
+- [x] Scroll
 - [x] Rater
 - [x] Range
 - [x] Radio
@@ -49,6 +50,10 @@
 - [x] Divider
 
 <br/><br/><br/>
+## V 0.0.12
+### 已完成
+> Scroll <br/>
+
 ## V 0.0.11
 ### 已完成
 > Rater <br/>

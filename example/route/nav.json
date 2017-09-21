@@ -97,6 +97,18 @@
         "name": "Rater",
         "description": "评分",
         "icon": "star"
+      },
+      {
+        "path": "/popup",
+        "name": "Popup",
+        "description": "弹出",
+        "icon": "popup"
+      },
+      {
+        "path": "/scroll",
+        "name": "Scroll",
+        "description": "滑动",
+        "icon": "scrollable"
       }
     ]
   },

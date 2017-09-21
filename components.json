@@ -21,7 +21,9 @@
   "radio": "./src/components/radio/index.js",
   "checkicon": "./src/components/checkicon/index.js",
   "range": "./src/components/range/index.js",
-  "rater": "./src/components/rater/index.js"
+  "rater": "./src/components/rater/index.js",
+  "popup": "./src/components/popup/index.js",
+  "scroll": "./src/components/scroll/index.js"
           
 
 }

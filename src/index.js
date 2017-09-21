@@ -21,8 +21,10 @@ import Radio from './components/radio/index'
 import Checkicon from './components/checkicon/index'
 import Range from './components/range/index'
 import Rater from './components/rater/index'
+import Popup from './components/popup/index'
+import Scroll from './components/scroll/index'
 
-const version = '0.0.11'
+const version = '0.0.12'
 const install = function (Vue, config = {}) {
   if (install.installed) return
   Vue.component(Button.name, Button)
@@ -45,6 +47,8 @@ const install = function (Vue, config = {}) {
   Vue.component(Checkicon.name, Checkicon)
   Vue.component(Range.name, Range)
   Vue.component(Rater.name, Rater)
+  Vue.component(Popup.name, Popup)
+  Vue.component(Scroll.name, Scroll)
   
   Vue.$toast = Vue.prototype.$toast = Toast
   Vue.$dialog = Vue.prototype.$dialog = Dialog
@@ -81,5 +85,7 @@ export default {
   Radio,
   Checkicon,
   Range,
-  Rater
+  Rater,
+  Popup,
+  Scroll
 }
