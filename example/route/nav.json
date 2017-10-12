@@ -109,7 +109,38 @@
         "name": "Scroll",
         "description": "滑动",
         "icon": "scrollable"
+      },
+      {
+        "path": "/countup",
+        "name": "Countup",
+        "description": "记数",
+        "icon": "count"
+      },
+      {
+        "path": "/flexbox",
+        "name": "Flexbox",
+        "description": "栅格",
+        "icon": "fy"
+      },
+      {
+        "path": "/picker",
+        "name": "Picker",
+        "description": "选择",
+        "icon": "fy"
+      },
+      {
+        "path": "/popuppicker",
+        "name": "popupPicker",
+        "description": "弹出选择",
+        "icon": "popup"
+      },
+      {
+        "path": "/address",
+        "name": "Address",
+        "description": "地址选择",
+        "icon": "map"
       }
+      
     ]
   },
   {

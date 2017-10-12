@@ -4,8 +4,9 @@ var render = require('json-templater/string')
 var uppercamelcase = require('uppercamelcase')
 var path = require('path')
 
-var OUTPUT_PATH = path.join(__dirname, '../../src/index.js')
+var OUTPUT_PATH = path.join(__dirname, '../../src/index.js');
 var IMPORT_TEMPLATE = 'import {{name}} from \'./components/{{package}}/index\''
+var IMPORT_JSON = 'import {{name}} from \'./datas/{{package}}.json\''
 var ISNTALL_COMPONENT_TEMPLATE = '  Vue.component({{name}}.name, {{name}})'
 var MAIN_TEMPLATE = `{{include}}
 
@@ -36,19 +37,29 @@ var ComponentNames = Object.keys(Components)
 var includeComponentTemplate = []
 var installTemplate = []
 var listTemplate = []
+var JSONData = ['china_address','china_address_v1','china_address_v2','china_address_v3',]
 
 ComponentNames.forEach(name => {
   var componentName = uppercamelcase(name)
-
-  includeComponentTemplate.push(render(IMPORT_TEMPLATE, {
-    name: componentName,
-    package: name
-  }))
+  // console.log(componentName,JSONData.indexOf(name)> -1)
+  if(JSONData.indexOf(name)> -1){
+    includeComponentTemplate.push(render(IMPORT_JSON, {
+      name: componentName,
+      package: name
+    }))
+  }else{
+    includeComponentTemplate.push(render(IMPORT_TEMPLATE, {
+      name: componentName,
+      package: name
+    }))
+  }
 
   if ([
     'Toast',
     'Dialog',
     'Loading',
+    'ChinaAddressV2',
+    'ChinaAddressV3',
   ].indexOf(componentName) === -1) {
     installTemplate.push(render(ISNTALL_COMPONENT_TEMPLATE, {
       name: componentName,

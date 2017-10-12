@@ -1,6 +1,6 @@
 {
   "name": "feui",
-  "version": "0.0.12",
+  "version": "0.0.14",
   "description": "",
   "main": "lib/feui.common.js",
   "style": "lib/style.css",
@@ -14,6 +14,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "array-filter": "^1.0.0",
+    "array-find": "^1.0.0",
+    "array-map": "0.0.0",
     "autosize": "^4.0.0",
     "babel": "^6.23.0",
     "babel-core": "^6.14.0",
@@ -26,6 +29,7 @@
     "cooking-autoprefixer": "^1.0.0",
     "cooking-less": "^1.0.5",
     "cooking-vue2": "^0.3.2",
+    "countup.js": "^1.9.2",
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^2.0.0-beta.4",
     "fastclick": "^1.0.6",

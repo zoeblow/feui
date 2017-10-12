@@ -25,8 +25,11 @@
 - [ ] Tab
 - [ ] Scroller
 - [ ] Popup
-- [ ] Picker
+- [x] Address
+- [x] Picker
+- [x] Popup Picker
 - [x] Scroll
+- [x] Flexbox
 - [x] Rater
 - [x] Range
 - [x] Radio
@@ -50,6 +53,17 @@
 - [x] Divider
 
 <br/><br/><br/>
+
+## V 0.0.14
+### 已完成
+> Address <br/>
+> popupPicker
+
+## V 0.0.13
+### 已完成
+> Picker <br/>
+> Flexbox <br/>
+
 ## V 0.0.12
 ### 已完成
 > Scroll <br/>

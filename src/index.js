@@ -23,8 +23,14 @@ import Range from './components/range/index'
 import Rater from './components/rater/index'
 import Popup from './components/popup/index'
 import Scroll from './components/scroll/index'
+import Flexbox from './components/flexbox/index'
+import FlexboxItem from './components/flexbox-item/index'
+import Picker from './components/picker/index'
+import Countup from './components/countup/index'
+import PopupPicker from './components/popup-picker/index'
+import Address from './components/address/index'
 
-const version = '0.0.12'
+const version = '0.0.14'
 const install = function (Vue, config = {}) {
   if (install.installed) return
   Vue.component(Button.name, Button)
@@ -49,6 +55,12 @@ const install = function (Vue, config = {}) {
   Vue.component(Rater.name, Rater)
   Vue.component(Popup.name, Popup)
   Vue.component(Scroll.name, Scroll)
+  Vue.component(Flexbox.name, Flexbox)
+  Vue.component(FlexboxItem.name, FlexboxItem)
+  Vue.component(Picker.name, Picker)
+  Vue.component(Countup.name, Countup)
+  Vue.component(PopupPicker.name, PopupPicker)
+  Vue.component(Address.name, Address)
   
   Vue.$toast = Vue.prototype.$toast = Toast
   Vue.$dialog = Vue.prototype.$dialog = Dialog
@@ -87,5 +99,11 @@ export default {
   Range,
   Rater,
   Popup,
-  Scroll
+  Scroll,
+  Flexbox,
+  FlexboxItem,
+  Picker,
+  Countup,
+  PopupPicker,
+  Address
 }

@@ -23,7 +23,12 @@
   "range": "./src/components/range/index.js",
   "rater": "./src/components/rater/index.js",
   "popup": "./src/components/popup/index.js",
-  "scroll": "./src/components/scroll/index.js"
-          
-
+  "scroll": "./src/components/scroll/index.js",
+  "flexbox": "./src/components/flexbox/index.js",
+  "flexbox-item": "./src/components/flexbox-item/index.js",
+  "picker": "./src/components/picker/index.js",
+  "countup": "./src/components/countup/index.js",
+  "popup-picker": "./src/components/popup-picker/index.js",
+  "address": "./src/components/address/index.js"
+  
 }

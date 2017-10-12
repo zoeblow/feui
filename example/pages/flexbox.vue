@@ -1,0 +1,123 @@
+<template>
+  <div class="page">
+    <fe-header slot="header" style="width:100%;position:absolute;left:0;top:0;z-index:100;">Flexbox</fe-header>
+    <div class="fe-content">
+      <divider>横排</divider>
+      <flexbox>
+        <flexbox-item><div class="flex-demo">1</div></flexbox-item>
+        <flexbox-item><div class="flex-demo">2</div></flexbox-item>
+      </flexbox>
+      <br>
+      <flexbox>
+        <flexbox-item><div class="flex-demo">1</div></flexbox-item>
+        <flexbox-item><div class="flex-demo">2</div></flexbox-item>
+        <flexbox-item><div class="flex-demo">3</div></flexbox-item>
+      </flexbox>
+      <br>
+      <flexbox>
+        <flexbox-item><div class="flex-demo">1</div></flexbox-item>
+        <flexbox-item><div class="flex-demo">2</div></flexbox-item>
+        <flexbox-item><div class="flex-demo">3</div></flexbox-item>
+        <flexbox-item><div class="flex-demo">4</div></flexbox-item>
+      </flexbox>
+      <br>
+      <flexbox>
+        <flexbox-item><div class="flex-demo">1</div></flexbox-item>
+        <flexbox-item><div class="flex-demo">2</div></flexbox-item>
+        <flexbox-item><div class="flex-demo">3</div></flexbox-item>
+        <flexbox-item><div class="flex-demo">4</div></flexbox-item>
+        <flexbox-item><div class="flex-demo">5</div></flexbox-item>
+      </flexbox>
+      <br>
+      <flexbox>
+        <flexbox-item><div class="flex-demo">1</div></flexbox-item>
+        <flexbox-item><div class="flex-demo">2</div></flexbox-item>
+        <flexbox-item><div class="flex-demo">3</div></flexbox-item>
+        <flexbox-item><div class="flex-demo">4</div></flexbox-item>
+        <flexbox-item><div class="flex-demo">5</div></flexbox-item>
+        <flexbox-item><div class="flex-demo">6</div></flexbox-item>
+      </flexbox>
+      <br>
+      <divider>横排没有空隙</divider>
+      <flexbox :gutter="0">
+        <flexbox-item><div class="flex-demo">1</div></flexbox-item>
+        <flexbox-item><div class="flex-demo">2</div></flexbox-item>
+        <flexbox-item><div class="flex-demo">3</div></flexbox-item>
+        <flexbox-item><div class="flex-demo">4</div></flexbox-item>
+      </flexbox>
+      <br>
+      <divider>垂直排列</divider>
+      <flexbox orient="vertical">
+        <flexbox-item><div class="flex-demo">1</div></flexbox-item>
+        <flexbox-item><div class="flex-demo">2</div></flexbox-item>
+      </flexbox>
+      <br>
+      <divider>垂直排列没有空隙</divider>
+      <flexbox orient="vertical" :gutter="0">
+        <flexbox-item><div class="flex-demo">1</div></flexbox-item>
+        <flexbox-item><div class="flex-demo">2</div></flexbox-item>
+      </flexbox>
+      <br>
+      <divider>栅格系统(12列)</divider>
+      <flexbox>
+        <flexbox-item :span="4"><div class="flex-demo">1/3</div></flexbox-item>
+        <flexbox-item><div class="flex-demo">2/3</div></flexbox-item>
+      </flexbox>
+      <br>
+      <flexbox>
+        <flexbox-item :span="6"><div class="flex-demo">6/12</div></flexbox-item>
+        <flexbox-item :span="2"><div class="flex-demo">2/12</div></flexbox-item>
+        <flexbox-item ><div class="flex-demo">rest</div></flexbox-item>
+      </flexbox>
+      <br>
+      <divider>灵活网格</divider>
+      <flexbox>
+        <flexbox-item :span="1/3"><div class="flex-demo">1/3</div></flexbox-item>
+        <flexbox-item :span="1/6"><div class="flex-demo">1/6</div></flexbox-item>
+        <flexbox-item :span="1/8"><div class="flex-demo">1/8</div></flexbox-item>
+        <flexbox-item :span="1/8"><div class="flex-demo">1/8</div></flexbox-item>
+        <flexbox-item><div class="flex-demo">rest</div></flexbox-item>
+      </flexbox>
+      <br>
+      <flexbox :gutter="0">
+        <flexbox-item :span="1/3"><div class="flex-demo">1/3</div></flexbox-item>
+        <flexbox-item :span="1/6"><div class="flex-demo">1/6</div></flexbox-item>
+        <flexbox-item :span="1/8"><div class="flex-demo">1/8</div></flexbox-item>
+        <flexbox-item :span="1/8"><div class="flex-demo">1/8</div></flexbox-item>
+        <flexbox-item><div class="flex-demo">rest</div></flexbox-item>
+      </flexbox>
+      <br>
+      <divider>灵活网格</divider>
+      <flexbox :gutter="0">
+        <flexbox-item :span="1/3" :order="4"><div class="flex-demo">1</div></flexbox-item>
+        <flexbox-item :span="1/6" :order="3"><div class="flex-demo">2</div></flexbox-item>
+        <flexbox-item :span="1/8" :order="2"><div class="flex-demo">3</div></flexbox-item>
+        <flexbox-item :span="1/8" :order="1"><div class="flex-demo">4</div></flexbox-item>
+        <flexbox-item :order="-99"><div class="flex-demo">5</div></flexbox-item>
+      </flexbox>
+      <br>
+      <divider>溢出换行</divider>
+      <flexbox :gutter="0" wrap="wrap">
+        <flexbox-item :span="1/3"><div class="flex-demo">1/3</div></flexbox-item>
+        <flexbox-item :span="1/3"><div class="flex-demo">1/3</div></flexbox-item>
+        <flexbox-item :span="1/3"><div class="flex-demo">1/3</div></flexbox-item>
+        <flexbox-item :span="1/3"><div class="flex-demo">1/3</div></flexbox-item>
+        <flexbox-item :span="1/3"><div class="flex-demo">1/3</div></flexbox-item>
+        <flexbox-item :span="1/3"><div class="flex-demo">1/3</div></flexbox-item>
+        <flexbox-item :span="1/3"><div class="flex-demo">1/3</div></flexbox-item>
+        <flexbox-item :span="1/3"><div class="flex-demo">1/3</div></flexbox-item>
+      </flexbox>
+    </div>
+  </div>
+</template>
+
+<style scoped lang="less">
+  .flex-demo{
+    text-align: center;
+    color: #fff;
+    background-color: #4a90e2;
+    border-radius: 4px;
+    background-clip: padding-box;
+  }
+  
+</style>

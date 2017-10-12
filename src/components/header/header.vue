@@ -29,7 +29,6 @@
   import objectAssign from 'object-assign'
   export default {
     name: 'fe-header',
-
     props: {
       leftOptions: Object,
       title: String,
