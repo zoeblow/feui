@@ -24,7 +24,7 @@
 </template>
 
 <script>
-
+import Toast from '../../src/components/toast'
 
 export default {
 
@@ -33,17 +33,17 @@ export default {
       this.$refs.search.setFocus()
     },
     resultClick (item) {
-      window.alert('you click the result item: ' + JSON.stringify(item))
+      window.alert('您选择的是: ' + JSON.stringify(item))
     },
     getResult (val) {
       this.results = val ? getResult(this.value) : []
     },
     onSubmit () {
-      // this.$vux.toast.show({
-      //   type: 'text',
-      //   position: 'top',
-      //   text: 'on submit'
-      // })
+      Toast({
+        duration: 1500,
+        message: '搜索提示',
+        type: 'text'
+      })
     },
     onFocus () {
       console.log('on focus')

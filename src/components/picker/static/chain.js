@@ -10,14 +10,14 @@ const Manager = class {
   }
 
   getChildren (value) {
-    return filter(this.data,  function (one) {
+    return filter(this.data, function (one) {
       return one.parent === value;
-    })
+    });
   }
 
   getFirstColumn () {
     return filter(this.data, function (one) {
-      return !one.parent || one.parent === 0 || one.parent === '0';
+      return !one.parent || one.parent === 0 || one.parent === '0'
     })
   }
 
@@ -28,9 +28,10 @@ const Manager = class {
   getColumns (value) {
     // check is data contains the values
     if (value.length > 0) {
+      var that = this
       const matchCount = this.getPure(this.data).filter(function (item) {
-        return undefined.getPure(value).indexOf(item.value) > -1;
-      }).length
+        return that.getPure(value).indexOf(item.value) > -1;
+      }).length;
       if (matchCount < this.getPure(value).length) {
         value = []
       }
@@ -54,9 +55,9 @@ const Manager = class {
         }
       }
     }
-    const list = datas.filter(function (item) {
+    var list = datas.filter(function(item) {
       return item.length > 0;
-    })
+    });
     // correct the column
     this.count = list.length
     return list

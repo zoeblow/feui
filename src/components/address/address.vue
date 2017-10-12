@@ -41,7 +41,7 @@ export default {
     if (this.currentValue.length && this.rawValue) {
       const parsedVal = name2value(this.currentValue, this.list)
       if (/__/.test(parsedVal)) {
-        console.error('Vux: Wrong address value', this.currentValue)
+        console.error('Feui: Wrong address value', this.currentValue)
         this.currentValue = []
       } else {
         this.currentValue = parsedVal.split(' ')
