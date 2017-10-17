@@ -29,8 +29,12 @@ import Picker from './components/picker/index'
 import Countup from './components/countup/index'
 import PopupPicker from './components/popup-picker/index'
 import Address from './components/address/index'
+import Slidbtn from './components/slidbtn/index'
+import Tab from './components/tab/index'
+import Tabitem from './components/tabitem/index'
+import Badge from './components/badge/index'
 
-const version = '0.0.14'
+const version = '0.0.16'
 const install = function (Vue, config = {}) {
   if (install.installed) return
   Vue.component(Button.name, Button)
@@ -61,6 +65,10 @@ const install = function (Vue, config = {}) {
   Vue.component(Countup.name, Countup)
   Vue.component(PopupPicker.name, PopupPicker)
   Vue.component(Address.name, Address)
+  Vue.component(Slidbtn.name, Slidbtn)
+  Vue.component(Tab.name, Tab)
+  Vue.component(Tabitem.name, Tabitem)
+  Vue.component(Badge.name, Badge)
   
   Vue.$toast = Vue.prototype.$toast = Toast
   Vue.$dialog = Vue.prototype.$dialog = Dialog
@@ -105,5 +113,9 @@ export default {
   Picker,
   Countup,
   PopupPicker,
-  Address
+  Address,
+  Slidbtn,
+  Tab,
+  Tabitem,
+  Badge
 }

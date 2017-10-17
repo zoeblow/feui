@@ -9,7 +9,7 @@ Vue.use(VueRouter)
 Vue.use(Feui)
 console.log(Feui)
 import './assets/iconfont/iconfont.css';
-import '../src/styles/index.less';
+import './styles/index.less';
 
 document.addEventListener('DOMContentLoaded', function () {
   if (FastClick) FastClick.attach(document.body)

@@ -1,5 +1,5 @@
 <template>
-    <div class="pages input">
+    <div class="page input">
       <fe-header slot="header" style="width:100%;position:absolute;left:0;top:0;z-index:100;">Textarea</fe-header>
       <div class="fe-content">
         <fe-group>

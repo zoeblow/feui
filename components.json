@@ -29,6 +29,11 @@
   "picker": "./src/components/picker/index.js",
   "countup": "./src/components/countup/index.js",
   "popup-picker": "./src/components/popup-picker/index.js",
-  "address": "./src/components/address/index.js"
+  "address": "./src/components/address/index.js",
+  "slidbtn": "./src/components/slidbtn/index.js",
+  "tab": "./src/components/tab/index.js",
+  "tabitem": "./src/components/tabitem/index.js",
+  "badge": "./src/components/badge/index.js"
+
   
 }

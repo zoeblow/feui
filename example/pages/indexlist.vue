@@ -1,5 +1,5 @@
 <template>
-    <div class="pages index">
+    <div class="page index">
         <fe-header slot="header" style="width:100%;position:absolute;left:0;top:0;z-index:100;">列表</fe-header>
         <div class="content">
             <fe-list v-model="oData" :isSort="true"></fe-list>
@@ -87,7 +87,7 @@
         height: 100%;
         box-sizing: border-box;
     }
-    .pages{
+    .page{
         height: 100%;
     }
 </style>

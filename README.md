@@ -22,9 +22,11 @@
 
 - [ ] Calendar
 - [ ] Datetime
-- [ ] Tab
 - [ ] Scroller
-- [ ] Popup
+- [x] Badge
+- [x] Tab
+- [x] Popup
+- [x] Slidbtn
 - [x] Address
 - [x] Picker
 - [x] Popup Picker
@@ -53,6 +55,15 @@
 - [x] Divider
 
 <br/><br/><br/>
+
+## V 0.0.16
+### 已完成
+> Tab <br/>
+> Badge <br/>
+
+## V 0.0.15
+### 已完成
+> Slidbtn <br/>
 
 ## V 0.0.14
 ### 已完成

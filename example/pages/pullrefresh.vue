@@ -1,5 +1,5 @@
 <template>
-    <div class="pages index">
+    <div class="page index">
         <fe-header slot="header" style="width:100%;position:absolute;left:0;top:0;z-index:100;">下拉刷新上拉加载</fe-header>
         <div class="content">
             <fe-pullrefresh height="400px" ref="pullScroll" v-model="status" @on-pullup-loading='loadmove' @on-pulldown-loading="reload" :usePullup="true" :usePulldown="true" style="background-color:ghostwhite">
@@ -69,7 +69,7 @@
 
 <style scoped lang="less">
     @import '../../src/styles/1px.less';
-    .pages {
+    .page {
         height: 100%;
     }
     .content {

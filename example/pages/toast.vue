@@ -1,5 +1,5 @@
 <template>
-    <div class="pages input">
+    <div class="page input">
       <fe-header slot="header" style="width:100%;position:absolute;left:0;top:0;z-index:100;">Toast</fe-header>
       <div class="fe-content">
         <fe-button @click="showSuccess">成功提示</fe-button>

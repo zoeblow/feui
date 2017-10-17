@@ -120,13 +120,13 @@
         "path": "/flexbox",
         "name": "Flexbox",
         "description": "栅格",
-        "icon": "fy"
+        "icon": "flex"
       },
       {
         "path": "/picker",
         "name": "Picker",
         "description": "选择",
-        "icon": "fy"
+        "icon": "selector"
       },
       {
         "path": "/popuppicker",
@@ -139,6 +139,17 @@
         "name": "Address",
         "description": "地址选择",
         "icon": "map"
+      },
+      {
+        "path": "/tab",
+        "name": "Tab",
+        "description": "地址选择",
+        "icon": "tab"
+      },{
+        "path": "/badge",
+        "name": "Badge",
+        "description": "角标",
+        "icon": "number8"
       }
       
     ]
@@ -169,6 +180,12 @@
         "name": "Dialog",
         "description": "弹窗",
         "icon": "dialog"
+      },
+      {
+        "path": "/slidbtn",
+        "name": "Slidbtn",
+        "description": "滑动操作",
+        "icon": "sliderlr"
       }
     ]
   }
