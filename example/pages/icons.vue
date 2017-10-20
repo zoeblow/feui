@@ -1,5 +1,5 @@
 <template>
-  <div class="page page-with-padding">
+  <div class="page">
     <fe-header slot="header" style="width:100%;position:absolute;left:0;top:0;z-index:100;">Icon</fe-header>
     <div class="fe-content">
       <ul class="icon-list-big">

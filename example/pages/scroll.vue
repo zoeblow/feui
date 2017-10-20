@@ -73,10 +73,6 @@
 .page,.fe-content{
   height: 100%;
 }
-.fe-content{
-  margin-top: 50px;
-  padding-top: 0px;
-}
 .scroll-page{
   position: absolute;
   height: 100%;

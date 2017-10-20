@@ -20,7 +20,7 @@
     </div>
     <div class="weui-cells nuim-search_show" v-show="isFixed">
       <slot></slot>
-      <div class="weui-cell weui-cell_access" v-for="item in results" :key='item' @click="handleResultClick(item)" v-on:touchmove.prevent>
+      <div class="weui-cell weui-cell_access" v-for="item in results" @click="handleResultClick(item)" v-on:touchmove.prevent>
         <div class="weui-cell__bd weui-cell_primary">
           <p>{{item.title}}</p>
         </div>

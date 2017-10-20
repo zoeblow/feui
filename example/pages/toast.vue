@@ -2,9 +2,11 @@
     <div class="page input">
       <fe-header slot="header" style="width:100%;position:absolute;left:0;top:0;z-index:100;">Toast</fe-header>
       <div class="fe-content">
-        <fe-button @click="showSuccess">成功提示</fe-button>
-        <fe-button @click="showError">失败提示</fe-button>
-        <fe-button @click="showText">提示文字</fe-button>
+        <div style="margin:10px;">
+          <fe-button @click="showSuccess">成功提示</fe-button>
+          <fe-button @click="showError">失败提示</fe-button>
+          <fe-button @click="showText">提示文字</fe-button>
+        </div>
       </div>  
     </div>
 </template>
@@ -44,7 +46,4 @@ export default {
 </script>
 
 <style scoped lang="less">
-  .fe-content{
-    margin: 0 10px;
-  }
 </style>

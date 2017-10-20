@@ -1,5 +1,5 @@
 <template>
-  <div class="page page-with-padding">
+  <div class="page">
     <fe-header slot="header" style="width:100%;position:absolute;left:0;top:0;z-index:100;">cell</fe-header>
     <div class="fe-content">
       <fe-group title='你好'>
@@ -53,9 +53,6 @@
   }
 </script>
 <style scoped lang="less">
-  .fe-content{
-    padding: 0px;margin: 50px 0 0 0 ;
-  }
   .sub-item {
     color: #888;
   }

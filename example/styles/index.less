@@ -2,6 +2,9 @@
   padding: 0;
   margin: 0;
 }
+html,body{
+  height: 100%;
+}
 #app{
   height: 100%;
   position: relative;
@@ -16,7 +19,11 @@ body {
 .page{
   margin: 0 auto;
   max-width: 500px;
+  overflow: auto;
 }
 .fe-content{
-  padding-top:50px; 
+  padding-top:46px; 
+  height: 100%;
+  overflow-y: auto;
+  -webkit-tap-highlight-color: transparent;
 }

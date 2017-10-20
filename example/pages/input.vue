@@ -70,6 +70,8 @@
           <fe-input title="请输入6位数字" type="text" placeholder="" v-model="password" :min="6" :max="6" @on-change="change"></fe-input>
           <fe-input title="请确认6位数字" v-model="password2" type="text" placeholder="" :equal-with="password"></fe-input>
         </fe-group>
+        <br>
+        <br>
       </div>  
     </div>
 </template>
@@ -112,7 +114,4 @@ export default {
 </script>
 
 <style scoped lang="less">
-.fe-content{
-  padding: 0px;margin: 50px 0 0 0 ;
-}
 </style>

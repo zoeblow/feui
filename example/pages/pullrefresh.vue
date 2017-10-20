@@ -4,7 +4,7 @@
         <div class="content">
             <fe-pullrefresh height="400px" ref="pullScroll" v-model="status" @on-pullup-loading='loadmove' @on-pulldown-loading="reload" :usePullup="true" :usePulldown="true" style="background-color:ghostwhite">
                 <div class="feui-box-demo">
-                    <li v-for="(item,index) in list" class="nuim-1px-b" :key="index">{{item}}</li>
+                    <li v-for="(item,index) in list" class="nuim-1px-b" >{{item}}</li>
                 </div>
                 <div slot="pulldown" style="height:40px;">
                     <!--<span v-show="status.pulldown === 'default'">下拉刷新</span>-->

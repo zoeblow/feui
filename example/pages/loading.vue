@@ -2,7 +2,9 @@
   <div class="page page-with-padding">
     <fe-header slot="header" style="width:100%;position:absolute;left:0;top:0;z-index:100;">Loading</fe-header>
     <div class="fe-content">
+      <div style="margin:10px;">
         <fe-button type="primary" @click="showLoading">show Loading(2秒后关闭)</fe-button>
+      </div>
     </div>
   </div>
 </template>
@@ -26,7 +28,4 @@
 }
 </script>
 <style scoped lang="less">
-  .fe-content{
-    margin: 10px;
-  }
 </style>

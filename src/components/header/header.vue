@@ -166,6 +166,7 @@
   }
 }
 .fe-content{
-  padding-top:50px; 
+  padding-top:46px; 
+  box-sizing: border-box;
 }
 </style>
