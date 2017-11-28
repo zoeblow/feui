@@ -1,7 +1,8 @@
 <template>
   <div class="page">
     <div class="page__hd">
-      <img :src="logoImg" alt="" class="logo">
+      <!-- <img :src="logoImg" alt="" class="logo"> -->
+      <i class="cell-icon iconfont feui-feui"></i>
       <h1 class="page__title">Feui</h1>
     </div>
     <fe-group :title="navGroup.groupTitle" v-for="navGroup in navs" :key="navGroup.index">
@@ -62,7 +63,6 @@
     margin: 0 auto;
     width: 75px;
   }
-
   .page__hd {
     padding: 40px;
 
@@ -90,5 +90,9 @@
   }
   .nuim-tap-active{
     // align-items: baseline;
+  }
+  .feui-feui{
+    font-size: 65px;
+    text-align: center;
   }
 </style>

@@ -33,7 +33,12 @@
   "slidbtn": "./src/components/slidbtn/index.js",
   "tab": "./src/components/tab/index.js",
   "tabitem": "./src/components/tabitem/index.js",
-  "badge": "./src/components/badge/index.js"
-
+  "badge": "./src/components/badge/index.js",
+  "checklist": "./src/components/checklist/index.js",
+  "datetime": "./src/components/datetime/index.js",
+  "calendar": "./src/components/calendar/index.js",
+  "inlinecalendar": "./src/components/inlinecalendar/index.js",
+  "swiper-item": "./src/components/swiper-item/index.js",
+  "swiper": "./src/components/swiper/index.js"
   
 }

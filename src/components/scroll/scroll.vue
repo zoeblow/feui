@@ -14,7 +14,7 @@
       @mouseup="onRefresh ? mouseUp($event) : undefined"
       @scroll="(onInfinite || infiniteLoading) ? onScroll($event) : undefined"
        >
-    <div class="scroll-inner"
+    <div class="scroll-inner" :class="{'hasHeader':!hasHeader}"
       :style="{
         transform: 'translate3d(0, ' + top + 'px, 0)',
         webkitTransform: 'translate3d(0, ' + top + 'px, 0)'
@@ -46,7 +46,11 @@
     props: {
       offset: {
         type: Number,
-        default: 44
+        default: 46
+      },
+      hasHeader:{
+        type:Boolean,
+        default:true
       },
       onRefresh: {
         type: Function,
@@ -65,7 +69,7 @@
         state: 0, // 0:down, 1: up, 2: refreshing
         startY: 0,
         touching: false,
-        infiniteLoading: false
+        infiniteLoading: false,
       }
     },
     methods: {

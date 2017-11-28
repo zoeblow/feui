@@ -33,8 +33,14 @@ import Slidbtn from './components/slidbtn/index'
 import Tab from './components/tab/index'
 import Tabitem from './components/tabitem/index'
 import Badge from './components/badge/index'
+import Checklist from './components/checklist/index'
+import Datetime from './components/datetime/index'
+import Calendar from './components/calendar/index'
+import Inlinecalendar from './components/inlinecalendar/index'
+import SwiperItem from './components/swiper-item/index'
+import Swiper from './components/swiper/index'
 
-const version = '0.0.16'
+const version = '0.1.2'
 const install = function (Vue, config = {}) {
   if (install.installed) return
   Vue.component(Button.name, Button)
@@ -69,6 +75,12 @@ const install = function (Vue, config = {}) {
   Vue.component(Tab.name, Tab)
   Vue.component(Tabitem.name, Tabitem)
   Vue.component(Badge.name, Badge)
+  Vue.component(Checklist.name, Checklist)
+  Vue.component(Datetime.name, Datetime)
+  Vue.component(Calendar.name, Calendar)
+  Vue.component(Inlinecalendar.name, Inlinecalendar)
+  Vue.component(SwiperItem.name, SwiperItem)
+  Vue.component(Swiper.name, Swiper)
   
   Vue.$toast = Vue.prototype.$toast = Toast
   Vue.$dialog = Vue.prototype.$dialog = Dialog
@@ -117,5 +129,11 @@ export default {
   Slidbtn,
   Tab,
   Tabitem,
-  Badge
+  Badge,
+  Checklist,
+  Datetime,
+  Calendar,
+  Inlinecalendar,
+  SwiperItem,
+  Swiper
 }

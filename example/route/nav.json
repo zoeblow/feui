@@ -150,6 +150,22 @@
         "name": "Badge",
         "description": "角标",
         "icon": "number8"
+      },{
+        "path": "/checklist",
+        "name": "Checklist",
+        "description": "单选复选",
+        "icon": "check"
+      },
+      {
+        "path": "/inlinecalendar",
+        "name": "inlinecalendar",
+        "description": "日历",
+        "icon": "datetime"
+      },{
+        "path": "/swiper",
+        "name": "Swiper",
+        "description": "轮播",
+        "icon": "swipe"
       }
       
     ]
@@ -186,6 +202,12 @@
         "name": "Slidbtn",
         "description": "滑动操作",
         "icon": "sliderlr"
+      },
+      {
+        "path": "/datetime",
+        "name": "Datetime",
+        "description": "日期选择",
+        "icon": "datetime"
       }
     ]
   }

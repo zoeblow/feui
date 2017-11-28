@@ -36,7 +36,7 @@
 </template>
 <script>
 import value2name from '../../src/libs/value2name'
-import ChinaAddressV3   from '../../src/datas/china_address_v3.json'
+import ChinaAddressV3   from '../assets/datas/china_address_v3.json'
 
 export default {
   data () {

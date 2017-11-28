@@ -14,7 +14,7 @@
 </style>
 <script>
   export default {
-    name: 'fe-button',
+    name: 'fe-calendar',
     props: {
       type: {
         type: String,

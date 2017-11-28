@@ -37,29 +37,18 @@ var ComponentNames = Object.keys(Components)
 var includeComponentTemplate = []
 var installTemplate = []
 var listTemplate = []
-var JSONData = ['china_address','china_address_v1','china_address_v2','china_address_v3',]
 
 ComponentNames.forEach(name => {
   var componentName = uppercamelcase(name)
-  // console.log(componentName,JSONData.indexOf(name)> -1)
-  if(JSONData.indexOf(name)> -1){
-    includeComponentTemplate.push(render(IMPORT_JSON, {
-      name: componentName,
-      package: name
-    }))
-  }else{
-    includeComponentTemplate.push(render(IMPORT_TEMPLATE, {
-      name: componentName,
-      package: name
-    }))
-  }
+  includeComponentTemplate.push(render(IMPORT_TEMPLATE, {
+    name: componentName,
+    package: name
+  }));
 
   if ([
     'Toast',
     'Dialog',
     'Loading',
-    'ChinaAddressV2',
-    'ChinaAddressV3',
   ].indexOf(componentName) === -1) {
     installTemplate.push(render(ISNTALL_COMPONENT_TEMPLATE, {
       name: componentName,

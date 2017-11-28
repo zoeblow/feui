@@ -1,11 +1,12 @@
 <template>
   <div class="page">
-    <fe-header slot="header" style="width:100%;position:absolute;left:0;top:0px;z-index:100;">Scroll</fe-header>
+    <!-- <fe-header slot="header" style="width:100%;position:absolute;left:0;top:0px;z-index:100;">Scroll</fe-header> -->
     <div class="fe-content">
       <div class="scroll-page" >
         <fe-scroll class="page-content"
                 :on-refresh="onRefresh"
-                :on-infinite="onInfinite">
+                :on-infinite="onInfinite"
+                :hasHeader="false">
           <div v-for="(item, index) in items" :key="index" @click.native="onItemClick(index)" class='item' :class="{'item-stable': index % 2 == 0}">
             {{ item }}
           </div>
@@ -20,13 +21,14 @@
     data () {
       return {
         items: [],
-        infiniteCount: 0
+        infiniteCount: 0,
+        hasHeader:false
       }
     },
 
     mounted() {
       for (let i = 1; i <= 20; i++) {
-        this.items.push(i + ' - keep walking, be 2 with you.')
+        this.items.push(i + ' - With You, Just Do IT.')
       }
       this.top = 1
       this.bottom = 20
@@ -37,7 +39,7 @@
         setTimeout(() => {
           let start = this.top - 1
           for (let i = start; i > start - 10; i--) {
-            this.items.splice(0, 0, i + ' - keep walking, be 2 with you.')
+            this.items.splice(0, 0, i + ' With You, Just Do CSS.')
           }
           this.top = this.top - 10;
 
@@ -50,7 +52,7 @@
           if (this.infiniteCount < 2) {
             let start = this.bottom + 1
             for (let i = start; i < start + 10; i++) {
-              this.items.push(i + ' - keep walking, be 2 with you.')
+              this.items.push(i + ' With You, Just Do JS.')
             }
             this.bottom = this.bottom + 10;
 
@@ -72,11 +74,21 @@
 <style scoped lang="less">
 .page,.fe-content{
   height: 100%;
+  position: relative;
 }
 .scroll-page{
-  position: absolute;
-  height: 100%;
-  width: 100%;
+  // position: absolute;
+  // left: 0;
+  // top: 0;
+  // bottom: 0;
+  // right: 0;
+  // width: 100%;
+  // height: 100%;
+  // background-color: #f5f5f5;
+  // overflow: hidden;
+  .page-content{
+    // padding-top: 46px;
+  }
 }
 .item {
   box-sizing: border-box;

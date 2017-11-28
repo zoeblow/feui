@@ -26,6 +26,10 @@
       isSort: { //是否需要排序(升序) 默认不需要
         type: Boolean,
         default: false
+      },
+      defClick: { 
+        type: Boolean,
+        default: false
       }
     },
     data() {
@@ -92,6 +96,10 @@
         }
       },
       onClick (item) {
+        if(this.defClick){
+          this.$emit('on-clickOrRoute',item);
+          return;
+        }
         go(item.link, this.$router)
       }
     }

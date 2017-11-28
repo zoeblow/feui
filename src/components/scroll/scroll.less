@@ -1,4 +1,4 @@
-@layer-height: 40px;
+@layer-height: 46px;
 @color-text-gray: #aaa;
 
 @keyframes preloader-spin {
@@ -89,6 +89,9 @@
   top: 0;
   width: 100%;
   transition-duration: 300ms;
+  &.hasHeader{
+    top:-@layer-height;
+  }
 }
 
 .label-down, .label-up, .label-refresh {

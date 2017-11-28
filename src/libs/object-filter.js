@@ -26,3 +26,9 @@ export const getLabel = function (list, value) {
   }
   return value
 }
+
+export const getLabels = function (list, values) {
+  return values.map(function (value) {
+    return getLabel(list, value);
+  })
+}

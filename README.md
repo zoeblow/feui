@@ -20,9 +20,9 @@
 
 ## Todo List
 
-- [ ] Calendar
-- [ ] Datetime
-- [ ] Scroller
+- [x] Swiper
+- [x] Calendar
+- [x] Datetime
 - [x] Badge
 - [x] Tab
 - [x] Popup
@@ -35,6 +35,7 @@
 - [x] Rater
 - [x] Range
 - [x] Radio
+- [x] Cheaclist
 - [x] Check-icon
 - [x] Toast
 - [x] Loading
@@ -55,6 +56,20 @@
 - [x] Divider
 
 <br/><br/><br/>
+## V 0.1.2
+### 已完成
+> Swiper <br/>
+> Calendar
+
+## V 0.1.1
+### 已完成
+> Checklist <br/>
+> Calendar
+
+
+## V 0.0.18
+### 已完成
+> Checklist <br/>
 
 ## V 0.0.16
 ### 已完成

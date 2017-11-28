@@ -1,6 +1,6 @@
 {
   "name": "feui",
-  "version": "0.0.16",
+  "version": "0.1.2",
   "description": "",
   "main": "lib/feui.common.js",
   "style": "lib/style.css",
@@ -17,6 +17,7 @@
     "array-filter": "^1.0.0",
     "array-find": "^1.0.0",
     "array-map": "0.0.0",
+    "array-shuffle": "^1.0.1",
     "autosize": "^4.0.0",
     "babel": "^6.23.0",
     "babel-core": "^6.14.0",
@@ -41,6 +42,7 @@
     "json-templater": "^1.0.4",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
+    "lodash": "^4.17.4",
     "my-local-ip": "^1.0.0",
     "postcss": "^5.2.0",
     "postcss-loader": "^0.13.0",
