@@ -1,0 +1,33 @@
+.fe-slidbtn {
+  overflow: hidden;
+  position: relative;
+}
+.fe-slidbtn_left, .fe-slidbtn_right {
+    top: 0;
+    height: 100%;
+    position: absolute;
+}
+.fe-slidbtn_left, .fe-slidbtn_right {
+    color: #FFFFFF;
+    font-size: 16px;
+    width: 65px;
+    height: 44px;
+    display: inline-block;
+    text-align: center;
+    line-height: 44px;
+}
+
+.fe-slidbtn_right {
+    right: 0;
+    transform: translate3d(100%, 0, 0);
+}
+.fe-slidbtn_left {
+    left: 0;
+    transform: translate3d(-100%, 0, 0);
+}
+.fe-slidbtn_wrapper, .fe-slidbtn_left, .fe-slidbtn_right {
+    -webkit-transition: -webkit-transform .15s ease-in-out;
+    transition: -webkit-transform .15s ease-in-out;
+    transition: transform .15s ease-in-out;
+    transition: transform .15s ease-in-out, -webkit-transform .15s ease-in-out;
+}

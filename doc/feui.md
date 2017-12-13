@@ -1,6 +1,5 @@
 # feui 新更改构建工具写法
 <div align="center" >  
-
 ![feui-logo](https://git.oschina.net/zoeblow/feui/raw/master/static/feui.png)
 </div>   
 
@@ -8,35 +7,31 @@
 ```
 ├── Readme.md                   // help
 ├── package.json                // 应用依赖源
-├── components.json             // 组件列表
 ├── static                      // 静态文件
-├── src                         // 组件开发目录
-│   ├── components              // 组件目录
-│   │   ├── button              // 组件
-│   │   │   ├── button.vue      // 此组件主体
-│   │   │   └── index.js        // 此编译入口
-│   │   └── ……                
-│   ├── libs                    // 库文件夹
-│   ├── tools                   // 工具类文件夹
-│   ├── styles                  // 样式文件
+├── components                  // 组件目录
+│   ├── button                  // 组件
+│   │   └── index.vue           // 此组件主体/入口
+│   └── ……                
+│   ├── feui-css                // 样式文件
+│   ├── utils                   // 工具类文件夹
 │   └── index.js                // 组件入口文件
 ├── node_modules                // 依赖文件
 ├── lib                         // 组件生成的可用npm文件夹
-│   ├── feui.common.js          // npm 入口文件
+│   ├── index.js                // npm 入口文件
 │   ├── ……                      
-│   └── style.min.css           // npm 入口样式文件
-├── example                     // 框架用例
+│   └── feui-css                // npm 样式文件
 ├── doc                         // 文档目录
-├── dist                        // 生成的可用发布文件
 ├── build                       // 配置
 │   ├── bin
-│   │   ├── build-all.js        // 编译全部文件
-│   │   └── build-entry.js      // 编译入口文件
-│   ├── config.js               // 配置文件
-│   ├── cooking.common.js       // 通用配置
-│   ├── cooking.component.js    // 组件配置
-│   ├── cooking.conf.js         // 总体配置
-│   ├── cooking.demo.js         // 用例配置
+│   │   ├── build-components.js // 编译组件配置
+│   │   ├── build-entry.js      // 生成组件模板
+│   │   ├── build-lib.js        // 生成组件文件
+│   │   ├── build-style-entry.js// 生成组件样式文件
+│   │   └── get-components.js   // 获取组件配置
+│   ├── build.js                // 构建文件
+│   ├── webpack.build.js        // 通用配置
+│   ├── webpack.config.dev.js   // 组件开发配置
+│   ├── webpack.config.prod.js  // 组件发布配置
 │   └── release.sh              // 执行文件
 └── .babelrc                    // babel配置
 ```
@@ -44,21 +39,21 @@
 
 
 ### 组件开发步骤
-> 第一步：在`src/components/`文件夹下面新建目录 <br/>
-> 第二步：在`components.json` 文件中添加你的组件目录 <br/>
-> 第三步：执行`npm run build:entry` 重新生成入口文件 <br/>
-> <br/>
+> 在`packages/`文件夹下面新建组件目录 <br/>
+> 在文件夹下面新建`index.vue`文件 <br/>
 > **注意**：每个组件必须要有一个`name`值，且为必填，为了方便管理和调用，请尽量以`fe-`开头<br/>
 > **切记**：这个名字就是组件调用时使用的名字 <br/>
 > 生成npm 文件和组件文件 直接运行 `npm run dist`
 
 ### 组件调用步骤
 > 第一步：安装组件 `npm install feui@latest --save-dev` <br/>
-> 第二步：在项目的`入口文件` 中引入组件<br/>
-> `import Feui from 'feui'` <br/>
+> 第二步：在项目中引入组件<br/>
+> 使用 babel-plugin-import (推荐) <br/>
+> 在 .babelrc <br/>
+> "plugins": [["import", { "libraryName": "feui", "style": true }]]<br/>
 > `Vue.use(Feui)` <br/>
-> 引入样式文件 <br/>
-> `import 'feui/lib/style.min.css'` <br/>
+> 在代码中直接使用`feui`组件 <br/>
+> `import { Badge } from 'feui';` <br/>
 > 重启一下就可以使用了 so easy!<br/>
 
 

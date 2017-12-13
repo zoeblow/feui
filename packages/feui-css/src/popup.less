@@ -1,0 +1,67 @@
+@import './variable.less';
+
+.nuim-popup-dialog {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: @popup-background-color;
+  z-index: 501;
+  transition-property: transform;
+  transition-duration: 300ms;
+}
+.nuim-popup-dialog.nuim-popup-left {
+  width: auto;
+  height: 100%;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: 0;
+}
+.nuim-popup-dialog.nuim-popup-right {
+  width: auto;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: auto;
+}
+.nuim-popup-dialog.nuim-popup-top {
+  width: 100%;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: 0;
+}
+.nuim-popup-mask {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  tap-highlight-color: rgba(0,0,0,0);
+  z-index: -1;
+  transition: opacity 400ms;
+}
+.nuim-popup-mask.nuim-popup-show {
+  opacity: 1;
+}
+
+.nuim-popup-animate-bottom-enter, .nuim-popup-animate-bottom-leave-active {
+  transform: translate3d(0, 100%, 0);
+}
+
+.nuim-popup-animate-left-enter, .nuim-popup-animate-left-leave-active {
+  transform: translate3d(-100%, 0, 0);
+}
+
+.nuim-popup-animate-right-enter, .nuim-popup-animate-right-leave-active {
+  transform: translate3d(100%, 0, 0);
+}
+
+.nuim-popup-animate-top-enter, .nuim-popup-animate-top-leave-active {
+  transform: translate3d(0, -100%, 0);
+}

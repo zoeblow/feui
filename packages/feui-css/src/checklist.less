@@ -1,0 +1,16 @@
+@import './weui/widget/weui_cell/weui_cell_global';
+@import './weui/widget/weui_cell/weui_check';
+@import './weui/icon/weui_icon_font';
+
+.weui-cells_checkbox .weui-check:checked + .nuim-checklist-icon-checked:before {
+  color: @checklist-icon-active-color;
+}
+.weui-cells_checkbox > label > * {
+  pointer-events: none;
+}
+.nuim-checklist-disabled .nuim-checklist-icon-checked:before {
+  opacity: 0.5;
+}
+.nuim-checklist-label-left {
+  flex-direction: row-reverse;
+}

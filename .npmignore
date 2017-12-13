@@ -8,7 +8,12 @@ logo.png
 CNAME
 circle.yml
 bower.json
-components.json
 .babelrc
 docs/
+.git
+.eslintignore
 yarn.lock
+postcss.config.js
+.eslintrc.js
+.babelrc
+.editorconfig

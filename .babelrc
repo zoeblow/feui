@@ -1,13 +1,9 @@
 {
-  "presets": [
-    ["es2015", { "modules": false }],
-    "stage-2"
-  ],
-  "plugins": ["transform-runtime"],
-  "comments": false,
+  "presets": [["env", { "modules": false, "loose": true }]],
+  "plugins": ["transform-vue-jsx", "transform-runtime", "transform-object-rest-spread"],
   "env": {
-    "test": {
-      "plugins": [ "istanbul" ]
+    "commonjs": {
+      "presets": [["env", { "modules": "commonjs", "loose": true }]]
     }
   }
 }

@@ -1,0 +1,39 @@
+@import './variable.less';
+@import './weui/base/mixin/setArrow.less';
+@import './weui/widget/weui_cell/weui_cell_global.less';
+@import './weui/widget/weui-loading/weui-loading.less';
+
+.nuim-cell-primary {
+  flex: 1;
+}
+.nuim-label {
+  display: block;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.weui-cell__ft .weui-loading {
+  display: block;
+}
+.weui-cell__ft.nuim-cell-align-left {
+  text-align: left;
+}
+.weui-cell.nuim-cell-no-border-intent:before {
+  left: 0;
+}
+.weui-cell_access .weui-cell__ft.nuim-cell-arrow-down:after {
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0) rotate(90deg);
+}
+.weui-cell_access .weui-cell__ft.nuim-cell-arrow-up:after {
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0) rotate(-90deg);
+}
+.nuim-cell-arrow-transition:after {
+  transition: transform 300ms;
+}
+.nuim-cell-disabled {
+  .nuim-label {
+    color: #b2b2b2;
+  }
+  &.weui-cell_access .weui-cell__ft:after {
+    border-color: #e2e2e2;
+  }
+}

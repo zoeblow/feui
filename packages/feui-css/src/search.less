@@ -1,0 +1,29 @@
+
+@import './weui/icon/weui_icon_font';
+@import './weui/widget/weui_searchbar/weui_searchbar';
+@import './weui/widget/weui_cell/weui_cell_global';
+@import './weui/widget/weui_cell/weui_access';
+
+.nuim-search-fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  background: rgba(255, 255, 255, 1);
+  backdrop-filter: blur(5px);
+}
+.nuim-search-box {
+  width: 100%;
+}
+.weui-cells.nuim-search_show {
+  margin-top: 0!important;
+  overflow-y: auto;
+}
+.nuim-search-mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 90%;
+  height: 100%;
+  z-index: 5;
+}

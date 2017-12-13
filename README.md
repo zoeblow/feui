@@ -1,16 +1,16 @@
 <div align="center">
-  <a href="http://feui.oschina.io">
+  <a href="http://feui.gitee.io">
     <img src="./static/feui.png" width="180" alt="">
   </a>
 </div>
 <div align="center">Feui 是爱信诺前端组移动组依据现有业务逻辑，基于VUE制作的一套UI组件</div>
   <br>
 <div align="center">
-   <a href="http://feui.oschina.io">
+   <a href="http://feui.gitee.io">
     <img src="./static/feui-qrcode.png" width="180" alt="">
   </a>
   <br>
-  <a href="http://feui.oschina.io">
+  <a href="http://feui.gitee.io">
     Live Demo >>
   </a>
   <br>
@@ -20,6 +20,7 @@
 
 ## Todo List
 
+- [x] Steps
 - [x] Swiper
 - [x] Calendar
 - [x] Datetime
@@ -56,6 +57,22 @@
 - [x] Divider
 
 <br/><br/><br/>
+## V 0.2.2
+### 已完成
+> 修复scroll调用方式 <br/>
+
+## V 0.2.1
+### 已完成
+> 更新steps bug <br/>
+
+## V 0.2.0
+### 已完成
+> 基础组件的重构，更改调用方式[更改调用方式](./doc/feui.md)  <br/>
+
+## V 0.1.3
+### 已完成
+> Steps <br/>
+
 ## V 0.1.2
 ### 已完成
 > Swiper <br/>
@@ -125,7 +142,7 @@
 
 ## V 0.0.5
 ### 已完成
-> 更改构建工具 [构建工具写法API](./doc/feui.md) <br/>
+> 更改构建工具 <br/>
   增加index-list
 
 ## V 0.0.4

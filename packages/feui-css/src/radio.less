@@ -1,0 +1,23 @@
+@import './weui/widget/weui_cell/weui_check';
+@import './weui/widget/weui_cell/weui_form/weui_form_common';
+@import './weui/icon/weui_icon_font';
+.weui-cell_radio > * {
+  pointer-events: none;
+}
+.nuim-radio-icon {
+  width: 24px;
+  height:24px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.nuim-radio-label {
+  vertical-align: middle;
+}
+.weui-cells_radio.nuim-radio-disabled .weui-check:checked + .weui-icon-checked:before {
+  opacity: 0.5;
+}
+.weui-cells_radio .weui-check:checked + .weui-icon-checked:before{
+  color:@radio-icon-checked;
+  // content: "\EA06";
+}

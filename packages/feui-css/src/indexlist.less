@@ -1,0 +1,79 @@
+@import './1px.less';
+@import './mixin.less';
+@import './weui/base/fn.less';
+.nuim-indexed-container {
+  position: relative;
+  height: 100%;
+  .nuim-indexed-az {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 22.3462px;
+    background-color: #c9c9c9;
+    a {
+      text-decoration: none;
+      display: block;
+      text-align: center;
+      font-size: 11px;
+      padding: 0px;
+      margin: 0px;
+      &.active {
+        color: #4a90e2;
+      }
+    }
+  }
+  .nuim-indexed-list {
+    height: 100%;
+    overflow-y: scroll;
+    -webkit-tap-highlight-color: transparent;
+    .nuim-table-view-divider {
+      font-weight: 500;
+      position: relative;
+      margin-top: -1px;
+      padding: 3px 55px 3px 15px;
+      color: #999;
+      background-color: #fafafa;
+    }
+    .nuim-indexed-list-item {
+      position: relative;
+      overflow: hidden;
+      padding: 10px 15px;
+      transform-style: preserve-3d;
+      padding-right: 55px;
+      &:after {
+        left: 15px;
+      }
+      &.nuim-toLink{
+        &:before{
+          .setArrow(right, 6px, #C8C8CD, 2px);
+          content: " ";
+          top: 50%;
+          margin-top: -4px;
+          right: 30px;
+          position: absolute;
+        }
+      }
+    }
+  }
+  .nuim-totas {
+    font-size: 35px;
+    color: #fff;
+    border-radius: 40px;
+    text-align: center;
+    line-height: 80px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 80px;
+    height: 80px;
+    z-index: 99;
+    .center;
+  }
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0
+}

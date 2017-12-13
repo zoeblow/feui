@@ -1,0 +1,63 @@
+@import './weui/widget/weui_cell/weui_cell_global';
+
+.nuim-cell-primary {
+  flex: 1;
+}
+.nuim-number-input {
+  float:left;
+  height:20px;
+  font-size:20px;
+  color: @number-input-font-color;
+  appearance: none;
+  border:1px solid #ececec;
+  padding:3px 0;
+  text-align:center;
+  border-radius: 1px;
+}
+.nuim-number-round .nuim-number-input {
+  border: none;
+}
+.nuim-number-selector {
+  float:left;
+  height:20px;
+  font-size:25px;
+  line-height:18px;
+  color:@number-button-font-color;
+  border:1px solid @number-square-button-enabled-border-color;
+}
+.nuim-number-round .nuim-number-selector {
+  width: 20px;
+  border-radius: 13px;
+}
+.nuim-number-selector svg {
+  fill: @number-button-font-color;
+}
+.nuim-number-selector.nuim-number-disabled svg {
+  fill: #ccc;
+}
+.nuim-number-round .nuim-number-selector.nuim-number-disabled {
+  border-color: @number-round-button-disabled-border-color;
+}
+.nuim-number-round .nuim-number-selector.nuim-number-disabled svg {
+  fill: #ccc;
+}
+.nuim-number-selector-sub {
+  border-right:none;
+  padding:4px 8px 2px 8px;
+  border-radius:2px 0 0 2px;
+}
+.nuim-number-selector-plus {
+  border-left:none;
+  margin-right: 5px;
+  padding:3px 8px;
+  border-radius:0 2px 2px 0;
+}
+.nuim-number-round .nuim-number-selector-sub svg {
+  position: relative;
+  top: 1px;
+}
+.nuim-number-round .nuim-number-selector-sub, .nuim-number-round .nuim-number-selector-plus {
+  padding: 2px;
+  border: 1px solid @number-round-button-enabled-border-color;
+  text-align: center;
+}
