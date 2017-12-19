@@ -1,45 +1,66 @@
 <template>
   <button
+    :style="buttonStyle"
     class="weui-btn"
-    :class="classObject"
-    @click="handleClick"
-    :disabled="disabled">
-    <i class="weui-loading" v-if="isLoading"></i>
-    <slot></slot>
+    :class="classes"
+    :disabled="disabled"
+    :type="actionType"
+    @click="onClick">
+    <i class="weui-loading" v-if="showLoading"></i>
+    <slot>{{ text }}</slot>
   </button>
 </template>
 <script>
+  import { go } from '../utils/router.js'
   export default {
     name: 'fe-button',
     props: {
       type: {
-        type: String,
         default: 'default'
       },
-      isLoading: Boolean,
       disabled: Boolean,
       mini: Boolean,
-      plain: Boolean
-    },
-
-    methods: {
-      handleClick (event) {
-        this.$emit('click', event)
+      plain: Boolean,
+      text: String,
+      actionType: String,
+      showLoading: Boolean,
+      link: [String, Object],
+      gradients: {
+        type: Array,
+        validator: function (val) {
+          return val.length === 2
+        }
       }
     },
-
+    methods: {
+      onClick () {
+        !this.disabled && go(this.link, this.$router)
+      }
+    },
     computed: {
-      classObject: function () {
-        let ret = {}
-
-        let classType = this.plain ? `weui-btn_plain-${this.type}` : `weui-btn_${this.type}`
-        let classDisabled = this.plain ? 'weui-btn_plain-disabled' : 'weui-btn_disabled'
-
-        ret[classType] = true
-        ret[classDisabled] = this.disabled
-        ret['weui-btn_loading'] = this.isLoading
-        ret['weui-btn_mini'] = this.mini
-        return ret
+      noBorder () {
+        return Array.isArray(this.gradients)
+      },
+      buttonStyle () {
+        if (this.gradients) {
+          return {
+            background: `linear-gradient(90deg, ${this.gradients[0]}, ${this.gradients[1]})`,
+            color: '#FFFFFF'
+          }
+        }
+      },
+      classes () {
+        return [
+          {
+            'weui-btn_disabled': !this.plain && this.disabled,
+            'weui-btn_plain-disabled': this.plain && this.disabled,
+            'weui-btn_mini': this.mini,
+            'nuim-button-no-border': this.noBorder
+          },
+          !this.plain ? `weui-btn_${this.type}` : '',
+          this.plain ? `weui-btn_plain-${this.type}` : '',
+          this.showLoading ? `weui-btn_loading` : ''
+        ]
       }
     }
   }

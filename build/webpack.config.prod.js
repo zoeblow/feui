@@ -2,19 +2,22 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const path = require('path');
 const devConfig = require('./webpack.config.dev.js');
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const OptimizeCSSPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = merge(devConfig, {
   output: {
-    path: path.join(__dirname, '../docs/dist'),
-    publicPath: 'https://',
-    filename: '[name].[hash:8].js',
+    path: path.join(__dirname, "../dist"),
+    filename: "js/[name].[hash:8].js",
     umdNamedDefine: true,
-    chunkFilename: 'async_[name].[chunkhash:8].js'
+    chunkFilename: "js/async_[name].[chunkhash:8].js"
   },
   devtool: false,
   plugins: [
     new webpack.DefinePlugin({
-      'process.env': {
+      "process.env": {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV)
       }
     }),
@@ -27,6 +30,21 @@ module.exports = merge(devConfig, {
         comments: false
       },
       sourceMap: false
-    })
+    }),
+    // Compress extracted CSS. We are using this plugin so that possible
+    // duplicated CSS from different components can be deduped.
+    new OptimizeCSSPlugin({
+      cssProcessorOptions: false
+        ? { safe: true, map: { inline: false } }
+        : { safe: true }
+    }),
+    // copy custom static assets
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, "../static"),
+        to: "static",
+        ignore: [".*"]
+      }
+    ])
   ]
 });

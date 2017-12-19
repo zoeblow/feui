@@ -8,12 +8,11 @@ const isProduction = process.env.NODE_ENV === "production";
 
 module.exports = {
   entry: {
-    // vendor: ["packages"],
-    // "feui-docs": "./docs/src/index.js",
-    app: "./docs/src/main.js"
+    vendor: ["packages"],
+    app: "./demos/main.js"
   },
   output: {
-    path: path.join(__dirname, "../docs/dist"),
+    path: path.join(__dirname, "../dist"),
     publicPath: "/",
     filename: "[name].js"
   },
@@ -55,11 +54,12 @@ module.exports = {
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
-          use: [
-            'css-loader',
-            'postcss-loader'
-          ]
+          use: ["css-loader", "postcss-loader"]
         })
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader: "url-loader?limit=10240"
       },
       {
         test: /\.md/,
@@ -76,7 +76,7 @@ module.exports = {
     new ProgressBarPlugin(),
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: "./docs/src/index.html",
+      template: "./demos/index.html",
       inject: true
     }),
     new webpack.optimize.CommonsChunkPlugin({

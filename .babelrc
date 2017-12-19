@@ -1,6 +1,9 @@
 {
-  "presets": [["env", { "modules": false, "loose": true }]],
+  "presets": [
+    ["es2015", { "modules": false }]
+  ],
   "plugins": ["transform-vue-jsx", "transform-runtime", "transform-object-rest-spread"],
+  "comments": false,
   "env": {
     "commonjs": {
       "presets": [["env", { "modules": "commonjs", "loose": true }]]

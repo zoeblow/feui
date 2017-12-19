@@ -18,6 +18,21 @@
 .weui-cells.nuim-search_show {
   margin-top: 0!important;
   overflow-y: auto;
+  position: fixed;
+  width: 100%;
+  max-height: 100%;
+
+  .weui-cell:last-child {
+    margin-bottom: 150px;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &::after {
+    display: none;
+  }
 }
 .nuim-search-mask {
   position: absolute;

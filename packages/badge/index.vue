@@ -1,5 +1,5 @@
 <template>
-  <span v-text="text" :class="['nuim-badge', {'nuim-badge-single': typeof text !== 'undefined' && text.toString().length === 1}]"></span>
+  <span v-text="text" :class="['nuim-badge', {'nuim-badge-dot': typeof text === 'undefined', 'nuim-badge-single': typeof text !== 'undefined' && text.toString().length === 1}]"></span>
 </template>
 
 <script>

@@ -10,9 +10,8 @@ lib/*
 !lib/style.css
 node_modules
 example/
-/docs/dist
+/dist
 test/unit/coverage
 packages/feui-css/build
 packages/feui-css/icons
 packages/feui-css/node_modules
-docs/
