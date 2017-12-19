@@ -1,7 +1,7 @@
 # feui 新更改构建工具写法
 <div align="center" >  
-![feui-logo](https://git.oschina.net/zoeblow/feui/raw/master/static/feui.png)
-</div>   
+<img src="https://git.oschina.net/zoeblow/feui/raw/master/static/feui.png" width="180" alt="">
+</div>
 
 ### 目录结构
 ```
