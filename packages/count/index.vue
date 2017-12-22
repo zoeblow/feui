@@ -5,7 +5,7 @@
     </div>
     <div class="weui-cell__ft nuim-cell-primary" :class="{'nuim-number-round': buttonStyle === 'round'}" v-show="!readonly" style="font-size:0">
       <div :style="{float:align}">
-        <a @click="sub" class="nuim-number-selector nuim-number-selector-sub":class="{'nuim-number-disabled':disabledMin}">
+        <a @click="sub" class="nuim-number-selector nuim-number-selector-sub" :class="{'nuim-number-disabled':disabledMin}">
           <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18"><defs></defs><path d="M863.74455 544.00086 163.424056 544.00086c-17.664722 0-32.00086-14.336138-32.00086-32.00086s14.336138-32.00086 32.00086-32.00086l700.320495 0c17.695686 0 31.99914 14.336138 31.99914 32.00086S881.440237 544.00086 863.74455 544.00086z"></path></svg>
         </a>
         <input v-model.number="currentValue" :name="name" class="nuim-number-input" :style="{width: width}" :readonly="!fillable" pattern="[0-9]*" type="number" @blur="blur" />
