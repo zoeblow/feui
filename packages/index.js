@@ -39,11 +39,13 @@ import Swiper from './swiper';
 import SwiperItem from './swiper-item';
 import Switch from './switch';
 import Tab from './tab';
+import Tabbar from './tabbar';
+import TabbarItem from './tabbar-item';
 import Tabitem from './tabitem';
 import Textarea from './textarea';
 import Toast from './toast';
 
-const version = '0.2.4';
+const version = '0.2.6';
 const components = [
   Actionsheet,
   Address,
@@ -84,6 +86,8 @@ const components = [
   SwiperItem,
   Switch,
   Tab,
+  Tabbar,
+  TabbarItem,
   Tabitem,
   Textarea
 ];
@@ -141,6 +145,8 @@ export {
   SwiperItem,
   Switch,
   Tab,
+  Tabbar,
+  TabbarItem,
   Tabitem,
   Textarea,
   Toast

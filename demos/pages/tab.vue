@@ -81,11 +81,11 @@
     <br/>
     <div>
        <fe-tab :line-width=2 active-color='#fc378c' v-model="index">
-        <fe-tabitem class="vux-center" :selected="demo2 === item" v-for="(item, index) in list2" @click="demo2 = item" :key="index">{{item}}</fe-tabitem>
+        <fe-tabitem class="nuim-center" :selected="demo2 === item" v-for="(item, index) in list2" @click="demo2 = item" :key="index">{{item}}</fe-tabitem>
       </fe-tab>
       <fe-swiper v-model="index" height="100px" :show-dots="false">
         <swiper-item v-for="(item, index) in list2" :key="index">
-          <div class="tab-swiper vux-center">{{item}} Container</div>
+          <div class="tab-swiper nuim-center">{{item}} Container</div>
         </swiper-item>
       </fe-swiper>
     </div>

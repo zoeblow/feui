@@ -1,0 +1,70 @@
+@import './weui/widget/weui_tab/weui_tab_tabbar';
+.weui-tab {
+    position: relative;
+    height: 100%;
+}
+
+.weui-tab__panel {
+    box-sizing: border-box;
+    height: 100%;
+    padding-bottom: 50px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.weui-tab__content{
+    display: none;
+}
+.nuim-reddot,.nuim-reddot-border,.nuim-reddot-s {
+  position: relative;
+}
+.nuim-reddot:after,.nuim-reddot-border:after,.nuim-reddot-s:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: #f74c31;
+  border-radius: 5px;
+  right: -3px;
+  top: -3px;
+  background-clip: padding-box;
+}
+.nuim-reddot-border:before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  border-radius: 5px;
+  right: -4px;
+  top: -4px;
+  background-clip: padding-box;
+  padding: 1px;
+}
+.nuim-reddot-s:after {
+  width: 6px;
+  height: 6px;
+  top: -5px;
+  right: -5px;
+}
+
+.weui-tabbar__icon {
+  position: relative;
+}
+.weui-tabbar__icon > sup {
+  position: absolute;
+  top: -8px;
+  left: 100%;
+  transform: translateX(-50%);
+  z-index: 101;
+}
+.weui-tabbar__item.nuim-tabbar-simple {
+  padding: 0;
+  height: 50px;
+  line-height: 50px;
+}
+.nuim-tabbar-simple .weui-tabbar__label {
+  font-size: 14px;
+  line-height: 50px;
+}

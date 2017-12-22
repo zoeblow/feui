@@ -65,7 +65,13 @@
       {
         "path": "/tab",
         "name": "Tab",
-        "description": "地址选择",
+        "description": "Tab标签",
+        "icon": "tab"
+      },
+      {
+        "path": "/tabbar",
+        "name": "Tabbar",
+        "description": "底部标签栏",
         "icon": "tab"
       }
     ]

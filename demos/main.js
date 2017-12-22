@@ -4,7 +4,8 @@ import App from "./App.vue";
 import router from "./router/index.js";
 
 
-import feui,{ Toast, Dialog } from "../packages/index.js";
+import feui,{ Toast, Dialog} from "../packages/index.js";
+// console.log(TabbarItem);
 window.Toast = Toast;
 window.Dialog = Dialog;
 import "../packages/feui-css/lib/index.css";

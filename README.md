@@ -20,6 +20,7 @@
 
 ## Todo List
 
+- [x] Tabbar
 - [x] Steps
 - [x] Swiper
 - [x] Calendar
@@ -56,7 +57,12 @@
 - [x] Icon
 - [x] Divider
 
+
 <br/><br/><br/>
+## V 0.2.6
+### 已完成
+> Tabbar <br/>
+
 ## V 0.2.5
 ### 已完成
 > badge search update <br/>

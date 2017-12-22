@@ -60,7 +60,7 @@
     }
   }
 </script>
-<style  lang='less'>
+<style scoped lang='less' >
 .page {
   .steps-success,
   .nuim-icon-location {
