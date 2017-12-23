@@ -14,5 +14,14 @@
 <body>
   <div id="app"></div>
 </body>
-
+<script>
+  var hostname = window.location.hostname;
+  var protocol = window.location.protocol
+  //非https 强制跳转到https
+  var ignorePath = ['localhost', '127.0.0.1', '172.30.5.37'].indexOf(hostname) < -1
+  // console.log(ignorePath)
+  if (ignorePath && protocol == 'http:') {
+    window.location.href = 'https://'+ hostname;
+  }
+</script>
 </html>

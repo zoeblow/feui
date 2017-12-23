@@ -16,11 +16,9 @@
 
 <script>
   import { navs } from '../router/index.js'
-
   export default {
     data () {
       return {
-        // logoImg,
         navs,
         keyword: '',
         componentList: []
@@ -85,9 +83,6 @@
 
   .footer-copyright {
     margin: 40px 0 20px;
-  }
-  .nuim-tap-active{
-    // align-items: baseline;
   }
   .feui-feui{
     font-size: 65px;
