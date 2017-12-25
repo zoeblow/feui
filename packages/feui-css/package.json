@@ -9,8 +9,7 @@
     "src"
   ],
   "scripts": {
-    "build": "gulp build",
-    "build:icons": "gulp icon-font"
+    "build": "gulp build"
   },
   "license": "MIT",
   "devDependencies": {

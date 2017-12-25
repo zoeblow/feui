@@ -45,7 +45,7 @@ import Tabitem from './tabitem';
 import Textarea from './textarea';
 import Toast from './toast';
 
-const version = '0.2.6';
+const version = '0.2.7';
 const components = [
   Actionsheet,
   Address,
