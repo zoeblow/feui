@@ -1,17 +1,20 @@
 <div align="center">
-  <a href="http://feui.gitee.io">
+  <a href="https://feui.gitee.io">
     <img src="./static/feui.png" width="180" alt="">
   </a>
 </div>
 <div align="center">Feui 是爱信诺前端组移动组依据现有业务逻辑，基于VUE制作的一套UI组件</div>
   <br>
 <div align="center">
-   <a href="http://feui.gitee.io">
+   <a href="https://feui.gitee.io">
     <img src="./static/feui-qrcode.png" width="180" alt="">
   </a>
   <br>
-  <a href="http://feui.gitee.io">
+  <a href="https://feui.gitee.io">
     Live Demo >>
+  </a>
+  <a href="https://feui.gitee.io/docs">
+    DOCS >>
   </a>
   <br>
   <br>
@@ -59,6 +62,10 @@
 
 
 <br/><br/><br/>
+## V 0.2.7
+### 已完成
+> 优化package.json和样式目录中的gulp config <br/>
+
 ## V 0.2.6
 ### 已完成
 > Tabbar <br/>
@@ -165,7 +172,7 @@
 
 ## V 0.0.4
 ### 已完成
-  忽略npm上传的无用文件
+> 忽略npm上传的无用文件
 
 ## V 0.0.3 
 ### 已完成
