@@ -2,12 +2,12 @@
   <div class="page">
     <fe-header slot="header" style="width:100%;position:absolute;left:0;top:0;z-index:100;">Rater</fe-header>
     <div class="fe-content">
-      <fe-group title="Normal Usage">
-        <fe-cell title="设置默认 = 5" inline-desc="总共5星如果不改变的话">
+      <fe-group title="基础用法">
+        <fe-cell title="默认设置" inline-desc="默认总共5星">
           <fe-rater v-model="data3" slot="value"></fe-rater>
         </fe-cell>
         <fe-cell title="自定义颜色">
-          <fe-rater v-model="data3" slot="value" :max="6" active-color="red"></fe-rater>
+          <fe-rater v-model="data2" slot="value" :max="6" active-color="red"></fe-rater>
         </fe-cell>
       </fe-group>
 
@@ -24,19 +24,19 @@
       </fe-group>
 
       <fe-group title="自定义图标">
-        <fe-cell title="loving">
+        <fe-cell title="小心心">
           <fe-rater v-model="data4" slot="value" star="♡" active-color="red" :margin="15"></fe-rater>
         </fe-cell>
-        <fe-cell title="Sunshine">
+        <fe-cell title="发光的太阳">
           <fe-rater v-model="data5" slot="value" star="☼" active-color="#4a90e2" :margin="4"></fe-rater>
         </fe-cell>
-        <fe-cell title="Smilies">
+        <fe-cell title="笑脸">
           <fe-rater v-model="data5" slot="value" star="☻" active-color="#4a90e2" :margin="4"></fe-rater>
         </fe-cell>
-        <fe-cell title="Different stars">
+        <fe-cell title="小星星">
           <fe-rater v-model="data5" slot="value" star="✩" active-color="red" :margin="4"></fe-rater>
         </fe-cell>
-        <fe-cell title="How embarrass">
+        <fe-cell title="尴尬">
           <fe-rater v-model="data5" slot="value" star="囧" active-color="#4a90e2" :margin="4"></fe-rater>
         </fe-cell>
         <fe-cell title="诺">
