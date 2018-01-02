@@ -1,6 +1,6 @@
 {
   "name": "feui",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "vue+weui+nuim组件库",
   "main": "lib/feui.js",
   "style": "lib/feui-css/index.css",
@@ -34,10 +34,11 @@
   "license": "MIT",
   "dependencies": {
     "babel-runtime": "6.x",
-    "vue-lazyload": "^1.1.4",
     "iscroll": "^4.2.5",
     "lodash.debounce": "^4.0.8",
-    "validator": "^9.1.2"
+    "qr.js": "0.0.0",
+    "validator": "^9.1.2",
+    "vue-lazyload": "^1.1.4"
   },
   "peerDependencies": {
     "vue": ">= 2.5.0"

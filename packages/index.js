@@ -27,6 +27,7 @@ import Picker from './picker';
 import Popup from './popup';
 import PopupPicker from './popup-picker';
 import Pullrefresh from './pullrefresh';
+import Qrcode from './qrcode';
 import Radio from './radio';
 import Range from './range';
 import Rater from './rater';
@@ -45,7 +46,7 @@ import Tabitem from './tabitem';
 import Textarea from './textarea';
 import Toast from './toast';
 
-const version = '0.2.7';
+const version = '0.2.8';
 const components = [
   Actionsheet,
   Address,
@@ -74,6 +75,7 @@ const components = [
   Popup,
   PopupPicker,
   Pullrefresh,
+  Qrcode,
   Radio,
   Range,
   Rater,
@@ -133,6 +135,7 @@ export {
   Popup,
   PopupPicker,
   Pullrefresh,
+  Qrcode,
   Radio,
   Range,
   Rater,

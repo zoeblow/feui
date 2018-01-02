@@ -13,16 +13,17 @@
   <a href="https://feui.gitee.io">
     Live Demo >>
   </a>
-  <br>
   <a href="https://feui.gitee.io/docs">
     DOCS >>
   </a>
-  <br> 
+  <br>
+  <br>
 </div>
 
 
 ## Todo List
 
+- [x] QRcode
 - [x] Tabbar
 - [x] Steps
 - [x] Swiper
@@ -62,6 +63,10 @@
 
 
 <br/><br/><br/>
+## V 0.2.8
+### 已完成
+> QRcode 组件和demo <br/>
+
 ## V 0.2.7
 ### 已完成
 > 优化package.json和样式目录中的gulp config <br/>

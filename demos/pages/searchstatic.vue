@@ -2,7 +2,6 @@
   <div>
     <fe-header slot="header" style="width:100%;position:absolute;left:0;top:0;z-index:100;">searchstatic</fe-header>
     <div class="fe-content">
-      <!-- <img src="../assets/demo/filter_bg.jpg" style="width: 100%"> -->
       <br>
       <fe-search @on-submit="onSubmit" :auto-fixed="autoFixed" @on-focus="onFocus" @on-cancel="onCancel"></fe-search>
       <divider>设定默认值</divider>

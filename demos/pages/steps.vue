@@ -26,23 +26,23 @@
       <br>
       <br>
       <fe-steps direction="vertical" :active="0" active-color="#f60">
-      <fe-step>
-        <h3>派件中</h3>
-        <p>2016-07-12 12:40</p>
-      </fe-step>
-      <fe-step>
-        <h3>已到达杭州</h3>
-        <p>2016-07-11 10:00</p>
-      </fe-step>
-      <fe-step>
-        <h3>已到达浙江</h3>
-        <p>2016-07-10 09:30</p>
-      </fe-step>
-      <fe-step>
-        <h3>已收件</h3>
-        <p>2016-07-09 18:30</p>
-      </fe-step>
-    </fe-steps>
+        <fe-step>
+          <h3>派件中</h3>
+          <p>2018-01-12 12:40</p>
+        </fe-step>
+        <fe-step>
+          <h3>已到达杭州</h3>
+          <p>2018-01-11 10:05</p>
+        </fe-step>
+        <fe-step>
+          <h3>已到达浙江</h3>
+          <p>2018-01-10 09:30</p>
+        </fe-step>
+        <fe-step>
+          <h3>已收件</h3>
+          <p>2018-01-09 18:30</p>
+        </fe-step>
+      </fe-steps>
     </div>
   </div>
 </template>
