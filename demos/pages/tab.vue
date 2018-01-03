@@ -72,7 +72,7 @@
     </fe-tab>
     <br/>
     <br/>
-    <divider>tab-item badge</divider>
+    <divider>气泡提示</divider>
     <fe-tab>
       <fe-tabitem selected badge-label="1">收到的消息</fe-tabitem>
       <fe-tabitem badge-background="#38C972" badge-color="#fff" badge-label="2">发出的消息</fe-tabitem>

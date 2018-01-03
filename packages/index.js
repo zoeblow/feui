@@ -40,9 +40,9 @@ import Swiper from './swiper';
 import SwiperItem from './swiper-item';
 import Switch from './switch';
 import Tab from './tab';
+import TabItem from './tab-item';
 import Tabbar from './tabbar';
 import TabbarItem from './tabbar-item';
-import Tabitem from './tabitem';
 import Textarea from './textarea';
 import Toast from './toast';
 
@@ -88,9 +88,9 @@ const components = [
   SwiperItem,
   Switch,
   Tab,
+  TabItem,
   Tabbar,
   TabbarItem,
-  Tabitem,
   Textarea
 ];
 
@@ -148,9 +148,9 @@ export {
   SwiperItem,
   Switch,
   Tab,
+  TabItem,
   Tabbar,
   TabbarItem,
-  Tabitem,
   Textarea,
   Toast
 };

@@ -37,6 +37,11 @@ log('Starting', 'build:style-entries');
 exec('npm run build:style-entry --silent');
 log('Finished', 'build:style-entries');
 
+// 6. build demo
+log('Starting', 'build demo');
+exec("npm run prod");
+log("Finished", "build demo");
+
 // helpers
 function log(status, action, breakLine) {
   const now = new Date();
