@@ -1,9 +1,32 @@
 <template>
   <div>
-    <popup-picker :fixed-columns="hideDistrict ? 2 : 0" :columns="3" :data="list" :title="title" v-model="currentValue" show-name :inline-desc="inlineDesc" :placeholder="placeholder" @on-hide="emitHide" @on-show="$emit('on-show')" :value-text-align="valueTextAlign" :confirm-text="confirmText" :cancel-text="cancelText" :display-format="displayFormat"></popup-picker>
+    <popup-picker
+    :fixed-columns="hideDistrict ? 2 : 0"
+    :columns="3"
+    :data="list"
+    :title="title"
+    v-model="currentValue"
+    show-name
+    :inline-desc="inlineDesc"
+    :placeholder="placeholder"
+    @on-hide="emitHide"
+    @on-show="$emit('on-show')"
+    :value-text-align="valueTextAlign"
+    :confirm-text="confirmText"
+    :cancel-text="cancelText"
+    :display-format="displayFormat"
+    :popup-style="popupStyle"
+    :popup-title="popupTitle"
+    :show.sync="showValue"
+    @on-shadow-change="onShadowChange">
+      <template slot="title" slot-scope="props">
+        <slot name="title" :label-class="props.labelClass" :label-style="props.labelStyles" :label-title="props.title">
+          <label :class="[props.labelClass,labelClass]" :style="props.labelStyle" v-if="props.labelTitle" v-html="props.labelTitle"></label>
+        </slot>
+      </template>
+    </popup-picker>
   </div>
 </template>
-
 <script>
 import name2value from '../utils/name2value'
 import value2name from '../utils/value2name'
@@ -27,6 +50,7 @@ export default {
       type: Array,
       required: true
     },
+    labelWidth: String,
     inlineDesc: String,
     placeholder: String,
     hideDistrict: Boolean,
@@ -36,20 +60,42 @@ export default {
     displayFormat: {
       type: Function,
       default: (val, names) => names
-    }
+    },
+    popupStyle: Object,
+    popupTitle: String,
+    show: Boolean
   },
   components: {
     [PopupPicker.name]: PopupPicker
+  },
+  data () {
+    return {
+      currentValue: this.value,
+      showValue: false
+    }
+  },
+  computed: {
+    nameValue () {
+      return value2name(this.currentValue, this.list)
+    },
+    labelClass () {
+      return {
+        'vux-cell-justify': this.$parent.labelAlign === 'justify' || this.$parent.$parent.labelAlign === 'justify'
+      }
+    }
   },
   created () {
     if (this.currentValue.length && this.rawValue) {
       const parsedVal = name2value(this.currentValue, this.list)
       if (/__/.test(parsedVal)) {
-        console.error('Feui: Wrong address value', this.currentValue)
+        console.error('Feui: 地址错误', this.currentValue)
         this.currentValue = []
       } else {
         this.currentValue = parsedVal.split(' ')
       }
+    }
+    if (this.show) {
+      this.showValue = true
     }
   },
   methods: {
@@ -58,16 +104,9 @@ export default {
     },
     getAddressName () {
       return value2name(this.value, this.list)
-    }
-  },
-  data () {
-    return {
-      currentValue: this.value
-    }
-  },
-  computed: {
-    nameValue () {
-      return value2name(this.currentValue, this.list)
+    },
+    onShadowChange (ids, names) {
+      this.$emit('on-shadow-change', ids, names)
     }
   },
   watch: {
@@ -83,6 +122,12 @@ export default {
         }
       }
       this.currentValue = val
+    },
+    show (val) {
+      this.showValue = val
+    },
+    showValue (val) {
+      this.$emit('update:show', val)
     }
   }
 }

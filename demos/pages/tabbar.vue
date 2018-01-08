@@ -2,7 +2,6 @@
   <div class="page">
     <fe-header slot="header" style="width:100%;position:absolute;left:0;top:0;z-index:100;">Tabbar</fe-header>
     <div class="fe-content">
-      <router-view></router-view>
       <fe-tabbar>
         <tabbar-item>
           <img slot="icon" src="../assets/images/logo-100.png" />
@@ -16,7 +15,7 @@
           <img slot="icon" src="../assets/images/logo-100.png" />
           <span slot="label">通讯录</span>
         </tabbar-item>
-        <tabbar-item badge="2">
+        <tabbar-item badge="2" @on-item-click='click'>
           <img slot="icon" src="../assets/images/logo-100.png" />
           <span slot="label">我的</span>
         </tabbar-item>
@@ -28,6 +27,11 @@
   export default{
     data () {
       return {
+      }
+    },
+    methods:{
+      click:function(i){
+        console.log(i)
       }
     }
   }

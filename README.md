@@ -62,6 +62,10 @@
 - [x] Icon
 - [x] Divider
 
+<br/><br/><br/>
+## V 0.2.9
+### 已完成
+> 更新Address组件和demo <br/>
 
 <br/><br/><br/>
 ## V 0.2.8
