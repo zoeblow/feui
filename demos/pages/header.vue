@@ -19,7 +19,7 @@
     <br>
     <fe-header>
       <span>重写左边</span>
-      <fe-icon slot="overwrite-left" type="back" style='font-size:25px;color:red' ></fe-icon>
+      <fe-icons slot="overwrite-left" type="left" style='font-size:34px;color:#f60;margin-top: -7px;' ></fe-icons>
     </fe-header>
     <br>
     <fe-header style="background-color:#000;">自定义背景颜色</fe-header>
