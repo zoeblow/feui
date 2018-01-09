@@ -1,16 +1,17 @@
 <template>
   <div class="page">
-    <fe-header slot="header" style="width:100%;position:absolute;left:0;top:0;z-index:100;">Icon</fe-header>
+    <fe-header slot="header" style="width:100%;position:absolute;left:0;top:0;z-index:100;">Icons</fe-header>
     <div class="fe-content">
-      <ul class="icon-list-big">
-        <li v-for="type in iconTypes" :key="type">
-          <fe-icon class="demo-icon-large" :type="type" :large="true"></fe-icon>
-          <label class="label" v-text="type"></label>
-        </li>
-      </ul>
-
+        <flexbox :gutter="0" wrap="wrap" class="icon-list-big">
+          <flexbox-item :span="1/3" v-for="type in iconTypes" :key="type">
+            <div class='feuicon-demo'>
+              <fe-icons class="demo-icon-large" :type="type" :large="true"></fe-icons>
+              <span class="label" v-text="type"></span>
+            </div>
+          </flexbox-item>
+        </flexbox>
       <div class="icon-list-small">
-        <fe-icon :type="type" v-for="type in iconTypes" :key="type"></fe-icon>
+        <fe-icons :type="type" v-for="type in iconTypes" :key="type"></fe-icons>
       </div>
     </div>
   </div>
@@ -21,24 +22,41 @@
     data () {
       return {
         iconTypes: [
-          'circle',
-          'download',
-          'info',
-          'safe-success',
-          'safe-warn',
+          'infocircle',
+          'icon',
           'success',
+          'icon-info',
+          'safesuccess',
+          'fail',
+          'scan',
+          'search',
+          'qrcode',
+          'loading',
+          'success-no-circle2',
           'success-circle',
+          'map',
+          'iconall143',
+          'cancel',
+          'Back',
+          'icons',
+          'step',
+          'star',
+          'seting',
+          'prev',
+          'next',
+          'left',
+          'right',
+          'top',
+          'bottom',
+          'delect',
+          'warn',
+          'clear',
+          'circle',
           'success-no-circle',
           'waiting',
-          'waiting-circle',
-          'warn',
-          'info-circle',
-          'cancel',
-          'search',
-          'clear',
-          'back',
-          'delete',
-
+          'upload-demo',
+          'feui',
+          'fy'
         ]
       }
     },
@@ -47,26 +65,26 @@
 
 <style scoped lang="less">
   .icon-list-big {
-    width: 80%;
+    // width: 80%;
     margin: 0 auto;
     padding: 0;
     margin-bottom: 40px;
 
-    li {
-      display: flex;
+    .feuicon-demo {
       padding: 0;
       margin: 1.2rem 0;
+      text-align: center;
 
       .demo-icon-large {
         display: block;
-        margin-right: 1rem;
-        font-size: 4rem;
+        font-size: 32px;
+        margin: 15px 0;
+        color: rgba(69,90,100,.8);
       }
 
       .label {
-        font-size: 1.1rem;
+        font-size: 14px;
         display: block;
-        float: left;
       }
     }
   }
@@ -74,7 +92,7 @@
   .icon-list-small {
     display: block;
     overflow: hidden;
-    width: 80%;
+    // width: 80%;
     margin: 0 auto 20px;
   }
 </style>

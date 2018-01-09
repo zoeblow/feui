@@ -27,9 +27,9 @@
         "icon": "header"
       },
       {
-        "path": "/feuicon",
-        "name": "Feuicon",
-        "description": "feui图标",
+        "path": "/icons",
+        "name": "Icons",
+        "description": "图标",
         "icon": "icon"
       },
       {
