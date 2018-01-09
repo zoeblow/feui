@@ -29,9 +29,7 @@
         <fe-button type="primary" @click.native="fullValues = $refs.demoObject.getFullValue()">getFullValue()</fe-button>
       </div>
       <fe-checklist title="包含 inlineDesc 属性的 Object 类型选项列表" :options="inlineDescList" v-model="inlineDescListValue" @on-change="change"></fe-checklist>
-
       <fe-checklist title="异步选项列表" :max="3" :options="asyncList" v-model="asyncListValue" @on-change="change"></fe-checklist>
-    
     </div>
   </div>
 </template>
@@ -93,7 +91,3 @@ export default {
   },
 }
 </script>
-
-<style scoped lang="less">
-  
-</style>

@@ -11,18 +11,16 @@
         <fe-address style="display:none;" popup-title="选择地址" :title="title" v-model="value" :list="addressData" placeholder="请选择地址" :show.sync="showAddress"></fe-address>
         <fe-button type="primary" @click.native="doShowAddress">单独控制显示(2s后关闭)</fe-button>
       </div>
-
       <fe-group>
-      <fe-address :title="title" @on-hide="logHide" v-model="value_0_1" :list="addressData" placeholder="请选择地址">
-        <template slot="title" slot-scope="props"><!-- use scope="props" when vue < 2.5.0 -->
-          <span :class="props.labelClass" :style="props.labelStyle" style="height:24px;">
-            <span class="demo-icon demo-icon-big" style="font-size:20px;vertical-align:middle;"></span>
-            <span style="vertical-align:middle;">地址</span>
-          </span>
-        </template>
-      </fe-address>
+        <fe-address :title="title" @on-hide="logHide" v-model="value_0_1" :list="addressData" placeholder="请选择地址">
+          <template slot="title" slot-scope="props"><!-- use scope="props" when vue < 2.5.0 -->
+            <span :class="props.labelClass" :style="props.labelStyle" style="height:24px;">
+              <span class="demo-icon demo-icon-big" style="font-size:20px;vertical-align:middle;"></span>
+              <span style="vertical-align:middle;">地址</span>
+            </span>
+          </template>
+        </fe-address>
       </fe-group>
-
       <br>
       <fe-group label-width="5em" label-align="left">
         <fe-address :title="title2" v-model="value2" raw-value :list="addressData" value-text-align="left"></fe-address>
@@ -40,10 +38,9 @@
       </fe-group>
       <fe-group>
         <fe-address title="只显示省市" v-model="value4" raw-value :list="addressData" hide-district></fe-address>
-        <cell title="value值" :value="value4"></cell>
-        <cell title="转换成文字值" :value="getName(value4)"></cell>
+        <fe-cell title="value值" :value="value4"></fe-cell>
+        <fe-cell title="转换成文字值" :value="getName(value4)"></fe-cell>
       </fe-group>
-
       <br/>
       <fe-group title="错误的地址将不能正确渲染到相应位置">
         <fe-address title="错误的值" v-model="value5" raw-value :list="addressData" inline-desc="广东省, 深圳 市, 南山区"></fe-address>
@@ -54,8 +51,6 @@
 <script>
 import value2name from '../../packages/utils/value2name'
 import ChinaAddressV3   from '../../packages/utils/mock/china_address_v3.json'
-
-
 export default {
   data () {
     return {

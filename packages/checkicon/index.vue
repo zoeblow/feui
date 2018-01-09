@@ -1,17 +1,17 @@
 <template>
   <div class="nuim-check-icon" @click="updateValue">
-    <fe-icon type="success" v-if="!right" v-show="type === 'default' && value"></fe-icon>
-    <fe-icon type="success_circle" v-if="!right"  v-show="type === 'plain' && value"></fe-icon>
-    <fe-icon type="circle" v-if="!right"  v-show="!value"></fe-icon>
+    <fe-icons type="success" v-if="!right" v-show="type === 'default' && value"></fe-icons>
+    <fe-icons type="success_circle" v-if="!right"  v-show="type === 'plain' && value"></fe-icons>
+    <fe-icons type="circle" v-if="!right"  v-show="!value"></fe-icons>
     <span><slot></slot></span>
-    <fe-icon type="success" v-if="right" v-show="type === 'default' && value"></fe-icon>
-    <fe-icon type="success_circle" v-if="right"  v-show="type === 'plain' && value"></fe-icon>
-    <fe-icon type="circle" v-if="right"  v-show="!value"></fe-icon>
+    <fe-icons type="success" v-if="right" v-show="type === 'default' && value"></fe-icons>
+    <fe-icons type="success-circle" v-if="right"  v-show="type === 'plain' && value"></fe-icons>
+    <fe-icons type="circle" v-if="right"  v-show="!value"></fe-icons>
   </div>
 </template>
 
 <script>
-import Icon from '../icon'
+import Icon from '../icons'
 
 export default {
   name:'fe-checkicon',

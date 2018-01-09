@@ -18,11 +18,13 @@ import FlexboxItem from './flexbox-item';
 import Group from './group';
 import Header from './header';
 import Icon from './icon';
+import Icons from './icons';
 import Indexlist from './indexlist';
 import InlineDesc from './inline-desc';
 import Inlinecalendar from './inlinecalendar';
 import Input from './input';
 import Loading from './loading';
+import Noticebar from './noticebar';
 import Picker from './picker';
 import Popup from './popup';
 import PopupPicker from './popup-picker';
@@ -46,7 +48,7 @@ import TabbarItem from './tabbar-item';
 import Textarea from './textarea';
 import Toast from './toast';
 
-const version = '0.2.9';
+const version = '0.3.0';
 const components = [
   Actionsheet,
   Address,
@@ -66,11 +68,13 @@ const components = [
   Group,
   Header,
   Icon,
+  Icons,
   Indexlist,
   InlineDesc,
   Inlinecalendar,
   Input,
   Loading,
+  Noticebar,
   Picker,
   Popup,
   PopupPicker,
@@ -126,11 +130,13 @@ export {
   Group,
   Header,
   Icon,
+  Icons,
   Indexlist,
   InlineDesc,
   Inlinecalendar,
   Input,
   Loading,
+  Noticebar,
   Picker,
   Popup,
   PopupPicker,

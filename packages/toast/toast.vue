@@ -8,8 +8,8 @@
 
         <!-- with icon -->
         <template v-if="displayStyle === 'default'">
-          <loading v-if="type === 'loading'" color="white" /></loading>
-          <fe-icon v-else class="nuim-toast__icon" :type="type" ></fe-icon>
+          <loading v-if="type === 'loading'" color="white" ></loading>
+          <fe-icons v-else class="nuim-toast__icon" :type="type" ></fe-icons>
           <div v-if="message" class="nuim-toast__text">{{ message }}</div>
         </template>
       </div>
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import Icon from '../icon';
+import Icon from '../icons';
 import Loading from '../loading';
 
 const DEFAULT_STYLE_LIST = ['success', 'fail', 'loading','cancel'];

@@ -20,7 +20,7 @@
 
 <script>
 import Base from '../utils/base'
-import Icon from '../icon'
+import Icon from '../icons'
 import InlineDesc from '../inline-desc'
 import { getValue, getLabels, getKey, getInlineDesc } from '../utils/object-filter'
 import shuffle from 'array-shuffle'

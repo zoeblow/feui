@@ -107,13 +107,13 @@
       ref="input"/>
     </div>
     <div class="weui-cell__ft">
-      <fe-icon type="clear" v-show="!equalWith && showClear && currentValue && !readonly && !disabled && isFocus" @click.native="clear">1</fe-icon>
-      <fe-icon class="nuim-input-icon" type="warn" :title="!valid ? firstError : ''" v-show="!novalidate && !equalWith && ((touched && !valid && firstError) || (forceShowError && !valid && firstError))"></fe-icon>
-      <fe-icon class="nuim-input-icon" type="warn" v-if="!novalidate && hasLengthEqual && dirty && equalWith && !valid"></fe-icon>
-      <fe-icon type="success" v-show="!novalidate && equalWith && equalWith === currentValue && valid"></fe-icon>
+      <fe-icons type="clear" v-show="!equalWith && showClear && currentValue && !readonly && !disabled && isFocus" @click.native="clear">1</fe-icons>
+      <fe-icons class="nuim-input-icon" type="warn" :title="!valid ? firstError : ''" v-show="!novalidate && !equalWith && ((touched && !valid && firstError) || (forceShowError && !valid && firstError))"></fe-icons>
+      <fe-icons class="nuim-input-icon" type="warn" v-if="!novalidate && hasLengthEqual && dirty && equalWith && !valid"></fe-icons>
+      <fe-icons type="success" v-show="!novalidate && equalWith && equalWith === currentValue && valid"></fe-icons>
 
-      <fe-icon type="success" class="nuim-input-icon" v-show="novalidate && iconType === 'success'"></fe-icon>
-      <fe-icon type="warn" class="nuim-input-icon" v-show="novalidate && iconType === 'error'"></fe-icon>
+      <fe-icons type="success" class="nuim-input-icon" v-show="novalidate && iconType === 'success'"></fe-icons>
+      <fe-icons type="warn" class="nuim-input-icon" v-show="novalidate && iconType === 'error'"></fe-icons>
 
       <slot name="right"></slot>
     </div>
@@ -125,7 +125,7 @@
   import isEmail from 'validator/lib/isEmail'
   import isMobilePhone from 'validator/lib/isMobilePhone'
   import Debounce from '../utils/debounce'
-  import Icon from '../icon'
+  import Icon from '../icons'
   import InlineDesc from '../inline-desc'
   const validators = {
     'email': {

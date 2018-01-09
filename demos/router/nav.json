@@ -27,9 +27,9 @@
         "icon": "header"
       },
       {
-        "path": "/icons",
-        "name": "Icons",
-        "description": "图标",
+        "path": "/feuicon",
+        "name": "Feuicon",
+        "description": "feui图标",
         "icon": "icon"
       },
       {
@@ -138,6 +138,12 @@
         "name": "Input",
         "description": "输入",
         "icon": "input"
+      },
+      {
+        "path": "/noticebar",
+        "name": "Naticebar",
+        "description": "通告栏",
+        "icon": "notice"
       },
       {
         "path": "/pullrefresh",

@@ -54,12 +54,17 @@ module.exports = {
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
-          use: ["css-loader", "postcss-loader"]
+          use: ["css-loader", "postcss-loader"],
+          publicPath: "./css/"
         })
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        loader: "url-loader?limit=10240"
+        loader: "url-loader",
+        options: {
+          limit: 10240,
+          name: "images/[name].[hash:8].[ext]"
+        }
       },
       {
         test: /\.md/,
@@ -82,10 +87,10 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: "vendor",
       minChunks: 2,
-      filename: isProduction ? "vendor.[hash:8].js" : "vendor.js"
+      filename: isProduction ? "js/vendor.[hash:8].js" : "vendor.js"
     }),
     new ExtractTextPlugin({
-      filename: isProduction ? "[name].[hash:8].css" : "[name].css",
+      filename: isProduction ? "css/[name].[hash:8].css" : "[name].css",
       allChunks: true
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),

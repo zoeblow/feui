@@ -3,7 +3,7 @@
     <div class="nuim-steps__status" v-if="title || description">
       <div class="nuim-steps__icon" v-if="icon || $slots.icon">
         <slot name="icon">
-          <fe-icon :type="icon" :class="iconClass" ></fe-icon>
+          <fe-icons :type="icon" :class="iconClass" ></fe-icons>
         </slot>
       </div>
       <div class="nuim-steps__message">
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import Icon from '../icon';
+import Icon from '../icons';
 
 export default {
   name: 'fe-steps',

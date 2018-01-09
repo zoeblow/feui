@@ -24,6 +24,7 @@
 
 ## Todo List
 
+- [x] Noticebar
 - [x] QRcode
 - [x] Tabbar
 - [x] Steps
@@ -63,6 +64,10 @@
 - [x] Divider
 
 <br/><br/><br/>
+## V 0.3.0
+### 已完成
+> 新增加Noticebar 将字体图标重写 <br/>
+
 ## V 0.2.9
 ### 已完成
 > 更新Address组件和demo <br/>

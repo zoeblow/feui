@@ -110,8 +110,6 @@
     </div>
   </div>
 </template>
-<script>
-s</script>
 <style scoped lang="less">
   .flex-demo{
     text-align: center;

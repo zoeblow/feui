@@ -22,7 +22,7 @@
       <div class="weui-cell__ft nuim-cell-primary nuim-datetime-value" :style="{textAlign: valueTextAlign}">
         <span class="nuim-cell-placeholder" v-if="!currentValue && placeholder">{{ placeholder }}</span>
         <span class="nuim-cell-value" v-if="currentValue">{{ displayFormat ? displayFormat(currentValue) : currentValue }}</span>
-        <fe-icon class="nuim-input-icon" type="warn" v-show="!valid" :title="firstError"></fe-icon>
+        <fe-icons class="nuim-input-icon" type="warn" v-show="!valid" :title="firstError"></fe-icons>
       </div>
     </slot>
   </a>
@@ -31,7 +31,7 @@
 <script>
 import Uuid from '../utils/uuid'
 import Picker from './datetimepicker'
-import Icon from '../icon'
+import Icon from '../icons'
 import InlineDesc from '../inline-desc'
 import format from './format'
 
