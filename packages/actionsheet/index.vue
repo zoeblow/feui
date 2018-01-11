@@ -14,7 +14,6 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
   name: 'fe-actionsheet',
