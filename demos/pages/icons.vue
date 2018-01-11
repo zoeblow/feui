@@ -65,7 +65,6 @@
 
 <style scoped lang="less">
   .icon-list-big {
-    // width: 80%;
     margin: 0 auto;
     padding: 0;
     margin-bottom: 40px;
@@ -92,7 +91,6 @@
   .icon-list-small {
     display: block;
     overflow: hidden;
-    // width: 80%;
     margin: 0 auto 20px;
   }
 </style>

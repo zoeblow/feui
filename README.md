@@ -64,6 +64,10 @@
 - [x] Divider
 
 <br/><br/><br/>
+## V 0.3.1
+### 已完成
+> 更新cell和group组件 <br/>
+
 ## V 0.3.0
 ### 已完成
 > 新增加Noticebar 将字体图标重写 <br/>

@@ -1,6 +1,10 @@
 <template>
-  <div class="nuim-cell-box weui-cell" :class="{'nuim-tap-active': isLink || !!link, 'weui-cell_access': isLink || !!link, 'nuim-cell-no-border-intent': !borderIntent}" @click="onClick">
-    <div><slot></slot></div>
+  <div
+  class="nuim-cell-box weui-cell"
+  :class="className"
+  :style="style"
+  @click="onClick">
+    <slot></slot>
   </div>
 </template>
 
@@ -15,6 +19,24 @@ export default {
     borderIntent: {
       type: Boolean,
       default: true
+    },
+    noFlex: Boolean,
+    alignItems: String
+  },
+  computed: {
+    style () {
+      if (this.alignItems) {
+        return {
+          'align-items': this.alignItems
+        }
+      }
+    },
+    className () {
+      return {
+        'nuim-tap-active': this.isLink || !!this.link,
+        'weui-cell_access': this.isLink || !!this.link,
+        'nuim-cell-no-border-intent': !this.borderIntent
+      }
     }
   },
   methods: {

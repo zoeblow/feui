@@ -3,10 +3,10 @@
 </template>
 
 <script>
-export default {
-  name:'fe-badge',
-  props: {
-    text: [String, Number]
+  export default {
+    name:'fe-badge',
+    props: {
+      text: [String, Number]
+    }
   }
-}
 </script>
