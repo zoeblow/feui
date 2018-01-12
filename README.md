@@ -21,47 +21,57 @@
   <br>
 </div>
 
-
 ## Todo List
 
+- [x] Actionsheet
+- [x] Address
+- [x] Badge
+- [x] Button
+- [x] Calendar
+- [x] Cell
+- [x] Cell-box
+- [x] Checkicon
+- [x] Checklist
+- [x] Count
+- [x] Countup
+- [x] Datetime
+- [x] Dialog
+- [x] Divider
+- [x] Flexbox
+- [x] Flexbox-item
+- [x] Group
+- [x] Header
+- [x] Icon
+- [x] Icons
+- [x] Indexlist
+- [x] Inlinecalendar
+- [x] Inline-desc
+- [x] Input
+- [x] Loading
 - [x] Noticebar
-- [x] QRcode
-- [x] Tabbar
+- [x] Picker
+- [x] Popup
+- [x] Popup-picker
+- [x] Pullrefresh
+- [x] Qrcode
+- [x] Radio
+- [x] Range
+- [x] Rater
+- [x] Scroll
+- [x] Search
+- [x] Slidbtn
+- [x] Step
 - [x] Steps
 - [x] Swiper
-- [x] Calendar
-- [x] Datetime
-- [x] Badge
-- [x] Tab
-- [x] Popup
-- [x] Slidbtn
-- [x] Address
-- [x] Picker
-- [x] Popup Picker
-- [x] Scroll
-- [x] Flexbox
-- [x] Rater
-- [x] Range
-- [x] Radio
-- [x] Cheaclist
-- [x] Check-icon
-- [x] Toast
-- [x] Loading
-- [x] Dialog
-- [x] Actionsheet
-- [x] Pullrefresh
-- [x] BUtton
-- [x] Count
-- [x] Search
-- [x] IndexList
-- [x] Header
+- [x] Swiper-item
 - [x] Switch
-- [x] Cell
-- [x] Group
-- [x] Input
+- [x] Tab
+- [x] Tabbar
+- [x] Tabbar-item
+- [x] Tab-item
 - [x] Textarea
-- [x] Icon
-- [x] Divider
+- [x] Toast
+
 
 <br/><br/><br/>
 ## V 0.3.1
