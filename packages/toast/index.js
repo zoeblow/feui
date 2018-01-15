@@ -52,7 +52,7 @@ const createMethod = type => (options = {}) =>
 Toast.loading = createMethod("loading");
 Toast.success = createMethod("success");
 Toast.fail = createMethod("fail");
-Toast.cancel = createMethod("cancel");
+Toast.info = createMethod("info");
 Toast.clear = () => {
   instance && instance.clear();
 };

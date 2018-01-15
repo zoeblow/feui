@@ -76,20 +76,6 @@
   height: 100%;
   position: relative;
 }
-.scroll-page{
-  // position: absolute;
-  // left: 0;
-  // top: 0;
-  // bottom: 0;
-  // right: 0;
-  // width: 100%;
-  // height: 100%;
-  // background-color: #f5f5f5;
-  // overflow: hidden;
-  .page-content{
-    // padding-top: 46px;
-  }
-}
 .item {
   box-sizing: border-box;
   font-size: 14px;

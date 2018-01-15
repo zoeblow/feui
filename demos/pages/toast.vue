@@ -5,6 +5,7 @@
         <div style="margin:10px;">
           <fe-button @click.native="showSuccess">成功提示</fe-button>
           <fe-button @click.native="showError">失败提示</fe-button>
+          <fe-button @click.native="showWarn">警告提示</fe-button>
           <fe-button @click.native="showText">提示文字</fe-button>
           <fe-button @click.native="showLoading">Loading</fe-button>
           <br>
@@ -28,11 +29,18 @@ export default {
       })
     },
     showError () {
-      Toast.cancel({
+      Toast.fail({
+        duration: 1500,
+        message: '失败提示'
+      })
+    },
+    showWarn () {
+      Toast.info({
         duration: 1500,
         message: '操作警告'
       })
     },
+    
     showLoading(){
       Toast.loading({duration: 1501, mask: true });
     },

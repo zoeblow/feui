@@ -9,7 +9,7 @@
         <!-- with icon -->
         <template v-if="displayStyle === 'default'">
           <loading v-if="type === 'loading'" color="white" ></loading>
-          <fe-icons v-else class="nuim-toast__icon" :type="type" ></fe-icons>
+          <fe-icons v-else class="nuim-toast__icon" :type="iconName" ></fe-icons>
           <div v-if="message" class="nuim-toast__text">{{ message }}</div>
         </template>
       </div>
@@ -22,8 +22,7 @@
 import Icon from '../icons';
 import Loading from '../loading';
 
-const DEFAULT_STYLE_LIST = ['success', 'fail', 'loading','cancel'];
-
+const DEFAULT_STYLE_LIST = ['success', 'fail', 'loading', 'info'];
 export default {
   name: 'nuim-toast',
 
@@ -55,6 +54,10 @@ export default {
   computed: {
     displayStyle() {
       return DEFAULT_STYLE_LIST.indexOf(this.type) !== -1 ? 'default' : this.type;
+    },
+    iconName() {
+      var name = this.type=='success'?'success-no-circle':this.type
+      return name;
     }
   }
 };
