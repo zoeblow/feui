@@ -4,6 +4,7 @@
   </a>
 </div>
 <div align="center">Feui 是爱信诺前端组移动组依据现有业务逻辑，基于VUE制作的一套UI组件</div>
+[![npm version](https://img.shields.io/npm/v/feui.svg)](https://www.npmjs.org/package/feui) ![dlone](https://img.shields.io/npm/dt/feui.svg) [![GitHub forks](https://img.shields.io/github/forks/zoeblow/feui.svg?style=social)](https://github.com/zoeblow/feui/network)  [![GitHub stars](https://img.shields.io/github/stars/zoeblow/feui.svg?style=social)](https://github.com/zoeblow/feui/stargazers) [![GitHub issues](https://img.shields.io/github/issues/zoeblow/feui.svg?style=social)](https://github.com/zoeblow/feui/issues)  
   <br>
 <div align="center">
    <a href="https://feui.gitee.io">
@@ -74,6 +75,10 @@
 
 
 <br/><br/><br/>
+## V 0.3.3
+### 已完成
+> 更新iconfont显示方式 <br/>
+
 ## V 0.3.2
 ### 已完成
 > 更新toast组件 <br/>

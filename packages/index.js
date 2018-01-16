@@ -17,7 +17,6 @@ import Flexbox from './flexbox';
 import FlexboxItem from './flexbox-item';
 import Group from './group';
 import Header from './header';
-import Icon from './icon';
 import Icons from './icons';
 import Indexlist from './indexlist';
 import InlineDesc from './inline-desc';
@@ -48,7 +47,7 @@ import TabbarItem from './tabbar-item';
 import Textarea from './textarea';
 import Toast from './toast';
 
-const version = '0.3.2';
+const version = '0.3.3';
 const components = [
   Actionsheet,
   Address,
@@ -67,7 +66,6 @@ const components = [
   FlexboxItem,
   Group,
   Header,
-  Icon,
   Icons,
   Indexlist,
   InlineDesc,
@@ -129,7 +127,6 @@ export {
   FlexboxItem,
   Group,
   Header,
-  Icon,
   Icons,
   Indexlist,
   InlineDesc,
