@@ -22,10 +22,8 @@
     data () {
       return {
         iconTypes: [
-          'infocircle',
           'icon',
           'success',
-          'icon-info',
           'safesuccess',
           'fail',
           'scan',
@@ -35,13 +33,16 @@
           'success-no-circle2',
           'success-circle',
           'map',
-          'iconall143',
+          'waiting-fail',
           'cancel',
-          'Back',
+          'back',
+          'info',
           'icons',
           'step',
           'star',
           'seting',
+          'jia',
+          'jian',
           'prev',
           'next',
           'left',
@@ -91,6 +92,22 @@
   .icon-list-small {
     display: block;
     overflow: hidden;
-    margin: 0 auto 20px;
+    margin: 0 auto 30px;
+    width: 80%;
+    .feui{
+      color:#4a90e2;
+      font-size: 22px;
+    }
   }
+  .nuim-flexbox{
+    .nuim-flexbox-item{
+      box-sizing: border-box;
+      border-bottom:1px solid #C7C7C7;
+      border-right:1px solid #C7C7C7;
+      &:nth-child(3n){
+        border-right:none;        
+      }
+    }
+  }
+  
 </style>
