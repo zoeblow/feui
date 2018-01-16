@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <fe-header slot="header" style="width:100%;position:absolute;left:0;top:0;z-index:100;">cell</fe-header>
+    <fe-header slot="header" style="width:100%;position:absolute;left:0;top:0;z-index:100;">Cell</fe-header>
     <div class="fe-content">
       <fe-group>
         <fe-cell title="我的账号" value="安全保护" @click.native="onClick"></fe-cell>

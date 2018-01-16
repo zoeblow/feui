@@ -94,7 +94,7 @@
       {
         "path": "/cell",
         "name": "Cell",
-        "description": "Cell",
+        "description": "单元格",
         "icon": "list"
       },
       {
