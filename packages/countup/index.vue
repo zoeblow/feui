@@ -9,9 +9,12 @@ export default {
   name:'fe-countup',
   mounted () {
     this.$nextTick(() => {
-      this._countup = new Countup(this.$el, this.startVal, this.endVal, this.decimals, this.duration, this.options)
+      this._countup = new Countup(this.$el, this.startVal, this.endVal, this.decimals, this.duration, this.options,this.callback)
       if (this.start) {
-        this._countup.start()
+        let that = this
+        that._countup.start(function() {
+          that.callback(that._countup);
+        })
       }
     })
   },
@@ -19,6 +22,10 @@ export default {
     start: {
       type: Boolean,
       default: true
+    },
+    reset: {
+      type: Boolean,
+      default: false
     },
     startVal: {
       type: Number,
@@ -28,12 +35,10 @@ export default {
       type: Number,
       required: true
     },
-    // number of decimal places in number
     decimals: {
       type: Number,
       default: 0
     },
-    // duration in seconds
     duration: {
       type: Number,
       default: 2
@@ -43,16 +48,26 @@ export default {
       default () {
         return {}
       }
+    },
+    callback: {
+      type: Function,
+      default () {}
     }
   },
   watch: {
     start (val) {
+      let that = this
       if (val) {
-        this._countup.start()
+        that._countup.start(function() {
+          that.callback && that.callback();
+        })
       }
     },
     endVal (val) {
       this._countup.update(val)
+    },
+    reset (){
+      this._countup.reset();
     }
   }
 }
