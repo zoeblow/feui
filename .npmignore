@@ -11,6 +11,7 @@ bower.json
 .babelrc
 docs/
 .git
+.vscode
 .eslintignore
 yarn.lock
 postcss.config.js

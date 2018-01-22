@@ -4,8 +4,11 @@ import App from "./App.vue";
 import router from "./router/index.js";
 
 
-import feui,{ Toast, Dialog} from "../packages/index.js";
-// console.log(TabbarItem);
+import feui,{ Toast, Dialog, Lazyload} from "../packages/index.js";
+// console.log(Lazyload, Dialog);
+Vue.use(Lazyload, {
+  lazyComponent: true
+});
 window.Toast = Toast;
 window.Dialog = Dialog;
 import "../packages/feui-css/lib/index.css";

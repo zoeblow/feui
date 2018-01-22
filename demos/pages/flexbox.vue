@@ -38,7 +38,7 @@
         <flexbox-item><div class="flex-demo">6</div></flexbox-item>
       </flexbox>
       <br>
-      <divider>横排没有空隙</divider>
+      <divider>横排无空隙</divider>
       <flexbox :gutter="0">
         <flexbox-item><div class="flex-demo">1</div></flexbox-item>
         <flexbox-item><div class="flex-demo">2</div></flexbox-item>
@@ -79,6 +79,7 @@
         <flexbox-item><div class="flex-demo">rest</div></flexbox-item>
       </flexbox>
       <br>
+      <divider>灵活网格无边框</divider>
       <flexbox :gutter="0">
         <flexbox-item :span="1/3"><div class="flex-demo">1/3</div></flexbox-item>
         <flexbox-item :span="1/6"><div class="flex-demo">1/6</div></flexbox-item>

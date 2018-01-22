@@ -22,6 +22,7 @@ import Indexlist from './indexlist';
 import InlineDesc from './inline-desc';
 import Inlinecalendar from './inlinecalendar';
 import Input from './input';
+import Lazyload from './lazyload';
 import Loading from './loading';
 import Noticebar from './noticebar';
 import Picker from './picker';
@@ -47,7 +48,7 @@ import TabbarItem from './tabbar-item';
 import Textarea from './textarea';
 import Toast from './toast';
 
-const version = '0.3.4';
+const version = '0.3.5';
 const components = [
   Actionsheet,
   Address,
@@ -132,6 +133,7 @@ export {
   InlineDesc,
   Inlinecalendar,
   Input,
+  Lazyload,
   Loading,
   Noticebar,
   Picker,

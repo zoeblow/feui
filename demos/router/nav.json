@@ -140,6 +140,12 @@
         "icon": "input"
       },
       {
+        "path": "/lazyload",
+        "name": "Lazyload",
+        "description": "懒加载",
+        "icon": "loading"
+      },
+      {
         "path": "/noticebar",
         "name": "Naticebar",
         "description": "通告栏",

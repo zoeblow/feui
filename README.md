@@ -52,6 +52,7 @@
 - [x] Inlinecalendar
 - [x] Inline-desc
 - [x] Input
+- [x] Lazyload
 - [x] Loading
 - [x] Noticebar
 - [x] Picker
@@ -79,6 +80,10 @@
 
 
 <br/><br/><br/>
+## V 0.3.5
+### 已完成
+> 添加Lazyload组件 <br/>
+
 ## V 0.3.4
 ### 已完成
 > 修改数字滚动的显示方式，重构了部分方法的实现方式 <br/>

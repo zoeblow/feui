@@ -9,6 +9,7 @@ function buildFeuiEntry() {
   const uninstallComponents = [
     'Dialog',
     'Toast',
+    'Lazyload',
     'ImagePreview',
     'Locale'
   ];
