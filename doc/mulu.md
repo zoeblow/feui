@@ -2,7 +2,7 @@
 ├── Readme.md                   // help
 ├── package.json                // 应用依赖源
 ├── static                      // 静态文件
-├── components                  // 组件目录
+├── packages                    // 组件目录
 │   ├── button                  // 组件
 │   │   └── index.vue           // 此组件主体/入口
 │   └── ……                
