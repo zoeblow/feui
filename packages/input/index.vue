@@ -1,16 +1,17 @@
 <template>
-	<div class="nuim-x-input weui-cell" :class="{'weui-cell_warn': !novalidate && !valid}">
+	<div class="nuim-fe-input weui-cell" :class="{'weui-cell_warn': showWarn, 'disabled': disabled}">
     <div class="weui-cell__hd">
       <div :style="labelStyles" v-if="hasRestrictedLabel">
         <slot name="restricted-label"></slot>
       </div>
       <slot name="label">
-        <label class="weui-label" :style="{width: labelWidth || $parent.labelWidth || labelWidthComputed, textAlign: $parent.labelAlign, marginRight: $parent.labelMarginRight}" v-if="title" v-html="title"></label>
+        <label class="weui-label" :class="labelClass" :style="{width: labelWidth || $parent.labelWidth || labelWidthComputed, textAlign: $parent.labelAlign, marginRight: $parent.labelMarginRight}" v-if="title" v-html="title" :for="`nuim-fe-input-${uuid}`"></label>
         <inline-desc v-if="inlineDesc">{{inlineDesc}}</inline-desc>
       </slot>
     </div>
-    <div class="weui-cell__bd weui-cell__primary" :class="placeholderAlign ? `nuim-x-input-placeholder-${placeholderAlign}` : ''">
+    <div class="weui-cell__bd weui-cell__primary" :class="placeholderAlign ? `nuim-fe-input-placeholder-${placeholderAlign}` : ''">
       <input
+      :id="`nuim-fe-input-${uuid}`"
       v-if="!type || type === 'text'"
       class="weui-input"
       :maxlength="max"
@@ -28,8 +29,10 @@
       v-model="currentValue"
       @focus="focusHandler"
       @blur="onBlur"
+      @keyup="onKeyUp"
       ref="input"/>
       <input
+      :id="`nuim-fe-input-${uuid}`"
       v-if="type === 'number'"
       class="weui-input"
       :maxlength="max"
@@ -47,8 +50,10 @@
       v-model="currentValue"
       @focus="focusHandler"
       @blur="onBlur"
+      @keyup="onKeyUp"
       ref="input"/>
       <input
+      :id="`nuim-fe-input-${uuid}`"
       v-if="type === 'email'"
       class="weui-input"
       :maxlength="max"
@@ -66,8 +71,10 @@
       v-model="currentValue"
       @focus="focusHandler"
       @blur="onBlur"
+      @keyup="onKeyUp"
       ref="input"/>
       <input
+      :id="`nuim-fe-input-${uuid}`"
       v-if="type === 'password'"
       class="weui-input"
       :maxlength="max"
@@ -85,8 +92,10 @@
       v-model="currentValue"
       @focus="focusHandler"
       @blur="onBlur"
+      @keyup="onKeyUp"
       ref="input"/>
       <input
+      :id="`nuim-fe-input-${uuid}`"
       v-if="type === 'tel'"
       class="weui-input"
       :maxlength="max"
@@ -104,12 +113,14 @@
       v-model="currentValue"
       @focus="focusHandler"
       @blur="onBlur"
+      @keyup="onKeyUp"
       ref="input"/>
     </div>
     <div class="weui-cell__ft">
-      <fe-icons type="clear" v-show="!equalWith && showClear && currentValue && !readonly && !disabled && isFocus" @click.native="clear">1</fe-icons>
-      <fe-icons class="nuim-input-icon" type="warn" :title="!valid ? firstError : ''" v-show="!novalidate && !equalWith && ((touched && !valid && firstError) || (forceShowError && !valid && firstError))"></fe-icons>
-      <fe-icons class="nuim-input-icon" type="warn" v-if="!novalidate && hasLengthEqual && dirty && equalWith && !valid"></fe-icons>
+      <!-- //v-show="!equalWith && showClear && currentValue && !readonly && !disabled && isFocus" -->
+      <fe-icons type="clear" v-show="!equalWith && showClear && currentValue && !readonly && !disabled && isFocus" @click.native="clear"></fe-icons>
+      <fe-icons @click.native="onClickErrorIcon" class="nuim-input-icon" type="warn" :title="!valid ? firstError : ''" v-show="showWarn"></fe-icons>
+      <fe-icons @click.native="onClickErrorIcon" class="nuim-input-icon" type="warn" v-if="!novalidate && hasLengthEqual && dirty && equalWith && !valid"></fe-icons>
       <fe-icons type="success" v-show="!novalidate && equalWith && equalWith === currentValue && valid"></fe-icons>
 
       <fe-icons type="success" class="nuim-input-icon" v-show="novalidate && iconType === 'success'"></fe-icons>
@@ -127,6 +138,8 @@
   import Debounce from '../utils/debounce'
   import Icon from '../icons'
   import InlineDesc from '../inline-desc'
+  import Toast from '../toast'
+  import mask from 'vanilla-masker'
   const validators = {
     'email': {
       fn: isEmail,
@@ -148,11 +161,8 @@
   export default {
     name: 'fe-input',
     created () {
-      this.currentValue = this.value || ''
-      if (!this.title && !this.placeholder && !this.currentValue) {
-        console.warn('no title and no placeholder?')
-      }
-      if (this.required && !this.currentValue) {
+      this.currentValue = (this.value === undefined || this.value === null) ? '' : (this.mask ? this.maskValue(this.value) : this.value)
+      if (this.required && typeof this.currentValue === 'undefined') {
         this.valid = false
       }
       this.handleChangeEvent = true
@@ -164,9 +174,10 @@
     },
     components: {
       [InlineDesc.name]: InlineDesc,
+      [Toast.name]: Toast,
       [Icon.name]: Icon,
     },
-    mounted () {
+    beforeMount () {
       if (this.$slots && this.$slots['restricted-label']) {
         this.hasRestrictedLabel = true
       }
@@ -226,7 +237,12 @@
       iconType: String,
       debounce: Number,
       placeholderAlign: String,
-      labelWidth: String
+      labelWidth: String,
+      mask: String,
+      shouldToastError: {
+        type: Boolean,
+        default: true
+      }
     },
     computed: {
       labelStyles () {
@@ -234,6 +250,11 @@
           width: this.labelWidthComputed || this.$parent.labelWidth || this.labelWidthComputed,
           textAlign: this.$parent.labelAlign,
           marginRight: this.$parent.labelMarginRight
+        }
+      },
+      labelClass () {
+        return {
+          'vux-cell-justify': this.$parent.labelAlign === 'justify' || this.$parent.$parent.labelAlign === 'justify'
         }
       },
       pattern () {
@@ -256,9 +277,25 @@
             textAlign: this.textAlign
           }
         }
+      },
+      showWarn () {
+        return !this.novalidate && !this.equalWith && !this.valid && this.firstError && (this.touched || this.forceShowError)
       }
     },
     methods: {
+      onClickErrorIcon () {
+        if (this.shouldToastError && this.firstError) {
+          Toast({
+            duration: 600,
+            message: this.firstError,
+          })
+        }
+        this.$emit('on-click-error-icon', this.firstError)
+      },
+      maskValue (val) {
+        const val1 = this.mask ? mask.toPattern(val, this.mask) : val
+        return val1
+      },
       reset (value = '') {
         this.dirty = false
         this.currentValue = value
@@ -270,23 +307,27 @@
         this.focus()
       },
       focus () {
+        console.log('fff-focus')
         this.$refs.input.focus()
       },
       blur () {
         this.$refs.input.blur()
       },
-      focusHandler () {
+      focusHandler ($event) {
         this.isFocus = true;
-        // console.log('fff',this.isFocus);
-
-        this.$emit('on-focus', this.currentValue)
+        this.$emit('on-focus', this.currentValue, $event)
       },
-      onBlur () {
+      onBlur ($event) {
         this.isFocus = false;
-        //  console.log('bbb',this.isFocus);
         this.setTouched()
         this.validate()
-        this.$emit('on-blur', this.currentValue)
+        this.$emit('on-blur', this.currentValue, $event)
+      },
+      onKeyUp (e) {
+        if (e.key === 'Enter') {
+          e.target.blur()
+          this.$emit('on-enter', this.currentValue, e)
+        }
       },
       getError () {
         let key = Object.keys(this.errors)[0]
@@ -314,9 +355,17 @@
         if (typeof this.isType === 'string') {
           const validator = validators[this.isType]
           if (validator) {
-            this.valid = validator[ 'fn' ](this.currentValue)
+            let value = this.currentValue
+
+            if (this.isType === 'china-mobile' && this.mask === '999 9999 9999') {
+              value = this.currentValue.replace(/\s+/g, '')
+            }
+
+            this.valid = validator[ 'fn' ](value)
             if (!this.valid) {
+              this.forceShowError = true
               this.errors.format = validator[ 'msg' ] + '格式不对哦~'
+              this.getError()
               return
             } else {
               delete this.errors.format
@@ -330,9 +379,7 @@
           if (!this.valid) {
             this.errors.format = validStatus.msg
             this.forceShowError = true
-            if (!this.firstError) {
-              this.getError()
-            }
+            this.getError()
             return
           } else {
             delete this.errors.format
@@ -343,9 +390,7 @@
           if (this.currentValue.length < this.min) {
             this.errors.min = `最少应该输入${this.min}个字符哦`
             this.valid = false
-            if (!this.firstError) {
-              this.getError()
-            }
+            this.getError()
             return
           } else {
             delete this.errors.min
@@ -396,11 +441,17 @@
         forceShowError: false,
         hasLengthEqual: false,
         valid: true,
-        currentValue: ''
+        currentValue: '',
+        showErrorToast: false
       }
       return data
     },
     watch: {
+      mask (val) {
+        if (val && this.currentValue) {
+          this.currentValue = this.maskValue(this.currentValue)
+        }
+      },
       valid () {
         this.getError()
       },
@@ -429,7 +480,7 @@
         } else {
           this.validate()
         }
-        this.$emit('input', newVal)
+        this.$emit('input', this.maskValue(newVal))
         if (this._debounce) {
           this._debounce()
         } else {
