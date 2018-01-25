@@ -7,7 +7,7 @@
       class="nuim-swiper-item"
       v-for="(item, index) in list"
       @click="clickListItem(item)"
-      :data-index="index">
+      :data-index="index" :key='index'>
         <a href="javascript:">
           <div class="nuim-img" :style="{backgroundImage: buildBackgroundUrl(item)}"></div>
           <p class="nuim-swiper-desc" v-if="showDescMask">{{ item.title }}</p>
@@ -19,7 +19,7 @@
       class="nuim-swiper-item nuim-swiper-item-clone"
       v-for="(item, index) in listTwoLoopItem"
       @click="clickListItem(item)"
-      :data-index="index">
+      :data-index="index" :key='index'>
         <a href="javascript:">
           <div class="nuim-img" :style="{backgroundImage: buildBackgroundUrl(item)}"></div>
           <p class="nuim-swiper-desc" v-if="showDescMask">{{ item.title }}</p>
@@ -28,7 +28,7 @@
 
     </div>
     <div :class="[dotsClass, 'nuim-indicator', `nuim-indicator-${dotsPosition}`]" v-show="showDots">
-      <a href="javascript:" v-for="key in length">
+      <a href="javascript:" v-for="key in length" :key='key.index'>
         <i class="nuim-icon-dot" :class="{'active': key - 1 === current}"></i>
       </a>
     </div>

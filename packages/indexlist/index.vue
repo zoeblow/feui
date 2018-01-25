@@ -1,15 +1,15 @@
 <template>
   <div class="nuim-indexed-container">
     <div class="nuim-indexed-list" ref="indexedList">
-      <div v-for="(item,index) in list" :ref="'group'+item.name">
+      <div v-for="(item,index) in list" :ref="'group'+item.name" :key='index'>
         <p class="nuim-table-view-divider nuim-1px-tb">{{item.name}}</p>
         <div class="nuim-indexed-list-item nuim-1px-b" 
         :class="{'nuim-toLink':k.link}"
-        @click="onClick(k)" v-for="(k,v) in item.list">{{ k.text }}</div>
+        @click="onClick(k)" v-for="(k,v) in item.list" :key='v'>{{ k.text }}</div>
       </div>
     </div>
     <div class="nuim-indexed-az" ref="indexAz">
-      <a v-for="(item,index) in _AZ" @click="clickBar(item)">{{item}}</a>
+      <a v-for="(item,index) in _AZ" @click="clickBar(item)" :key='index'>{{item}}</a>
     </div>
     <transition name="fade">
       <div class="nuim-totas" v-show="active">{{text}}</div>

@@ -26,17 +26,17 @@
     <table>
       <thead v-show="!hideWeekList">
         <tr>
-          <th v-for="(week, index) in _weeksList" class="week" :class="`is-week-list-${index}`">{{ week || 'fy' }}</th>
+          <th v-for="(week, index) in _weeksList" class="week" :class="`is-week-list-${index}`" :key='index'>{{ week || 'fy' }}</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(day,k1) in days">
+        <tr v-for="(day,k1) in days" :key='day'>
           <td
           v-for="(child,k2) in day"
           :data-date="formatDate(year, month, child)"
           :data-current="currentValue"
           :class="buildClass(k2, child)"
-          @click="select(k1, k2, child)">
+          @click="select(k1, k2, child)" :key='child'>
             <slot
             :year="year"
             :month="month"
