@@ -7,7 +7,9 @@ import router from "./router/index.js";
 import feui,{ Toast, Dialog, Lazyload} from "../packages/index.js";
 // console.log(Lazyload, Dialog);
 Vue.use(Lazyload, {
-  lazyComponent: true
+  lazyComponent: true,
+  error: "https://i.loli.net/2018/01/29/5a6e858413275.png",
+  loading: "https://i.loli.net/2018/01/29/5a6e858463317.gif"
 });
 window.Toast = Toast;
 window.Dialog = Dialog;

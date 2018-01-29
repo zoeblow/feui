@@ -8,7 +8,7 @@
       </fe-group>
       <divider>懒加载背景图</divider>      
       <fe-group title="iPhone 8">
-        <div v-for="img in backgroundImageList" v-lazy:background-image="img" :key='img'></div>
+        <div v-for="img in backgroundImageList" class='lazyback' v-lazy:background-image="img" :key='img'></div>
       </fe-group>
       <divider>懒加载模块</divider>
       <fe-group title="MacBook Pro">
@@ -30,9 +30,9 @@ export default {
         'https://i.loli.net/2018/01/22/5a657b62a72bb.jpg'
       ],
       backgroundImageList: [
-        'https://i.loli.net/2018/01/22/5a657b57b7c55.jpg',
-        'https://i.loli.net/2018/01/22/5a657b5e73892.jpg',
-        'https://i.loli.net/2018/01/22/5a657b6417bfc.jpg'
+        'https://i.loli.net/2018/01/29/5a6e94028cdd0.jpg',
+        'https://i.loli.net/2018/01/29/5a6e9402daf3a.jpg',
+        'https://i.loli.net/2018/01/29/5a6e94051e657.jpg'
       ],
       componentImageList: [
         'https://i.loli.net/2018/01/22/5a657b6118e21.jpg',
@@ -49,14 +49,16 @@ export default {
   img,div[lazy] {
     padding: 15px;
     width: 100%;
-    height: 250px;
     margin: 10px 0 0;
     background-color: white;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    background-size: 315px 250px;
+    background-size: 315px 225px;
     background-position: 15px;
     background-repeat: no-repeat;
     box-sizing: border-box;
+  }
+  .lazyback{
+    height: 225px;
   }
 }
 </style>
