@@ -11,5 +11,5 @@ body{
    background:#999; /* 滚条内嵌颜色 */
 } 
 ::-webkit-scrollbar-button {
-    background-color:999;/* 两边端按钮颜色 */
+    background-color:#999;/* 两边端按钮颜色 */
 }

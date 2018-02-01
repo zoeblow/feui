@@ -2,12 +2,13 @@
   <div
     v-show="showNoticeBar"
     class="nuim-notice-bar"
-    :class="{ 'nuim-notice-bar--withicon': mode }"
+    :class="{ 'nuim-notice-bar--withicon': type }"
     :style="barStyle"
-    @click="$emit('click')"
+    @click="$emit('on-click')"
   >
-    <div class="nuim-notice-bar__left-icon" v-if="leftIcon">
-      <img :src="leftIcon" />
+    <div class="nuim-notice-bar__left-icon" v-if="leftIcon || leftImg">
+      <img :src="leftImg" v-if='leftImg'/>
+      <fe-icons class="left-icon" :type="leftIcon" v-else />
     </div>
     <div class="nuim-notice-bar__content-wrap" ref="contentWrap">
       <div
@@ -37,9 +38,10 @@ export default {
 
   props: {
     text: String,
-    mode: String,
-    color: String,
+    type: String,
     leftIcon: String,
+    leftImg: String,
+    color: String,
     background: String,
     delay: {
       type: [String, Number],
@@ -68,7 +70,7 @@ export default {
 
   computed: {
     iconName() {
-      return this.mode === 'closeable' ? 'cancel' : this.mode === 'link' ? 'next' : '';
+      return this.type === 'beclosed' ? 'cancel' : this.type === 'link' ? 'next' : '';
     },
     barStyle() {
       return {
@@ -98,8 +100,8 @@ export default {
 
   methods: {
     onClickIcon() {
-      console.log(this.mode)
-      this.showNoticeBar = this.mode !== 'closeable';
+      console.log(this.type)
+      this.showNoticeBar = this.type !== 'beclosed';
     },
     onAnimationEnd() {
       this.firstRound = false;

@@ -35,6 +35,7 @@
           'map',
           'waiting-fail',
           'cancel',
+          'notice',
           'back',
           'info',
           'icons',

@@ -78,7 +78,12 @@
 - [x] Textarea
 - [x] Toast
 
+
 <br/><br/><br/>
+## V 0.3.7
+### 已完成
+> 添加重写noticebar组件部分方法 <br/>
+
 ## V 0.3.6
 ### 已完成
 > 更新input组件部分方法 <br/>
