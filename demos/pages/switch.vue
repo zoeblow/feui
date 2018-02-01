@@ -18,15 +18,13 @@
 </template>
 <script>
 export default {
-  data () {
+  data() {
     return {
-      defaultT:true
-    }
+      defaultT: true
+    };
   },
-  methods:{
-    
-  }
-}
+  methods: {}
+};
 </script>
 
 <style  lang="less">

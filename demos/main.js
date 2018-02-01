@@ -3,8 +3,7 @@ import VueRouter from "vue-router";
 import App from "./App.vue";
 import router from "./router/index.js";
 
-
-import feui,{ Toast, Dialog, Lazyload} from "../packages/index.js";
+import feui, { Toast, Dialog, Lazyload } from "../packages/index.js";
 // console.log(Lazyload, Dialog);
 Vue.use(Lazyload, {
   lazyComponent: true,
@@ -15,7 +14,7 @@ window.Toast = Toast;
 window.Dialog = Dialog;
 import "../packages/feui-css/lib/index.css";
 import "./assets/iconfont/iconfont.css";
-import "./styles/index.css"
+import "./styles/index.css";
 Vue.use(feui);
 
 Vue.config.productionTip = false;

@@ -57,21 +57,22 @@
 </template>
 
 <script>
-  export default {
-    data (){
-      return{
-        data1: 0,
-        data2: 5,
-        data3: 5,
-        data4: 3,
-        data41: 3.7,
-        data42: 3.5,
-        data5: 3,
-        data6: 3
-      } 
-    }
-  }  
+export default {
+  data() {
+    return {
+      data1: 0,
+      data2: 5,
+      data3: 5,
+      data4: 3,
+      data41: 3.7,
+      data42: 3.5,
+      data5: 3,
+      data6: 3
+    };
+  }
+};
 </script>
 
 <style scoped lang="less">
+
 </style>

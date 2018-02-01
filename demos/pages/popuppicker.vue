@@ -43,112 +43,130 @@
 <script>
 export default {
   methods: {
-    onChange (val) {
-      console.log('val change', val)
+    onChange(val) {
+      console.log("val change", val);
     },
-    changeList10 () {
-      this.list1 = [['小米1', 'iPhone1', '华为1', '情怀1', '三星1', '其他1', '不告诉你1']]
+    changeList10() {
+      this.list1 = [
+        ["小米1", "iPhone1", "华为1", "情怀1", "三星1", "其他1", "不告诉你1"]
+      ];
     },
-    changeList11 () {
-      this.list1[0].push('我是push条目')
+    changeList11() {
+      this.list1[0].push("我是push条目");
     },
-    changeList20 () {
-
-    },
-    changeList21 () {
+    changeList20() {},
+    changeList21() {
       this.list3.push({
-        name: '美国002_007',
-        value: '0007',
-        parent: 'usa002'
-      })
+        name: "美国002_007",
+        value: "0007",
+        parent: "usa002"
+      });
     },
-    onShow () {
-      console.log('on show')
+    onShow() {
+      console.log("on show");
     },
-    onHide (type) {
-      console.log('on hide', type)
+    onHide(type) {
+      console.log("on hide", type);
     }
   },
-  data () {
+  data() {
     return {
-      title1: '手机机型',
-      title2: '详细机型',
-      title3: '联动显示值',
-      title4: '联动显示文字',
-      list1: [['小米', 'iPhone', '华为', '情怀', '三星', '其他', '不告诉你']],
-      list2: [['小米', 'iPhone', '华为', '情怀', '三星', '其他', '不告诉你'], ['小米1', 'iPhone2', '华为3', '情怀4', '三星5', '其他6', '不告诉你7']],
-      list3: [{
-        name: '中国',
-        value: 'china',
-        parent: 0
-      }, {
-        name: '美国',
-        value: 'USA',
-        parent: 0
-      }, {
-        name: '安徽',
-        value: 'ah',
-        parent: 'china'
-      }, {
-        name: '浙江',
-        value: 'zj',
-        parent: 'china'
-      }, {
-        name: '加州',
-        value: 'ca',
-        parent: 'USA'
-      }, {
-        name: '纽约州',
-        value: 'nyk',
-        parent: 'USA'
-      }, {
-        name: '合肥',
-        value: 'hf',
-        parent: 'ah'
-      }, {
-        name: '宿州',
-        value: 'sz',
-        parent: 'ah'
-      }, {
-        name: '杭州',
-        value: 'hz',
-        parent: 'zj'
-      }, {
-        name: '宁波',
-        value: 'nb',
-        parent: 'zj'
-      }, {
-        name: '南加州',
-        value: 'ca-s',
-        parent: 'ca'
-      }, {
-        name: '北加州',
-        value: 'ca-n',
-        parent: 'ca'
-      }, {
-        name: '布鲁克林区',
-        value: '0005',
-        parent: 'nyk'
-      }, {
-        name: '曼哈顿',
-        value: 'Manhattan',
-        parent: 'nyk'
-      }],
-      value1: ['iPhone'],
-      value2: ['iPhone', '华为3'],
+      title1: "手机机型",
+      title2: "详细机型",
+      title3: "联动显示值",
+      title4: "联动显示文字",
+      list1: [["小米", "iPhone", "华为", "情怀", "三星", "其他", "不告诉你"]],
+      list2: [
+        ["小米", "iPhone", "华为", "情怀", "三星", "其他", "不告诉你"],
+        ["小米1", "iPhone2", "华为3", "情怀4", "三星5", "其他6", "不告诉你7"]
+      ],
+      list3: [
+        {
+          name: "中国",
+          value: "china",
+          parent: 0
+        },
+        {
+          name: "美国",
+          value: "USA",
+          parent: 0
+        },
+        {
+          name: "安徽",
+          value: "ah",
+          parent: "china"
+        },
+        {
+          name: "浙江",
+          value: "zj",
+          parent: "china"
+        },
+        {
+          name: "加州",
+          value: "ca",
+          parent: "USA"
+        },
+        {
+          name: "纽约州",
+          value: "nyk",
+          parent: "USA"
+        },
+        {
+          name: "合肥",
+          value: "hf",
+          parent: "ah"
+        },
+        {
+          name: "宿州",
+          value: "sz",
+          parent: "ah"
+        },
+        {
+          name: "杭州",
+          value: "hz",
+          parent: "zj"
+        },
+        {
+          name: "宁波",
+          value: "nb",
+          parent: "zj"
+        },
+        {
+          name: "南加州",
+          value: "ca-s",
+          parent: "ca"
+        },
+        {
+          name: "北加州",
+          value: "ca-n",
+          parent: "ca"
+        },
+        {
+          name: "布鲁克林区",
+          value: "0005",
+          parent: "nyk"
+        },
+        {
+          name: "曼哈顿",
+          value: "Manhattan",
+          parent: "nyk"
+        }
+      ],
+      value1: ["iPhone"],
+      value2: ["iPhone", "华为3"],
       value3: [],
       value4: [],
       showPopupPicker: false,
-      value5: ['2'],
+      value5: ["2"],
       switch6: false,
       value6: [],
-      formatDemoValue: ['01', '12'],
-      format: function (value, name) {
-        return `${value[0]}:${value[1]}`
+      formatDemoValue: ["01", "12"],
+      format: function(value, name) {
+        return `${value[0]}:${value[1]}`;
       }
-    }
+    };
   }
-}
+};
 </script>
 
 <style scoped>

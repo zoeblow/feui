@@ -21,51 +21,59 @@
 </template>
 <script>
 export default {
-  data () {
+  data() {
     return {
       show1: false,
       menus1: {
-        menu1: '分享给朋友',
-        menu2: '分享到朋友圈'
+        menu1: "分享给朋友",
+        menu2: "分享到朋友圈"
       },
       show2: false,
       menus2: {
-        menu1: '拍照',
-        menu2: '从相册选择'
+        menu1: "拍照",
+        menu2: "从相册选择"
       },
       show3: false,
       show4: false,
       show5: false,
-      menus5: [{
-        label: '确定咩?<br/><span style="color:#666;font-size:12px;">删除后就无法撤消了哦</span>',
-        type: 'info'
-      }, {
-        label: 'Primary',
-        type: 'primary',
-        value: 'primary'
-      }, {
-        label: 'Warn',
-        type: 'warn'
-      }, {
-        label: 'Disabled',
-        type: 'disabled'
-      }, {
-        label: 'Default'
-      }],
+      menus5: [
+        {
+          label:
+            '确定咩?<br/><span style="color:#666;font-size:12px;">删除后就无法撤消了哦</span>',
+          type: "info"
+        },
+        {
+          label: "Primary",
+          type: "primary",
+          value: "primary"
+        },
+        {
+          label: "Warn",
+          type: "warn"
+        },
+        {
+          label: "Disabled",
+          type: "disabled"
+        },
+        {
+          label: "Default"
+        }
+      ],
       showSuccess: false,
       menus3: {
-        'title.noop': '确定咩?<br/><span style="color:#666;font-size:12px;">删除后就无法撤消了哦</span>',
+        "title.noop":
+          '确定咩?<br/><span style="color:#666;font-size:12px;">删除后就无法撤消了哦</span>',
         delete: '<span style="color:red">删除</span>'
       }
-    }
+    };
   },
   methods: {
-    click (key) {
-      console.log(key)
+    click(key) {
+      console.log(key);
     },
-    onDelete () {
-      this.showSuccess = true
+    onDelete() {
+      this.showSuccess = true;
     }
   }
-}
+};
 </script>

@@ -7,16 +7,14 @@
   </div>
 </template>
 <script>
-  export default{
-  }
+export default {};
 </script>
 <style scoped lang="less">
-  .error-code {
-    display: block;
-    color: #666;
-    font-size: 4rem;
-    font-weight: 200;
-    text-align: center;
-  }
-  
+.error-code {
+  display: block;
+  color: #666;
+  font-size: 4rem;
+  font-weight: 200;
+  text-align: center;
+}
 </style>

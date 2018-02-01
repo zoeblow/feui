@@ -49,54 +49,54 @@
   </div>
 </template>
 <script>
-import value2name from '../../packages/utils/value2name'
-import ChinaAddressV3   from '../../packages/utils/mock/china_address_v3.json'
+import value2name from "../../packages/utils/value2name";
+import ChinaAddressV3 from "../../packages/utils/mock/china_address_v3.json";
 export default {
-  data () {
+  data() {
     return {
-      title: '默认为空',
+      title: "默认为空",
       value_0_1: [],
       value: [],
-      title2: '设置值',
-      value2: ['天津市', '市辖区', '和平区'],
-      value3: ['广东省', '中山市', '--'],
+      title2: "设置值",
+      value2: ["天津市", "市辖区", "和平区"],
+      value3: ["广东省", "中山市", "--"],
       addressData: ChinaAddressV3,
       value4: [],
-      value5: ['广东省', '深圳 市', '南山区'],
+      value5: ["广东省", "深圳 市", "南山区"],
       showAddress: false
-    }
+    };
   },
-  created(){
-    console.log()
+  created() {
+    console.log();
   },
   methods: {
-    doShowAddress () {
-      this.showAddress = true
+    doShowAddress() {
+      this.showAddress = true;
       setTimeout(() => {
-        this.showAddress = false
-      }, 2000)
+        this.showAddress = false;
+      }, 2000);
     },
-    onShadowChange (ids, names) {
-      console.log(ids, names)
+    onShadowChange(ids, names) {
+      console.log(ids, names);
     },
-    changeData () {
-      this.value2 = ['430000', '430400', '430407']
+    changeData() {
+      this.value2 = ["430000", "430400", "430407"];
     },
-    changeDataByLabels () {
-      this.value2 = ['广东省', '广州市', '天河区']
+    changeDataByLabels() {
+      this.value2 = ["广东省", "广州市", "天河区"];
     },
-    changeDataByLabels2 () {
-      this.value2 = ['广东省', '中山市', '--']
+    changeDataByLabels2() {
+      this.value2 = ["广东省", "中山市", "--"];
     },
-    getName (value) {
-      return value2name(value, ChinaAddressV3)
+    getName(value) {
+      return value2name(value, ChinaAddressV3);
     },
-    logHide (str) {
-      console.log('on-hide', str)
+    logHide(str) {
+      console.log("on-hide", str);
     },
-    logShow (str) {
-      console.log('on-show')
+    logShow(str) {
+      console.log("on-show");
     }
   }
-}
+};
 </script>

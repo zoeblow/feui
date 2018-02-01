@@ -35,15 +35,15 @@
 </template>
 <script>
 export default {
-  data () {
+  data() {
     return {
       roundValue: 0
-    }
+    };
   },
   methods: {
-    change (val) {
-      console.log('change', val)
+    change(val) {
+      console.log("change", val);
     }
   }
-}
+};
 </script>

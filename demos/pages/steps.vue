@@ -47,18 +47,18 @@
   </div>
 </template>
 <script>
-  export default{
-    data() {
-      return {
-        active: 0
-      };
-    },
-    methods:{
-      nextStep(){
-        this.active = ++this.active % 4;
-      }
+export default {
+  data() {
+    return {
+      active: 0
+    };
+  },
+  methods: {
+    nextStep() {
+      this.active = ++this.active % 4;
     }
   }
+};
 </script>
 <style scoped lang='less' >
 .page {
@@ -80,4 +80,3 @@
   }
 }
 </style>
-

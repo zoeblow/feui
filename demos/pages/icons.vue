@@ -18,97 +18,96 @@
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        iconTypes: [
-          'icon',
-          'success',
-          'safesuccess',
-          'fail',
-          'scan',
-          'search',
-          'qrcode',
-          'loading',
-          'success-no-circle2',
-          'success-circle',
-          'map',
-          'waiting-fail',
-          'cancel',
-          'notice',
-          'back',
-          'info',
-          'icons',
-          'step',
-          'star',
-          'seting',
-          'jia',
-          'jian',
-          'prev',
-          'next',
-          'left',
-          'right',
-          'top',
-          'bottom',
-          'delect',
-          'warn',
-          'clear',
-          'circle',
-          'success-no-circle',
-          'waiting',
-          'upload-demo',
-          'feui',
-          'fy'
-        ]
-      }
-    },
+export default {
+  data() {
+    return {
+      iconTypes: [
+        "icon",
+        "success",
+        "safesuccess",
+        "fail",
+        "scan",
+        "search",
+        "qrcode",
+        "loading",
+        "success-no-circle2",
+        "success-circle",
+        "map",
+        "waiting-fail",
+        "cancel",
+        "notice",
+        "back",
+        "info",
+        "icons",
+        "step",
+        "star",
+        "seting",
+        "jia",
+        "jian",
+        "prev",
+        "next",
+        "left",
+        "right",
+        "top",
+        "bottom",
+        "delect",
+        "warn",
+        "clear",
+        "circle",
+        "success-no-circle",
+        "waiting",
+        "upload-demo",
+        "feui",
+        "fy"
+      ]
+    };
   }
+};
 </script>
 
 <style scoped lang="less">
-  .icon-list-big {
-    margin: 0 auto;
+.icon-list-big {
+  margin: 0 auto;
+  padding: 0;
+  margin-bottom: 40px;
+
+  .feuicon-demo {
     padding: 0;
-    margin-bottom: 40px;
+    margin: 1.2rem 0;
+    text-align: center;
 
-    .feuicon-demo {
-      padding: 0;
-      margin: 1.2rem 0;
-      text-align: center;
+    .demo-icon-large {
+      display: block;
+      font-size: 32px;
+      margin: 15px 0;
+      color: rgba(69, 90, 100, 0.8);
+    }
 
-      .demo-icon-large {
-        display: block;
-        font-size: 32px;
-        margin: 15px 0;
-        color: rgba(69,90,100,.8);
-      }
-
-      .label {
-        font-size: 14px;
-        display: block;
-      }
+    .label {
+      font-size: 14px;
+      display: block;
     }
   }
+}
 
-  .icon-list-small {
-    display: block;
-    overflow: hidden;
-    margin: 0 auto 30px;
-    width: 80%;
-    .feui{
-      color:#4a90e2;
-      font-size: 22px;
+.icon-list-small {
+  display: block;
+  overflow: hidden;
+  margin: 0 auto 30px;
+  width: 80%;
+  .feui {
+    color: #4a90e2;
+    font-size: 22px;
+  }
+}
+.nuim-flexbox {
+  .nuim-flexbox-item {
+    box-sizing: border-box;
+    border-bottom: 1px solid #c7c7c7;
+    border-right: 1px solid #c7c7c7;
+    &:nth-child(3n) {
+      border-right: none;
     }
   }
-  .nuim-flexbox{
-    .nuim-flexbox-item{
-      box-sizing: border-box;
-      border-bottom:1px solid #C7C7C7;
-      border-right:1px solid #C7C7C7;
-      &:nth-child(3n){
-        border-right:none;        
-      }
-    }
-  }
-  
+}
 </style>

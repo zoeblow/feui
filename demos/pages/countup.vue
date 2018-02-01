@@ -23,45 +23,45 @@
 </template>
 <script>
 export default {
-  data () {
+  data() {
     return {
       doStart: false,
       doReset: false,
       options: {
         useEasing: true,
         useGrouping: true,
-        separator: '',
-        decimal: '.',
-        prefix: '￥',
-        suffix: '元'
+        separator: "",
+        decimal: ".",
+        prefix: "￥",
+        suffix: "元"
       }
-    }
+    };
   },
-  methods:{
-    doResetFn:function(params) {
-      this.doReset=true;
-      this.doStart=false;
+  methods: {
+    doResetFn: function(params) {
+      this.doReset = true;
+      this.doStart = false;
     },
-    callback:function(ins){
-      console.log(ins.endVal)
+    callback: function(ins) {
+      console.log(ins.endVal);
       Toast.success({
         duration: 1500,
-        message: '滚完了'
-      })
+        message: "滚完了"
+      });
     },
-    callback1:function(){
+    callback1: function() {
       Toast.success({
         duration: 1500,
-        message: '点击成功鸟'
-      })
+        message: "点击成功鸟"
+      });
     }
   }
-}
+};
 </script>
 
 <style scoped lang="less">
 .demo1 {
-  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   font-size: 55px;
   color: #4a90e2;
 }

@@ -27,44 +27,44 @@
 <script>
 export default {
   methods: {
-    setFocus () {
-      this.$refs.search.setFocus()
+    setFocus() {
+      this.$refs.search.setFocus();
     },
-    resultClick (item) {
-      window.alert('您选择的是: ' + JSON.stringify(item))
+    resultClick(item) {
+      window.alert("您选择的是: " + JSON.stringify(item));
     },
-    getResult (val) {
-      this.results = val ? getResult(this.value) : []
+    getResult(val) {
+      this.results = val ? getResult(this.value) : [];
     },
-    onSubmit () {
+    onSubmit() {
       Toast({
         duration: 1500,
-        message: '搜索提示',
-      })
+        message: "搜索提示"
+      });
     },
-    onFocus () {
-      console.log('on focus')
+    onFocus() {
+      console.log("on focus");
     },
-    onCancel () {
-      console.log('on cancel')
+    onCancel() {
+      console.log("on cancel");
     }
   },
-  data () {
+  data() {
     return {
       results: [],
-      value: 'test'
-    }
+      value: "test"
+    };
   }
-}
+};
 
-function getResult (val) {
-  let rs = []
+function getResult(val) {
+  let rs = [];
   for (let i = 0; i < 8; i++) {
     rs.push({
       title: `${val} result: ${i + 1} `,
       other: i
-    })
+    });
   }
-  return rs
+  return rs;
 }
 </script>

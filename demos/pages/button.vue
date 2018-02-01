@@ -96,40 +96,40 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-      submit001: '点我呀',
+      submit001: "点我呀",
       disable001: false
-    }
+    };
   },
-  methods:{
-    clickBack () {
-      this.$router.push({path:'/'});
+  methods: {
+    clickBack() {
+      this.$router.push({ path: "/" });
     },
-    change (value) {
-      console.log('change:', value)
+    change(value) {
+      console.log("change:", value);
     },
-    processButton001 () {
-      this.submit001 = '处理中...'
-      this.disable001 = true
+    processButton001() {
+      this.submit001 = "处理中...";
+      this.disable001 = true;
     }
   }
-}
+};
 </script>
 <style scoped lang="less">
-  .buttons-big {
-    display: block;
-    margin: 10px auto;
-  }
-  .buttons-plain {
-    display: block;
-    width: 60%;
-    margin: 10px auto;
-  }
+.buttons-big {
+  display: block;
+  margin: 10px auto;
+}
+.buttons-plain {
+  display: block;
+  width: 60%;
+  margin: 10px auto;
+}
 
-  .buttons-mini {
-    display: block;
-    width: 60%;
-    margin: 10px auto;
-  }
+.buttons-mini {
+  display: block;
+  width: 60%;
+  margin: 10px auto;
+}
 </style>

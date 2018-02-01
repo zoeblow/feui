@@ -1,10 +1,10 @@
-import uuidMixin from './mixin_uuid'
+import uuidMixin from "./mixin_uuid";
 
 var data = {
-      errors: {},
-      prisine: true,
-      touched: false
-}
+  errors: {},
+  prisine: true,
+  touched: false
+};
 export default {
   mixins: [uuidMixin],
   props: {
@@ -13,35 +13,34 @@ export default {
       default: false
     }
   },
-  created :function() {
-    this.handleChangeEvent = false
+  created: function() {
+    this.handleChangeEvent = false;
   },
   computed: {
-    dirty :function() {
-      return !this.prisine
+    dirty: function() {
+      return !this.prisine;
     },
-    invalid :function() {
-      return !this.valid
+    invalid: function() {
+      return !this.valid;
     }
   },
   methods: {
-    setTouched :function() {
-      this.touched = true
+    setTouched: function() {
+      this.touched = true;
     }
   },
   watch: {
-    value :function(newVal) {
+    value: function(newVal) {
       if (this.prisine === true) {
-        this.prisine = false
+        this.prisine = false;
       }
       if (!this.handleChangeEvent) {
-        this.$emit('on-change', newVal)
-        this.$emit('input', newVal)
+        this.$emit("on-change", newVal);
+        this.$emit("input", newVal);
       }
     }
   },
-  data :function(){
-    return data
+  data: function() {
+    return data;
   }
-}
-
+};

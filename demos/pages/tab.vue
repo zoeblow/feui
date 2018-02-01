@@ -104,83 +104,82 @@
 </template>
 
 <script>
-const list = () => ['精选', '美食', '电影', '酒店', '外卖']
+const list = () => ["精选", "美食", "电影", "酒店", "外卖"];
 export default {
-  data () {
+  data() {
     return {
       list2: list(),
-      demo2: '美食',
-      list3: ['收到的消息', '发出的消息'],
-      demo3: '收到的消息',
-      list4: ['正在正映', '即将上映'],
-      demo4: '即将上映',
-      demoDisabled: 'A',
+      demo2: "美食",
+      list3: ["收到的消息", "发出的消息"],
+      demo3: "收到的消息",
+      list4: ["正在正映", "即将上映"],
+      demo4: "即将上映",
+      demoDisabled: "A",
       index: 0,
-      getBarWidth: function (index) {
-        return (index + 1) * 22 + 'px'
+      getBarWidth: function(index) {
+        return (index + 1) * 22 + "px";
       }
-    }
+    };
   },
   methods: {
-    onItemClick (index) {
-      console.log('on item click:', index)
+    onItemClick(index) {
+      console.log("on item click:", index);
     },
-    addTab () {
+    addTab() {
       if (this.list2.length < 5) {
-        this.list2 = list().slice(0, this.list2.length + 1)
+        this.list2 = list().slice(0, this.list2.length + 1);
       }
     },
-    removeTab () {
+    removeTab() {
       if (this.list2.length > 1) {
-        this.list2 = list().slice(0, this.list2.length - 1)
+        this.list2 = list().slice(0, this.list2.length - 1);
       }
     },
-    next () {
+    next() {
       if (this.index === this.list2.length - 1) {
-        this.index = 0
+        this.index = 0;
       } else {
-        ++this.index
+        ++this.index;
       }
     },
-    prev () {
+    prev() {
       if (this.index === 0) {
-        this.index = this.list2.length - 1
+        this.index = this.list2.length - 1;
       } else {
-        --this.index
+        --this.index;
       }
     }
   }
-}
+};
 </script>
 <style scoped lang="less">
-
-  .active-6-1 {
-    color: rgb(252, 55, 140) !important;
-    border-color: rgb(252, 55, 140) !important;
+.active-6-1 {
+  color: rgb(252, 55, 140) !important;
+  border-color: rgb(252, 55, 140) !important;
+}
+.active-6-2 {
+  color: #04be02 !important;
+  border-color: #04be02 !important;
+}
+.active-6-3 {
+  color: rgb(55, 174, 252) !important;
+  border-color: rgb(55, 174, 252) !important;
+}
+.nuim-1px-r {
+  position: relative !important;
+  &:after {
+    content: " ";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1px;
+    bottom: 0;
+    border-right: 1px solid #c7c7c7;
+    color: #c7c7c7;
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+    -webkit-transform: scaleX(0.5);
+    transform: scaleX(0.5);
   }
-  .active-6-2 {
-    color: #04be02 !important;
-    border-color: #04be02 !important;
-  }
-  .active-6-3 {
-    color: rgb(55, 174, 252) !important;
-    border-color: rgb(55, 174, 252) !important;
-  }
-  .nuim-1px-r{
-    position: relative!important;
-    &:after {
-      content: " ";
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 1px;
-      bottom: 0;
-      border-right: 1px solid #C7C7C7;
-      color: #C7C7C7;
-      -webkit-transform-origin: 100% 0;
-      transform-origin: 100% 0;
-      -webkit-transform: scaleX(0.5);
-      transform: scaleX(0.5);
-    }
 }
 </style>

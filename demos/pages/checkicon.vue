@@ -15,13 +15,13 @@
 </template>
 <script>
 export default {
-  data () {
+  data() {
     return {
       demo1: false,
       demo2: true,
       demo3: false,
       demo4: true
-    }
+    };
   }
-}
+};
 </script>

@@ -1,15 +1,12 @@
-body{
+body {
   background-color: #f2f3f4;
 }
-::-webkit-scrollbar{
-   width:5px;
-   background:#f2f3f4;/* 整个滚条背景 */
-} 
-::-webkit-scrollbar-thumb{
-   -webkit-border-radius:2px;
-   border-radius:2px;
-   background:#999; /* 滚条内嵌颜色 */
-} 
-::-webkit-scrollbar-button {
-    background-color:#999;/* 两边端按钮颜色 */
+::-webkit-scrollbar {
+  width: 5px;
+  background: #f2f3f4; /* 整个滚条背景 */
+}
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background: #999; /* 滚条内嵌颜色 */
 }

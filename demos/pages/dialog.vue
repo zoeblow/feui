@@ -19,42 +19,43 @@
   </div>
 </template>
 <script>
-  export default {
-  data () {
-    return {
-    }
+export default {
+  data() {
+    return {};
   },
-  methods:{
-    showalert(skin,title){
+  methods: {
+    showalert(skin, title) {
       Dialog.alert({
         title: title,
-        skin:skin,
-        message: '弹窗内容',
-        confirmButtonText:'确实'
+        skin: skin,
+        message: "弹窗内容",
+        confirmButtonText: "确实"
       }).then(() => {
         // on close
       });
     },
-    showDialog (skin, title) {
-        console.log(skin,title)
-        Dialog.confirm({
-          title: title,
-          skin:skin,
-          message: '弹窗内容',
-        }).then(() => {
+    showDialog(skin, title) {
+      console.log(skin, title);
+      Dialog.confirm({
+        title: title,
+        skin: skin,
+        message: "弹窗内容"
+      })
+        .then(() => {
           // on confirm
-          console.log('confirm')
-        }).catch(() => {
+          console.log("confirm");
+        })
+        .catch(() => {
           // on cancel
-          console.log('cancel')
+          console.log("cancel");
         });
 
-        // Dialog({
-        //   title: title,
-        //   message: 'hello world',
-        //   skin
-        // },this.doSomething)
-      }
+      // Dialog({
+      //   title: title,
+      //   message: 'hello world',
+      //   skin
+      // },this.doSomething)
+    }
   }
-}
+};
 </script>

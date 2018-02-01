@@ -9,22 +9,20 @@
   </div>
 </template>
 <script>
-  export default {
-  data () {
-    return {
-    }
+export default {
+  data() {
+    return {};
   },
-  created:function(){
-  },
-  methods:{
-    showLoading () {
-      Toast.loading({duration: 2000, mask: true });
-      
+  created: function() {},
+  methods: {
+    showLoading() {
+      Toast.loading({ duration: 2000, mask: true });
+
       // Loading.show({text:'显示咯'});
       // setTimeout(function(){
       //    Loading.hide()
       // },2000)
     }
   }
-}
+};
 </script>

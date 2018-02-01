@@ -17,23 +17,27 @@
   </div>
 </template>
 <script>
-  export default {
-    mounted () {
-      setInterval(() => {
-        this.value = `https://feui.gitee.io?t=#${Math.random().toString(16).substr(3,6)}`;
-        this.fgColor = `#${Math.random().toString(16).substr(3,6)}`;
-      }, 500)
-    },
-    data () {
-      return {
-        value: 'https://feui.gitee.io',
-        fgColor: '#000000'
-      }
-    }
+export default {
+  mounted() {
+    setInterval(() => {
+      this.value = `https://feui.gitee.io?t=#${Math.random()
+        .toString(16)
+        .substr(3, 6)}`;
+      this.fgColor = `#${Math.random()
+        .toString(16)
+        .substr(3, 6)}`;
+    }, 500);
+  },
+  data() {
+    return {
+      value: "https://feui.gitee.io",
+      fgColor: "#000000"
+    };
   }
+};
 </script>
 <style scoped lang="less">
-  .fe-content{
-    text-align: center; 
-  }
+.fe-content {
+  text-align: center;
+}
 </style>

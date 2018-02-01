@@ -26,27 +26,30 @@
 </template>
 <script>
 export default {
-  data () {
+  data() {
     return {
-      radio001: [ 'China', 'Japan' ],
-      radio001Value: 'China',
-      radio002Value: 'Japan',
-      radio003: [{
-        icon: 'http://temp.im/50x50/4a90e2/fff',
-        key: '001',
-        value: 'radio001'
-      }, {
-        icon: 'http://temp.im/50x50/4a90e2/fff',
-        key: '002',
-        value: 'radio002'
-      }],
-      selected:{color: '#4a90e2'}
-    }
+      radio001: ["China", "Japan"],
+      radio001Value: "China",
+      radio002Value: "Japan",
+      radio003: [
+        {
+          icon: "http://temp.im/50x50/4a90e2/fff",
+          key: "001",
+          value: "radio001"
+        },
+        {
+          icon: "http://temp.im/50x50/4a90e2/fff",
+          key: "002",
+          value: "radio002"
+        }
+      ],
+      selected: { color: "#4a90e2" }
+    };
   },
   methods: {
-    change (value) {
-      console.log('change:', value)
+    change(value) {
+      console.log("change:", value);
     }
   }
-}
+};
 </script>

@@ -37,21 +37,19 @@
 </template>
 <script>
 export default {
-    data () {
-      return {
-        
-      }
+  data() {
+    return {};
+  },
+  methods: {
+    clickRight() {
+      alert("点击了 Right");
     },
-    methods: {
-      clickRight () {
-        alert('点击了 Right')
-      },
-      clickLeft(){
-        alert('点击了 Left')
-      }
+    clickLeft() {
+      alert("点击了 Left");
     }
   }
+};
 </script>
 <style scoped lang="less">
-  
+
 </style>

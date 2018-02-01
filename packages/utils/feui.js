@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import Vue from "vue";
 
 export const isServer = Vue.prototype.$isServer;
 
@@ -7,11 +7,11 @@ export function isDef(value) {
 }
 
 export function get(object, path) {
-  const keys = path.split('.');
+  const keys = path.split(".");
   let result = object;
 
   keys.forEach(key => {
-    result = isDef(result[key]) ? result[key] : '';
+    result = isDef(result[key]) ? result[key] : "";
   });
 
   return result;
@@ -19,7 +19,7 @@ export function get(object, path) {
 
 const camelizeRE = /-(\w)/g;
 export function camelize(str) {
-  return str.replace(camelizeRE, (_, c) => c ? c.toUpperCase() : '');
+  return str.replace(camelizeRE, (_, c) => (c ? c.toUpperCase() : ""));
 }
 
 export function isAndroid() {

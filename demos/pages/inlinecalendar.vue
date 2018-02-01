@@ -66,18 +66,18 @@
 <script>
 export default {
   methods: {
-    onChange (val) {
-      console.log('on-change', val)
+    onChange(val) {
+      console.log("on-change", val);
     },
-    onViewChange (val, count) {
-      console.log('on view change', val, count)
+    onViewChange(val, count) {
+      console.log("on view change", val, count);
     }
   },
-  data () {
+  data() {
     return {
       show: true,
-      value: ['2018-11-10','2018-11-11','2018-11-12'],
-      listValue: '',
+      value: ["2018-11-10", "2018-11-11", "2018-11-12"],
+      listValue: "",
       range: false,
       showLastMonth: true,
       showNextMonth: true,
@@ -90,31 +90,39 @@ export default {
       changeWeeksList: false,
       weeksList: [],
       useCustomFn: false,
-      buildSlotFn: () => '',
+      buildSlotFn: () => "",
       disablePast: false,
       disableFuture: false,
       disableWeekend: false,
-      disableDateFunction (date) {
-        if (date.formatedDate === '2017-10-16') {
-          return true
+      disableDateFunction(date) {
+        if (date.formatedDate === "2017-10-16") {
+          return true;
         }
       }
-    }
+    };
   },
   watch: {
-    replace (val) {
-      this.replaceTextList = val ? {
-        'TODAY': '今'
-      } : {}
+    replace(val) {
+      this.replaceTextList = val
+        ? {
+            TODAY: "今"
+          }
+        : {};
     },
-    useCustomFn (val) {
-      this.buildSlotFn = val ? (line, index, data) => {
-        return /8/.test(data.date) ? '<div style="font-size:12px;text-align:center;"><span style="display:inline-block;width:5px;height:5px;background-color:red;border-radius:50%;"></span></div>' : '<div style="height:19px;"></div>'
-      } : () => ''
+    useCustomFn(val) {
+      this.buildSlotFn = val
+        ? (line, index, data) => {
+            return /8/.test(data.date)
+              ? '<div style="font-size:12px;text-align:center;"><span style="display:inline-block;width:5px;height:5px;background-color:red;border-radius:50%;"></span></div>'
+              : '<div style="height:19px;"></div>';
+          }
+        : () => "";
     },
-    changeWeeksList (val) {
-      this.weeksList = val ? ['日', '一', '二', '三', '四', '五', '六 '] : ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']
+    changeWeeksList(val) {
+      this.weeksList = val
+        ? ["日", "一", "二", "三", "四", "五", "六 "]
+        : ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
     }
   }
-}
+};
 </script>

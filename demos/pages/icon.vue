@@ -17,64 +17,63 @@
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        iconTypes: [
-          'circle',
-          'download',
-          'info',
-          'safe-success',
-          'safe-warn',
-          'success',
-          'success-circle',
-          'success-no-circle',
-          'waiting',
-          'waiting-circle',
-          'warn',
-          'info-circle',
-          'cancel',
-          'search',
-          'clear',
-          'back',
-          'delete',
-
-        ]
-      }
-    },
+export default {
+  data() {
+    return {
+      iconTypes: [
+        "circle",
+        "download",
+        "info",
+        "safe-success",
+        "safe-warn",
+        "success",
+        "success-circle",
+        "success-no-circle",
+        "waiting",
+        "waiting-circle",
+        "warn",
+        "info-circle",
+        "cancel",
+        "search",
+        "clear",
+        "back",
+        "delete"
+      ]
+    };
   }
+};
 </script>
 
 <style scoped lang="less">
-  .icon-list-big {
-    width: 80%;
-    margin: 0 auto;
+.icon-list-big {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0;
+  margin-bottom: 40px;
+
+  li {
+    display: flex;
     padding: 0;
-    margin-bottom: 40px;
+    margin: 1.2rem 0;
 
-    li {
-      display: flex;
-      padding: 0;
-      margin: 1.2rem 0;
+    .demo-icon-large {
+      display: block;
+      margin-right: 1rem;
+      font-size: 4rem;
+    }
 
-      .demo-icon-large {
-        display: block;
-        margin-right: 1rem;
-        font-size: 4rem;
-      }
-
-      .label {
-        font-size: 1.1rem;
-        display: block;
-        float: left;
-      }
+    .label {
+      font-size: 1.1rem;
+      display: block;
+      float: left;
     }
   }
+}
 
-  .icon-list-small {
-    display: block;
-    overflow: hidden;
-    width: 80%;
-    margin: 0 auto 20px;
-  }
+.icon-list-small {
+  display: block;
+  overflow: hidden;
+  width: 80%;
+  margin: 0 auto 20px;
+}
 </style>

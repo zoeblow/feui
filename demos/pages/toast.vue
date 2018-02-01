@@ -16,58 +16,57 @@
 </template>
 <script>
 export default {
-  data () { 
+  data() {
     return {
-      defaultT:true
-    }
+      defaultT: true
+    };
   },
-  methods:{
-    showSuccess () {
+  methods: {
+    showSuccess() {
       Toast.success({
         duration: 1500,
-        message: '操作成功'
-      })
+        message: "操作成功"
+      });
     },
-    showError () {
+    showError() {
       Toast.fail({
         duration: 1500,
-        message: '失败提示'
-      })
+        message: "失败提示"
+      });
     },
-    showWarn () {
+    showWarn() {
       Toast.info({
         duration: 1500,
-        message: '操作警告'
-      })
+        message: "操作警告"
+      });
     },
-    
-    showLoading(){
-      Toast.loading({duration: 1501, mask: true });
+    showLoading() {
+      Toast.loading({ duration: 1501, mask: true });
     },
-    showText(){
+    showText() {
       Toast({
         duration: 1500,
-        message: '显示文字咯咯咯..',
-      })
+        message: "显示文字咯咯咯.."
+      });
     },
-    gaoji(){
-        const toast = Toast.loading({
-          duration: 0,       // 持续展示 toast
-          forbidClick: true, // 禁用背景点击
-          message: '倒计时 3 秒'
-        });
+    gaoji() {
+      const toast = Toast.loading({
+        duration: 0, // 持续展示 toast
+        forbidClick: true, // 禁用背景点击
+        message: "倒计时 3 秒"
+      });
 
-        let second = 3;
-        const timer = setInterval(() => {
-          second--;
-          if (second) {
-            toast.message = `倒计时 ${second} 秒`;
-          } else {
-            clearInterval(timer);
-            Toast.clear();
-          }
-        }, 1000);
+      let second = 3;
+      const timer = setInterval(() => {
+        second--;
+        if (second) {
+          toast.message = `倒计时 ${second} 秒`;
+        } else {
+          clearInterval(timer);
+          Toast.clear();
+        }
+      }, 1000);
     }
   }
-}
+};
 </script>

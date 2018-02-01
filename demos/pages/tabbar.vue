@@ -24,27 +24,26 @@
   </div>
 </template>
 <script>
-  export default{
-    data () {
-      return {
-      }
-    },
-    methods:{
-      click:function(i){
-        console.log(i)
-      }
+export default {
+  data() {
+    return {};
+  },
+  methods: {
+    click: function(i) {
+      console.log(i);
     }
   }
+};
 </script>
 </style>
 <style lang="less" scoped>
-img{
-  filter: grayscale(100%); 
+img {
+  filter: grayscale(100%);
 }
 
 .weui-bar__item_on {
-  img{
-    filter: grayscale(0%); 
+  img {
+    filter: grayscale(0%);
   }
 }
 </style>

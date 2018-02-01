@@ -98,68 +98,69 @@
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        readonly: true,
-        minuteListValue: '2017-06-12 09:00',
-        hourListValue: '2017-06-12 09:00',
-        format: 'YYYY-MM-DD HH:mm',
-        value1: '2015-11-12',
-        valueReadonly: '2015-11-12',
-        value2: '',
-        value3: '',
-        value3_1: '',
-        value4: '',
-        value5: '',
-        value6: '2016-08-18',
-        value7: '',
-        value8: '',
-        limitHourValue: '',
-        startDate: '2015-11-11',
-        endDate: '2017-10-11',
-        formatValue: '2017-10-11',
-        formatValueFunction (val) {
-          return val.replace(/-/g, '$')
-        },
-        value9: '',
-        visibility: false,
-        computeHoursValue: '',
-        computeDaysValue: '',
-        computeHoursFunction (date, isToday, generateRange) {
-          if (isToday) {
-            return generateRange(new Date().getHours(), 23)
-          } else {
-            return generateRange(0, 23)
-          }
-        },
-        computeDaysFunction (options, generateRange) {
-          return [options.month] // if current month is n, days are [n]
+export default {
+  data() {
+    return {
+      readonly: true,
+      minuteListValue: "2017-06-12 09:00",
+      hourListValue: "2017-06-12 09:00",
+      format: "YYYY-MM-DD HH:mm",
+      value1: "2015-11-12",
+      valueReadonly: "2015-11-12",
+      value2: "",
+      value3: "",
+      value3_1: "",
+      value4: "",
+      value5: "",
+      value6: "2016-08-18",
+      value7: "",
+      value8: "",
+      limitHourValue: "",
+      startDate: "2015-11-11",
+      endDate: "2017-10-11",
+      formatValue: "2017-10-11",
+      formatValueFunction(val) {
+        return val.replace(/-/g, "$");
+      },
+      value9: "",
+      visibility: false,
+      computeHoursValue: "",
+      computeDaysValue: "",
+      computeHoursFunction(date, isToday, generateRange) {
+        if (isToday) {
+          return generateRange(new Date().getHours(), 23);
+        } else {
+          return generateRange(0, 23);
         }
+      },
+      computeDaysFunction(options, generateRange) {
+        return [options.month]; // if current month is n, days are [n]
       }
+    };
+  },
+  methods: {
+    toggleFormat() {
+      this.format =
+        this.format === "YYYY-MM-DD HH:mm" ? "YYYY-MM-DD" : "YYYY-MM-DD HH:mm";
     },
-    methods:{
-      toggleFormat () {
-        this.format = this.format === 'YYYY-MM-DD HH:mm' ? 'YYYY-MM-DD' : 'YYYY-MM-DD HH:mm'
-      },
-      change (value) {
-        console.log('change', value)
-      },
-      clearValue (value) {
-        this.value6 = ''
-      },
-      clearValue8 (value) {
-        this.value8 = ''
-      },
-      setToday (value) {
-        let now = new Date()
-        let cmonth = now.getMonth() + 1
-        let day = now.getDate()
-        if (cmonth < 10) cmonth = '0' + cmonth
-        if (day < 10) day = '0' + day
-        this.value7 = now.getFullYear() + '-' + cmonth + '-' + day
-        console.log('set today ok')
-      }
+    change(value) {
+      console.log("change", value);
+    },
+    clearValue(value) {
+      this.value6 = "";
+    },
+    clearValue8(value) {
+      this.value8 = "";
+    },
+    setToday(value) {
+      let now = new Date();
+      let cmonth = now.getMonth() + 1;
+      let day = now.getDate();
+      if (cmonth < 10) cmonth = "0" + cmonth;
+      if (day < 10) day = "0" + day;
+      this.value7 = now.getFullYear() + "-" + cmonth + "-" + day;
+      console.log("set today ok");
     }
   }
+};
 </script>

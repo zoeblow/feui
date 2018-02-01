@@ -6,9 +6,9 @@
  * <div v-clickoutside="handleClose">
  * ```
  */
-import Vue from 'vue';
+import Vue from "vue";
 const isServer = Vue.prototype.$isServer;
-const clickoutsideContext = '@@clickoutsideContext';
+const clickoutsideContext = "@@clickoutsideContext";
 
 export default {
   bind: function bind(el, binding, vnode) {
@@ -20,18 +20,23 @@ export default {
     el[clickoutsideContext] = {
       documentHandler: documentHandler,
       methodName: binding.expression,
-      arg: binding.arg || 'click'
+      arg: binding.arg || "click"
     };
-    !isServer && document.addEventListener(el[clickoutsideContext].arg, documentHandler);
+    !isServer &&
+      document.addEventListener(el[clickoutsideContext].arg, documentHandler);
   },
   update: function update(el, binding) {
     el[clickoutsideContext].methodName = binding.expression;
   },
   unbind: function unbind(el) {
-    !isServer && document.removeEventListener(el[clickoutsideContext].arg, el[clickoutsideContext].documentHandler);
+    !isServer &&
+      document.removeEventListener(
+        el[clickoutsideContext].arg,
+        el[clickoutsideContext].documentHandler
+      );
   },
   install: function install(Vue) {
-    Vue.directive('clickoutside', {
+    Vue.directive("clickoutside", {
       bind: this.bind,
       unbind: this.unbind
     });

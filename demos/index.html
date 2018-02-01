@@ -21,7 +21,8 @@
   var ignorePath = ['localhost', '127.0.0.1', '172.30.5.37'].indexOf(hostname) == -1
   // console.log(ignorePath)
   if (ignorePath && protocol == 'http:') {
-    window.location.href = 'https://'+ hostname;
+    window.location.href = 'https://' + hostname;
   }
 </script>
+
 </html>

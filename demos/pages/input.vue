@@ -112,49 +112,49 @@
 </template>
 <script>
 export default {
-  data () {
+  data() {
     return {
-      password: '123465',
-      password2: '',
-      enterText: '',
+      password: "123465",
+      password2: "",
+      enterText: "",
       // valid1: false,
       // valid2: false,
-      iconType: '',
-      be2333: function (value) {
+      iconType: "",
+      be2333: function(value) {
         return {
-          valid: value === '2333',
-          msg: '必须输入2333'
-        }
+          valid: value === "2333",
+          msg: "必须输入2333"
+        };
       },
-      style: '',
-      disabledValue: 'hello',
-      debounceValue: '',
-      maxValue: '',
-      maskValue: '13456789101',
-      maskValue2: ''
-    }
+      style: "",
+      disabledValue: "hello",
+      debounceValue: "",
+      maxValue: "",
+      maskValue: "13456789101",
+      maskValue2: ""
+    };
   },
-  methods:{
+  methods: {
     // getValid1 () {
     //   this.valid1 = this.$refs.input01.valid
     // },
     // getValid2 () {
     //   this.valid2 = this.$refs.input02.valid
     // },
-    change (val) {
-      console.log('on change', val)
+    change(val) {
+      console.log("on change", val);
     },
-    onBlur (val) {
-      console.log('on blur', val)
+    onBlur(val) {
+      console.log("on blur", val);
     },
-    onFocus (val, $event) {
-      console.log('on focus', val, $event)
+    onFocus(val, $event) {
+      console.log("on focus", val, $event);
     },
-    onEnter (val) {
-      console.log('click enter!', val)
+    onEnter(val) {
+      console.log("click enter!", val);
     }
   }
-}
+};
 </script>
 <style scoped>
 .red {

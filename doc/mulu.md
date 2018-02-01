@@ -6,14 +6,14 @@
 ├── packages                    // 组件目录
 │   ├── button                  // 组件
 │   │   └── index.vue           // 此组件主体/入口
-│   └── ……                
+│   └── ……
 │   ├── feui-css                // 样式文件
 │   ├── utils                   // 工具类文件夹
 │   └── index.js                // 组件入口文件
 ├── node_modules                // 依赖文件
 ├── lib                         // 组件生成的可用npm文件夹
 │   ├── index.js                // npm 入口文件
-│   ├── ……                      
+│   ├── ……
 │   └── feui-css                // npm 样式文件
 ├── doc                         // 文档目录
 ├── build                       // 配置

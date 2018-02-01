@@ -21,32 +21,33 @@
 </template>
 <script>
 export default {
-  data () {
+  data() {
     return {
       imageList: [
-        'https://i.loli.net/2018/01/22/5a657b6d542d4.jpg',
-        'https://i.loli.net/2018/01/22/5a657b718c766.jpg',
-        'https://i.loli.net/2018/01/22/5a657b7140692.jpg',
-        'https://i.loli.net/2018/01/22/5a657b62a72bb.jpg'
+        "https://i.loli.net/2018/01/22/5a657b6d542d4.jpg",
+        "https://i.loli.net/2018/01/22/5a657b718c766.jpg",
+        "https://i.loli.net/2018/01/22/5a657b7140692.jpg",
+        "https://i.loli.net/2018/01/22/5a657b62a72bb.jpg"
       ],
       backgroundImageList: [
-        'https://i.loli.net/2018/01/29/5a6e94028cdd0.jpg',
-        'https://i.loli.net/2018/01/29/5a6e9402daf3a.jpg',
-        'https://i.loli.net/2018/01/29/5a6e94051e657.jpg'
+        "https://i.loli.net/2018/01/29/5a6e94028cdd0.jpg",
+        "https://i.loli.net/2018/01/29/5a6e9402daf3a.jpg",
+        "https://i.loli.net/2018/01/29/5a6e94051e657.jpg"
       ],
       componentImageList: [
-        'https://i.loli.net/2018/01/22/5a657b6118e21.jpg',
-        'https://i.loli.net/2018/01/22/5a657b62f3c8b.jpg'
+        "https://i.loli.net/2018/01/22/5a657b6118e21.jpg",
+        "https://i.loli.net/2018/01/22/5a657b62f3c8b.jpg"
       ]
-    }
+    };
   }
-}
+};
 </script>
 <style scoped lang="less">
 .fe-content {
   padding: 46px 15px 0;
 
-  img,div[lazy] {
+  img,
+  div[lazy] {
     padding: 15px;
     width: 100%;
     margin: 10px 0 0;
@@ -57,7 +58,7 @@ export default {
     background-repeat: no-repeat;
     box-sizing: border-box;
   }
-  .lazyback{
+  .lazyback {
     height: 225px;
   }
 }

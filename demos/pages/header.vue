@@ -27,29 +27,29 @@
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        menus: {
-          menu1: 'Take Photo',
-          menu2: 'Choose from photos'
-        },
-        showMenus: false
-      }
-    },
-    methods: {
-      onHeaderClick () {
-        console.log('header clicked')
+export default {
+  data() {
+    return {
+      menus: {
+        menu1: "Take Photo",
+        menu2: "Choose from photos"
       },
-      clickBack () {
-        alert('自定义返回事件')
-      }
+      showMenus: false
+    };
+  },
+  methods: {
+    onHeaderClick() {
+      console.log("header clicked");
+    },
+    clickBack() {
+      alert("自定义返回事件");
     }
   }
+};
 </script>
 
 <style scoped lang="less">
-  .demo-header {
-    margin-bottom: 30px;
-  }
+.demo-header {
+  margin-bottom: 30px;
+}
 </style>

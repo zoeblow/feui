@@ -35,113 +35,113 @@
 </template>
 
 <script>
-  export default {
-    mounted() {
-      for (let i = 1; i <= 20; i++) {
-        this.items.push(i + ' - With You, Just Do IT.')
-      }
-      this.top = 1
-      this.bottom = 20
+export default {
+  mounted() {
+    for (let i = 1; i <= 20; i++) {
+      this.items.push(i + " - With You, Just Do IT.");
+    }
+    this.top = 1;
+    this.bottom = 20;
+  },
+  data() {
+    return {
+      show: false,
+      show1: false,
+      show2: false,
+      show3: false,
+      show4: false,
+      show5: false,
+      show6: false,
+      title6: "默认空的",
+      value6: [],
+      showToast: false,
+      show7: false,
+      show8: false,
+      show9: false,
+      show10: false,
+      show11: false,
+      status: true,
+      items: [],
+      infiniteCount: 0,
+      hasHeader: false
+    };
+  },
+  methods: {
+    resetScroller() {
+      this.$nextTick(() => {
+        this.$refs.scroller.reset();
+      });
     },
-    data () {
-      return {
-        show: false,
-        show1: false,
-        show2: false,
-        show3: false,
-        show4: false,
-        show5: false,
-        show6: false,
-        title6: '默认空的',
-        value6: [],
-        showToast:false,
-        show7: false,
-        show8: false,
-        show9: false,
-        show10: false,
-        show11: false,
-        status:true,
-        items: [],
-        infiniteCount: 0,
-        hasHeader:false
-      }
+    log(str) {
+      console.log(str);
     },
-    methods: {
-      resetScroller () {
-        this.$nextTick(() => {
-          this.$refs.scroller.reset()
-        })
-      },
-      log (str) {
-        console.log(str)
-      },
-      onRefresh(done) {
-        setTimeout(() => {
-          let start = this.top - 1
-          for (let i = start; i > start - 10; i--) {
-            this.items.splice(0, 0, i + ' With You, Just Do CSS.')
-          }
-          this.top = this.top - 10;
-
-          done()
-        }, 1500)
-      },
-
-      onInfinite(done) {
-        setTimeout(() => {
-          if (this.infiniteCount < 2) {
-            let start = this.bottom + 1
-            for (let i = start; i < start + 10; i++) {
-              this.items.push(i + ' With You, Just Do JS.')
-            }
-            this.bottom = this.bottom + 10;
-
-            this.infiniteCount++
-          }
-
-          done()
-        }, 1500)
-      },
-
-      onItemClick(index) {
-        console.log(index)
-      }
-    },
-    watch: {
-      show10 (val) {
-        if (val) {
-          setTimeout(() => {
-            this.show10 = false
-          }, 1000)
+    onRefresh(done) {
+      setTimeout(() => {
+        let start = this.top - 1;
+        for (let i = start; i > start - 10; i--) {
+          this.items.splice(0, 0, i + " With You, Just Do CSS.");
         }
-      },
-      showToast(s){
-        if(s){
-          Toast({
-            duration: 2000,
-            message: '操作成功',
-          });
-          setTimeout(() => {
-            this.showToast = false;
-          }, 2000)
+        this.top = this.top - 10;
+
+        done();
+      }, 1500);
+    },
+
+    onInfinite(done) {
+      setTimeout(() => {
+        if (this.infiniteCount < 2) {
+          let start = this.bottom + 1;
+          for (let i = start; i < start + 10; i++) {
+            this.items.push(i + " With You, Just Do JS.");
+          }
+          this.bottom = this.bottom + 10;
+
+          this.infiniteCount++;
         }
+
+        done();
+      }, 1500);
+    },
+
+    onItemClick(index) {
+      console.log(index);
+    }
+  },
+  watch: {
+    show10(val) {
+      if (val) {
+        setTimeout(() => {
+          this.show10 = false;
+        }, 1000);
+      }
+    },
+    showToast(s) {
+      if (s) {
+        Toast({
+          duration: 2000,
+          message: "操作成功"
+        });
+        setTimeout(() => {
+          this.showToast = false;
+        }, 2000);
       }
     }
   }
+};
 </script>
 
 <style scoped lang="less">
-  .popup0 {
-  padding-bottom:15px;
-  height:200px;
+.popup0 {
+  padding-bottom: 15px;
+  height: 200px;
 }
 .popup1 {
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
 }
 .popup2 {
-  padding-bottom:15px;
-  height:400px;
+  padding-bottom: 15px;
+  height: 400px;
 }
 .position-vertical-demo {
   background-color: #ffe26d;

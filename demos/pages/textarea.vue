@@ -24,18 +24,18 @@
 </template>
 <script>
 export default {
-  data () {
+  data() {
     return {
-      placeholder:'占位符',
-      title:'标题'
-    }
+      placeholder: "占位符",
+      title: "标题"
+    };
   },
-  methods:{
-    onEvent (event) {
-      console.log('on', event)
+  methods: {
+    onEvent(event) {
+      console.log("on", event);
     }
   }
-}
+};
 </script>
 
 <style scoped lang="less">

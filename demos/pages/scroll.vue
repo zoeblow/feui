@@ -17,62 +17,61 @@
   </div>
 </template>
 <script>
-  export default {
-    data () {
-      return {
-        items: [],
-        infiniteCount: 0,
-        hasHeader:true
-      }
-    },
+export default {
+  data() {
+    return {
+      items: [],
+      infiniteCount: 0,
+      hasHeader: true
+    };
+  },
 
-    mounted() {
-      for (let i = 1; i <= 20; i++) {
-        this.items.push(i + ' - With You, Just Do IT.')
-      }
-      this.top = 1
-      this.bottom = 20
-    },
-
-    methods: {
-      onRefresh(done) {
-        setTimeout(() => {
-          let start = this.top - 1
-          for (let i = start; i > start - 10; i--) {
-            this.items.splice(0, 0, i + ' With You, Just Do CSS.')
-          }
-          this.top = this.top - 10;
-
-          done()
-        }, 1500)
-      },
-
-      onInfinite(done) {
-        setTimeout(() => {
-          if (this.infiniteCount < 2) {
-            let start = this.bottom + 1
-            for (let i = start; i < start + 10; i++) {
-              this.items.push(i + ' With You, Just Do JS.')
-            }
-            this.bottom = this.bottom + 10;
-
-            this.infiniteCount++
-          }
-
-          done()
-        }, 1500)
-      },
-
-      onItemClick(index) {
-        console.log(index)
-      }
+  mounted() {
+    for (let i = 1; i <= 20; i++) {
+      this.items.push(i + " - With You, Just Do IT.");
     }
+    this.top = 1;
+    this.bottom = 20;
+  },
 
+  methods: {
+    onRefresh(done) {
+      setTimeout(() => {
+        let start = this.top - 1;
+        for (let i = start; i > start - 10; i--) {
+          this.items.splice(0, 0, i + " With You, Just Do CSS.");
+        }
+        this.top = this.top - 10;
+        done();
+      }, 1500);
+    },
+
+    onInfinite(done) {
+      setTimeout(() => {
+        if (this.infiniteCount < 2) {
+          let start = this.bottom + 1;
+          for (let i = start; i < start + 10; i++) {
+            this.items.push(i + " With You, Just Do JS.");
+          }
+          this.bottom = this.bottom + 10;
+
+          this.infiniteCount++;
+        }
+
+        done();
+      }, 1500);
+    },
+
+    onItemClick(index) {
+      console.log(index);
+    }
   }
+};
 </script>
 
 <style scoped lang="less">
-.page,.fe-content{
+.page,
+.fe-content {
   height: 100%;
   position: relative;
 }

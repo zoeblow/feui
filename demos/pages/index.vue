@@ -15,38 +15,42 @@
 </template>
 
 <script>
-  import { navs } from '../router/index.js'
-  export default {
-    data () {
-      return {
-        navs,
-        keyword: '',
-        componentList: []
-      }
-    },
-    mounted () {
-      let debug = process.env.NODE_ENV === 'development'
-      if (!debug) {
-        // 生产环境，及线上演示时不显示未完成组件项
-        let tempNavs = []
-        navs.map(navGroup => {
-          navGroup.navItems = navGroup.navItems.filter(item => item.status !== 'todo')
-          tempNavs = tempNavs.concat(navGroup)
-        })
-        this.navs = tempNavs
-      }
-
+import { navs } from "../router/index.js";
+export default {
+  data() {
+    return {
+      navs,
+      keyword: "",
+      componentList: []
+    };
+  },
+  mounted() {
+    let debug = process.env.NODE_ENV === "development";
+    if (!debug) {
+      // 生产环境，及线上演示时不显示未完成组件项
+      let tempNavs = [];
       navs.map(navGroup => {
-        this.componentList = this.componentList.concat(navGroup.navItems)
-      })
-    },
+        navGroup.navItems = navGroup.navItems.filter(
+          item => item.status !== "todo"
+        );
+        tempNavs = tempNavs.concat(navGroup);
+      });
+      this.navs = tempNavs;
+    }
 
-    computed: {
-      filterResult () {
-        return this.componentList.filter(value => new RegExp(this.keyword, 'i').test(value.name))
-      }
+    navs.map(navGroup => {
+      this.componentList = this.componentList.concat(navGroup.navItems);
+    });
+  },
+
+  computed: {
+    filterResult() {
+      return this.componentList.filter(value =>
+        new RegExp(this.keyword, "i").test(value.name)
+      );
     }
   }
+};
 </script>
 
 <style>
@@ -54,38 +58,38 @@
 </style>
 
 <style scoped lang="less">
-  .logo {
-    display: block;
-    margin: 0 auto;
-    width: 75px;
-  }
-  .page__hd {
-    padding: 40px;
+.logo {
+  display: block;
+  margin: 0 auto;
+  width: 75px;
+}
+.page__hd {
+  padding: 40px;
 
-    .page__title {
-      text-align: center;
-      font-size: 20px;
-      font-weight: 400;
-    }
-  }
-
-  .page {
-    margin-bottom: 0;
-  }
-
-  .cell-icon {
-    display: block;
-    margin-right: 5px;
-    color: #41b883;
-    overflow: hidden;
-    font-size: 20px;
-  }
-
-  .footer-copyright {
-    margin: 40px 0 20px;
-  }
-  .feui-feui{
-    font-size: 65px;
+  .page__title {
     text-align: center;
+    font-size: 20px;
+    font-weight: 400;
   }
+}
+
+.page {
+  margin-bottom: 0;
+}
+
+.cell-icon {
+  display: block;
+  margin-right: 5px;
+  color: #41b883;
+  overflow: hidden;
+  font-size: 20px;
+}
+
+.footer-copyright {
+  margin: 40px 0 20px;
+}
+.feui-feui {
+  font-size: 65px;
+  text-align: center;
+}
 </style>

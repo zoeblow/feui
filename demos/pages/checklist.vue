@@ -35,59 +35,74 @@
 </template>
 
 <script>
-import _ from 'lodash'
+import _ from "lodash";
 export default {
-  mounted () {
+  mounted() {
     setTimeout(() => {
-      this.asyncList = ['A', 'B', 'C', 'D']
-    }, 3000)
+      this.asyncList = ["A", "B", "C", "D"];
+    }, 3000);
   },
-  data () {
+  data() {
     return {
       fullValues: [],
       checklist001: [],
       checklist0011: [],
-      labelPosition: '',
-      error: '',
-      commonList: [ '安徽', '浙江', '北京' ],
-      checklist002: [ '安徽', '浙江' ],
-      checklist003: [ '安徽', '浙江' ],
-      checklist005: [ '01', '02', '03' ],
+      labelPosition: "",
+      error: "",
+      commonList: ["安徽", "浙江", "北京"],
+      checklist002: ["安徽", "浙江"],
+      checklist003: ["安徽", "浙江"],
+      checklist005: ["01", "02", "03"],
       checklist005Value: [],
-      objectList: [{key: '1', value: '001 value'}, {key: '2', value: '002 value'}, {key: '3', value: '003 value'}],
-      objectListValue: ['1', '2'],
+      objectList: [
+        { key: "1", value: "001 value" },
+        { key: "2", value: "002 value" },
+        { key: "3", value: "003 value" }
+      ],
+      objectListValue: ["1", "2"],
       inlineDescList: [
-        {key: '1', value: 'Tiger is good', inlineDesc: 'Tiger is the king of mountain'},
-        {key: '2', value: 'Lion is better', inlineDesc: 'Lion is the king of woods'},
-        {key: '3', value: 'Camel is best, no inline-desc'}
+        {
+          key: "1",
+          value: "Tiger is good",
+          inlineDesc: "Tiger is the king of mountain"
+        },
+        {
+          key: "2",
+          value: "Lion is better",
+          inlineDesc: "Lion is the king of woods"
+        },
+        { key: "3", value: "Camel is best, no inline-desc" }
       ],
       inlineDescListValue: [1],
       asyncList: [],
       asyncListValue: [],
-      radioValue: ['安徽']
-    }
+      radioValue: ["安徽"]
+    };
   },
   methods: {
-    change (val) {
-      console.log('change', val)
+    change(val) {
+      console.log("change", val);
     },
-    onError (errors) {
-      console.log(errors)
-      this.error = errors
+    onError(errors) {
+      console.log(errors);
+      this.error = errors;
     },
-    onNoError () {
-      this.error = null
+    onNoError() {
+      this.error = null;
     },
-    selectFirst () {
-      this.checklist001 = ['安徽']
+    selectFirst() {
+      this.checklist001 = ["安徽"];
     },
-    selectFirstTwo () {
-      this.checklist001 = ['安徽', '浙江']
+    selectFirstTwo() {
+      this.checklist001 = ["安徽", "浙江"];
     },
-    selectLeft () {
-      const left = _.without.apply(_, [this.commonList].concat(this.checklist001))
-      this.checklist001 = left
+    selectLeft() {
+      const left = _.without.apply(
+        _,
+        [this.commonList].concat(this.checklist001)
+      );
+      this.checklist001 = left;
     }
-  },
-}
+  }
+};
 </script>

@@ -46,76 +46,80 @@
 </template>
 
 <script>
-import demo1 from '../assets/images/demo/demo1.jpg'
-import demo2 from '../assets/images/demo/demo2.jpg'
-import demo3 from '../assets/images/demo/demo3.jpg'
-import demo4 from '../assets/images/demo/demo4.jpg'
-import demo5 from '../assets/images/demo/demo5.jpg'
+import demo1 from "../assets/images/demo/demo1.jpg";
+import demo2 from "../assets/images/demo/demo2.jpg";
+import demo3 from "../assets/images/demo/demo3.jpg";
+import demo4 from "../assets/images/demo/demo4.jpg";
+import demo5 from "../assets/images/demo/demo5.jpg";
 
-const baseList = [{
-  url: 'javascript:',
-  img: demo1,
-  title: '陪你去看花'
-}, {
-  url: 'javascript:',
-  img: demo2,
-  title: '陪你去看云'
-}, {
-  url: 'javascript:',
-  img: demo3,
-  title: '陪你去看山',
-  fallbackImg: demo4
-}]
+const baseList = [
+  {
+    url: "javascript:",
+    img: demo1,
+    title: "陪你去看花"
+  },
+  {
+    url: "javascript:",
+    img: demo2,
+    title: "陪你去看云"
+  },
+  {
+    url: "javascript:",
+    img: demo3,
+    title: "陪你去看山",
+    fallbackImg: demo4
+  }
+];
 
 const imgList = [
-  'http://placehold.it/800x300/4a90e2/fff.png',
-  'http://placehold.it/800x300/41b883/fff.png',
-  'http://placehold.it/800x300/7276f9/fff.png'
-]
+  "http://placehold.it/800x300/4a90e2/fff.png",
+  "http://placehold.it/800x300/41b883/fff.png",
+  "http://placehold.it/800x300/7276f9/fff.png"
+];
 
 const urlList = baseList.map((item, index) => ({
-  url: 'http://ifuyuan.wang',
+  url: "http://ifuyuan.wang",
   img: item.img,
   fallbackImg: item.fallbackImg,
   title: `(可点击)${item.title}`
-}))
+}));
 
 const demoList = imgList.map((one, index) => ({
-  url: 'javascript:',
+  url: "javascript:",
   img: one
-}))
+}));
 
 const only2ClickList = baseList.slice(0, 2).map(item => {
-  item.url = 'http://ifuyuan.wang'
-  return item
-})
+  item.url = "http://ifuyuan.wang";
+  return item;
+});
 
 export default {
-  created () {
+  created() {
     //初始化
     this.demo05_onLoad(1);
   },
   methods: {
-    onSwiperItemIndexChange (index) {
-      console.log('demo item change', index)
+    onSwiperItemIndexChange(index) {
+      console.log("demo item change", index);
     },
-    demo01_onIndexChange (index) {
-      this.demo01_index = index
+    demo01_onIndexChange(index) {
+      this.demo01_index = index;
     },
-    demo05_onIndexChange (index) {
-      this.demo05_index = index
+    demo05_onIndexChange(index) {
+      this.demo05_index = index;
     },
-    demo05_onLoad (id) {
-      this.demo05_list = id === 1 ? baseList : demoList
+    demo05_onLoad(id) {
+      this.demo05_list = id === 1 ? baseList : demoList;
     },
-    demo06_onIndexChange (index) {
-      this.demo06_index = index
+    demo06_onIndexChange(index) {
+      this.demo06_index = index;
     },
-    demo07_onIndexChange (index) {
-      this.demo07_index = index
+    demo07_onIndexChange(index) {
+      this.demo07_index = index;
     }
   },
-  data () {
+  data() {
     return {
       demo01_list: baseList,
       demo02_list: demoList,
@@ -130,9 +134,9 @@ export default {
       demo06_index: 0,
       demo07_index: 0,
       swiperItemIndex: 1
-    }
+    };
   }
-}
+};
 </script>
 <style scoped>
 .copyright {
@@ -145,7 +149,7 @@ export default {
   border-left: none;
   border-right: none;
 }
-.text-scroll p{
+.text-scroll p {
   font-size: 12px;
   text-align: center;
   line-height: 30px;
@@ -153,7 +157,7 @@ export default {
 .black {
   background-color: #000;
 }
-.title{
+.title {
   line-height: 100px;
   text-align: center;
   color: #fff;
@@ -191,8 +195,7 @@ export default {
 .swiper-demo-img img {
   width: 100%;
 }
-.nuim-swiper-item a{
-  color:#333;
+.nuim-swiper-item a {
+  color: #333;
 }
 </style>
-

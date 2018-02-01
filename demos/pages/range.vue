@@ -82,12 +82,12 @@
 </template>
 <script>
 export default {
-  mounted () {
+  mounted() {
     setTimeout(() => {
-      this.showData13 = true
-    }, 2000)
+      this.showData13 = true;
+    }, 2000);
   },
-  data () {
+  data() {
     return {
       data1: 0,
       data2: 0,
@@ -107,19 +107,20 @@ export default {
       max: 100,
       step: 1,
       dynamiValue: 0
-    }
+    };
   },
   methods: {
-    onChange (val) {
-      console.log('change', val)
+    onChange(val) {
+      console.log("change", val);
     },
-    update () {
-      this.min = Math.floor(Math.random() * 30)
-      this.max = Math.floor(50 + Math.random() * 100)
-      this.step = 1 + Math.floor(Math.random() * 10)
+    update() {
+      this.min = Math.floor(Math.random() * 30);
+      this.max = Math.floor(50 + Math.random() * 100);
+      this.step = 1 + Math.floor(Math.random() * 10);
     }
   }
-}
+};
 </script>
 <style scoped lang="less">
+
 </style>

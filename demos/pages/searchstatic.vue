@@ -13,42 +13,42 @@
 <script>
 export default {
   methods: {
-    resultClick (item) {
-      window.alert('you click the result item: ' + JSON.stringify(item))
+    resultClick(item) {
+      window.alert("you click the result item: " + JSON.stringify(item));
     },
-    getResult (val) {
-      this.results = val ? getResult(this.value) : []
+    getResult(val) {
+      this.results = val ? getResult(this.value) : [];
     },
-    onSubmit (val) {
-      window.alert('on submit' + val)
+    onSubmit(val) {
+      window.alert("on submit" + val);
     },
-    onCancel () {
-      console.log('on cancel')
+    onCancel() {
+      console.log("on cancel");
     },
-    onFocus () {
-      console.log('on focus')
+    onFocus() {
+      console.log("on focus");
     }
   },
-  data () {
+  data() {
     return {
       results: [],
       autoFixed: false,
-      value: '',
-      value1: 'hello',
-      value2: 'feui'
-    }
+      value: "",
+      value1: "hello",
+      value2: "feui"
+    };
   }
-}
+};
 
-function getResult (val) {
-  let rs = []
+function getResult(val) {
+  let rs = [];
   for (let i = 0; i < 8; i++) {
     rs.push({
       title: `${val} result: ${i + 1} `,
       other: i
-    })
+    });
   }
-  return rs
+  return rs;
 }
 </script>
 

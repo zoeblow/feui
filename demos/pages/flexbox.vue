@@ -112,12 +112,11 @@
   </div>
 </template>
 <style scoped lang="less">
-  .flex-demo{
-    text-align: center;
-    color: #fff;
-    background-color: #4a90e2;
-    border-radius: 4px;
-    background-clip: padding-box;
-  }
-  
+.flex-demo {
+  text-align: center;
+  color: #fff;
+  background-color: #4a90e2;
+  border-radius: 4px;
+  background-clip: padding-box;
+}
 </style>

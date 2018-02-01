@@ -89,41 +89,41 @@
 </template>
 
 <script>
-  export default{
-    data () {
-      return {
-        money: null,
-        showContent001: false,
-        showContent002: false,
-        showContent003: false,
-        showContent004: false
-      }
-    },
-    mounted () {
-      setTimeout(() => {
-        this.money = -1024
-      }, 2000)
-    },
-    methods: {
-      onClick () {
-        console.log('on click')
-      }
-    },
+export default {
+  data() {
+    return {
+      money: null,
+      showContent001: false,
+      showContent002: false,
+      showContent003: false,
+      showContent004: false
+    };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.money = -1024;
+    }, 2000);
+  },
+  methods: {
+    onClick() {
+      console.log("on click");
+    }
   }
+};
 </script>
 <style scoped lang="less">
-  .sub-item {
-    color: #888;
-  }
-  .slide {
-    padding: 0 20px;
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height .5s cubic-bezier(0, 1, 0, 1) -.1s;
-  }
-  .animate {
-    max-height: 9999px;
-    transition-timing-function: cubic-bezier(0.5, 0, 1, 0);
-    transition-delay: 0s;
-  }
+.sub-item {
+  color: #888;
+}
+.slide {
+  padding: 0 20px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s cubic-bezier(0, 1, 0, 1) -0.1s;
+}
+.animate {
+  max-height: 9999px;
+  transition-timing-function: cubic-bezier(0.5, 0, 1, 0);
+  transition-delay: 0s;
+}
 </style>

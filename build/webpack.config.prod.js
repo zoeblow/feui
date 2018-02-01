@@ -1,7 +1,7 @@
-const webpack = require('webpack');
-const merge = require('webpack-merge');
-const path = require('path');
-const devConfig = require('./webpack.config.dev.js');
+const webpack = require("webpack");
+const merge = require("webpack-merge");
+const path = require("path");
+const devConfig = require("./webpack.config.dev.js");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -31,8 +31,6 @@ module.exports = merge(devConfig, {
       },
       sourceMap: false
     }),
-    // Compress extracted CSS. We are using this plugin so that possible
-    // duplicated CSS from different components can be deduped.
     new OptimizeCSSPlugin({
       cssProcessorOptions: false
         ? { safe: true, map: { inline: false } }

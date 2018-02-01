@@ -26,70 +26,69 @@
 </template>
 
 <script>
-    export default {
-        
-        data() {
-            return {
-                status: {
-                    pulldown: 'default',
-                    pullup: 'default'
-                },
-                list: ['1', '2', '3', '4', '5', '6', '7'],
-                defaultT:true
-            }
-        },
-        methods: {
-            reload() {
-                setTimeout(() => {
-                    this.list.unshift(`${this.list.length + 1}`);
-                    this.$nextTick(() => {
-                        this.$refs.pullScroll.reset();
-                    })
-                }, 1000)
-            },
-            loadmove() {
-                setTimeout(() => {
-                    this.list.push(`${this.list.length + 1}`);
-                    this.$nextTick(() => {
-                        this.$refs.pullScroll.reset();
-                    })
-                }, 1000)
-            }
-        },
-        watch:{
-            defaultT(newVal){
-                if(!newVal){
-                    this.$refs.pullScroll.disablePullup();
-                }else{
-                    this.$refs.pullScroll.enablePullup();
-                }
-            }
-        }
+export default {
+  data() {
+    return {
+      status: {
+        pulldown: "default",
+        pullup: "default"
+      },
+      list: ["1", "2", "3", "4", "5", "6", "7"],
+      defaultT: true
+    };
+  },
+  methods: {
+    reload() {
+      setTimeout(() => {
+        this.list.unshift(`${this.list.length + 1}`);
+        this.$nextTick(() => {
+          this.$refs.pullScroll.reset();
+        });
+      }, 1000);
+    },
+    loadmove() {
+      setTimeout(() => {
+        this.list.push(`${this.list.length + 1}`);
+        this.$nextTick(() => {
+          this.$refs.pullScroll.reset();
+        });
+      }, 1000);
     }
+  },
+  watch: {
+    defaultT(newVal) {
+      if (!newVal) {
+        this.$refs.pullScroll.disablePullup();
+      } else {
+        this.$refs.pullScroll.enablePullup();
+      }
+    }
+  }
+};
 </script>
 
 <style scoped lang="less">
-    .page {
-        height: 100%;
-    }
-    .content {
-        padding-top: 46px;
-        height: 100%;
-        box-sizing: border-box;
-    }
-    .feui-box-demo {
-        li {
-            list-style: none;
-            padding: 10px;
-        }
-    }
-    .feui-arrow {
-        display: inline-block;
-        transition: all linear 0.2s;
-        -webkit-transition: all linear 0.2s;
-    }
-    .is-rotate {
-        transform: rotate(-180deg);
-        -webkit-transform: rotate(-180deg);
-    }
+.page {
+  height: 100%;
+}
+.content {
+  padding-top: 46px;
+  height: 100%;
+  box-sizing: border-box;
+}
+.feui-box-demo {
+  li {
+    list-style: none;
+    padding: 10px;
+  }
+}
+.feui-arrow {
+  display: inline-block;
+  transition: all linear 0.2s;
+  -webkit-transition: all linear 0.2s;
+}
+.is-rotate {
+  transform: rotate(-180deg);
+  -webkit-transform: rotate(-180deg);
+}
 </style>
