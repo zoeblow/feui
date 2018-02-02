@@ -1,5 +1,5 @@
-@import './weui/widget/weui_tips/weui_mask';
-@import './weui/widget/weui_tips/weui_actionsheet';
+@import "./weui/widget/weui_tips/weui_mask";
+@import "./weui/widget/weui_tips/weui_actionsheet";
 
 .nuim-actionsheet-menu-primary {
   color: @actionsheet-label-primary-color;
@@ -13,9 +13,15 @@
 .nuim-actionsheet-menu-disabled {
   color: @actionsheet-label-disabled-color;
 }
-.nuim-actionsheet-mask-enter, .nuim-actionsheet-mask-leave-active {
+.nuim-actionsheet-mask-enter,
+.nuim-actionsheet-mask-leave-active,
+.nuim-android-actionsheet-enter,
+.nuim-android-actionsheet-leave-active {
   opacity: 0;
 }
-.nuim-actionsheet-mask-leave-active, .nuim-actionsheet-mask-enter-active {
-  transition: opacity 300ms;
+.nuim-actionsheet-mask-leave-active,
+.nuim-actionsheet-mask-enter-active,
+.nuim-android-actionsheet-leave-active,
+.nuim-android-actionsheet-enter-active {
+  transition: opacity 300ms!important;
 }

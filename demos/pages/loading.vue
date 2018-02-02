@@ -16,7 +16,7 @@ export default {
   created: function() {},
   methods: {
     showLoading() {
-      Toast.loading({ duration: 2000, mask: true });
+      Toast.loading({ duration: 2000, mask: true});
 
       // Loading.show({text:'显示咯'});
       // setTimeout(function(){
