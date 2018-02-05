@@ -46,28 +46,22 @@
 </template>
 
 <script>
-import demo1 from "../assets/images/demo/demo1.jpg";
-import demo2 from "../assets/images/demo/demo2.jpg";
-import demo3 from "../assets/images/demo/demo3.jpg";
-import demo4 from "../assets/images/demo/demo4.jpg";
-import demo5 from "../assets/images/demo/demo5.jpg";
-
 const baseList = [
   {
     url: "javascript:",
-    img: demo1,
+    img: 'https://i.loli.net/2018/01/29/5a6e85c5114f5.jpg',
     title: "陪你去看花"
   },
   {
     url: "javascript:",
-    img: demo2,
+    img: 'https://i.loli.net/2018/01/29/5a6e85c5aeb85.jpg',
     title: "陪你去看云"
   },
   {
     url: "javascript:",
-    img: demo3,
+    img: 'https://i.loli.net/2018/01/29/5a6e85c49167b.jpg',
     title: "陪你去看山",
-    fallbackImg: demo4
+    fallbackImg: 'https://i.loli.net/2018/01/29/5a6e85c4d972d.jpg'
   }
 ];
 

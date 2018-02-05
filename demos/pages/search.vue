@@ -2,7 +2,7 @@
   <div>
     <fe-header slot="header" style="width:100%;position:absolute;left:0;top:0;z-index:100;">search</fe-header>
     <div class="fe-content">
-      <img src="../assets/images/demo/demo1.jpg" alt="" style="width: 100%">
+      <img src="https://i.loli.net/2018/01/29/5a6e85c5114f5.jpg" alt="" style="width: 100%">
       <fe-search
         @result-click="resultClick"
         @on-change="getResult"
