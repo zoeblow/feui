@@ -32,9 +32,17 @@ export default {
       radio001Value: "安徽",
       radio002Value: "北京",
       radio003: [
-        { icon: "http://temp.im/50x50/f17c67/fff", key: "001", value: "珊瑚朱"},
-        { icon: "http://temp.im/50x50/008573/fff", key: "002", value: "松石绿"},
-        { icon: "http://temp.im/50x50/228fbd/fff", key: "003", value: "浅缥色"}
+        {
+          icon: "http://temp.im/50x50/f17c67/fff",
+          key: "001",
+          value: "珊瑚朱"
+        },
+        {
+          icon: "http://temp.im/50x50/008573/fff",
+          key: "002",
+          value: "松石绿"
+        },
+        { icon: "http://temp.im/50x50/228fbd/fff", key: "003", value: "浅缥色" }
       ],
       selected: { color: "#4a90e2" }
     };
