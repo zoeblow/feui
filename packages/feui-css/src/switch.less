@@ -3,16 +3,23 @@
 
 .weui-cell_switch .weui-cell__ft {
   font-size: 0;
+  position: relative;
 }
-.weui-switch {
-    -webkit-appearance: none;
-    appearance: none;
-}
+
 input.weui-switch[disabled] {
   opacity: @switch-disabled-opacity;
 }
 
-.nuim-x-switch.weui-cell_switch {
+.nuim-switch.weui-cell_switch {
   padding-top: 6px;
   padding-bottom: 6px;
+}
+
+.nuim-switch-overlay {
+  width: 60px;
+  height: 50px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  opacity: 0;
 }

@@ -92,7 +92,7 @@ export default {
       validator (val) {
         /* istanbul ignore if */
         if (process.env.NODE_ENV === 'development' && val && val.length !== 10) {
-          console.error('[VUX] Datetime prop:start-date 必须为 YYYY-MM-DD 格式')
+          console.error('[FEUI] Datetime prop:start-date 必须为 YYYY-MM-DD 格式')
         }
         return val ? val.length === 10 : true
       }
@@ -102,7 +102,7 @@ export default {
       validator (val) {
         /* istanbul ignore if */
         if (process.env.NODE_ENV === 'development' && val && val.length !== 10) {
-          console.error('[VUX] Datetime prop:end-date 必须为 YYYY-MM-DD 格式')
+          console.error('[FEUI] Datetime prop:end-date 必须为 YYYY-MM-DD 格式')
         }
         return val ? val.length === 10 : true
       }

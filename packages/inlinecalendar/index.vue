@@ -111,7 +111,7 @@ export default {
         // tip for older nuim-loader
         if (typeof V_LOCALE === 'undefined') {
           if (process.env.NODE_ENV === 'development') {
-            // console.warn('[VUX warn] 抱歉，inline-calendar 组件需要升级 nuim-loader 到最新版本才能正常使用')
+            // console.warn('[FEUI warn] 抱歉，inline-calendar 组件需要升级到最新版本才能正常使用')
           }
           return ['日', '一', '二', '三', '四', '五', '六']
         } else {

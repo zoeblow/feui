@@ -160,7 +160,7 @@ export default {
   animation-duration: 1s;
   animation-fill-mode: both;
 }
-.vux-indicator.custom-bottom {
+.nuim-indicator.custom-bottom {
   bottom: 30px;
 }
 @-webkit-keyframes fadeInUp {

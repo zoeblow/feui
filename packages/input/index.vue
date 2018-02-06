@@ -254,7 +254,7 @@
       },
       labelClass () {
         return {
-          'vux-cell-justify': this.$parent.labelAlign === 'justify' || this.$parent.$parent.labelAlign === 'justify'
+          'nuim-cell-justify': this.$parent.labelAlign === 'justify' || this.$parent.$parent.labelAlign === 'justify'
         }
       },
       pattern () {

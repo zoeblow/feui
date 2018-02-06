@@ -13,6 +13,13 @@
         <fe-group title="设置title 颜色">
           <fe-switch  title="<span style='color:red'>我的颜色</span>"></fe-switch>
         </fe-group>
+        <fe-group title="阻止默认">
+          <fe-switch title="默认false" prevent-default v-model="defaultF" @on-click="onClick"></fe-switch>
+        </fe-group>
+        <fe-group title="值转换 map">
+          <fe-switch title="默认true" :value-map="['0', '1']" v-model="stringValue"></fe-switch>
+          <fe-cell title="value" :value="typeof stringValue + ' ' + stringValue"></fe-cell>
+        </fe-group>
       </div>  
     </div>
 </template>
@@ -20,10 +27,23 @@
 export default {
   data() {
     return {
-      defaultT: true
+      defaultT: true,
+      defaultF: false,
+      stringValue: '0'
     };
   },
-  methods: {}
+  methods: {
+    onClick (newVal, oldVal) {
+      console.log(newVal, oldVal)
+      Toast.loading({
+        duration: 1000,
+        message: "处理中..."
+      });
+      setTimeout(() => {
+        this.defaultF = newVal
+      }, 1000);
+    }
+  }
 };
 </script>
 
