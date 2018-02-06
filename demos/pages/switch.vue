@@ -18,7 +18,7 @@
         </fe-group>
         <fe-group title="值转换 map">
           <fe-switch title="默认true" :value-map="['0', '1']" v-model="stringValue"></fe-switch>
-          <fe-cell title="value" :value="typeof stringValue + ' ' + stringValue"></fe-cell>
+          <fe-cell title="值" :value="typeof stringValue + ' ' + stringValue"></fe-cell>
         </fe-group>
       </div>  
     </div>
@@ -46,7 +46,3 @@ export default {
   }
 };
 </script>
-
-<style  lang="less">
-
-</style>
