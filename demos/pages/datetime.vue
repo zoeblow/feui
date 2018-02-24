@@ -25,18 +25,22 @@
       </fe-group>
 
       <div style="padding:15px;">
-        <fe-button type="primary" @click.native="formatValue = '2017-11-11'">{{ '设置时间为2017-11-11' }}</fe-button>
+        <fe-button type="primary" @click.native="formatValue = '2018-11-11'">{{ '设置时间为2018-11-11' }}</fe-button>
       </div>
 
       <fe-group title="限定小时范围">
-        <fe-datetime v-model="limitHourValue" format="YYYY-MM-DD HH:mm" :min-hour=9 :mafe-hour=18 @on-change="change" title="限定小时范围" :inline-desc="'工作时间为 09-18'"></fe-datetime>
+        <fe-datetime v-model="limitHourValue" format="YYYY-MM-DD HH:mm" :min-hour=9 :max-hour=18 @on-change="change" title="限定小时范围" :inline-desc="'工作时间为 09-18'"></fe-datetime>
       </fe-group>
 
-      <fe-group title="设置开始时间和结束日期 2015-11-11 ~ 2017-10-11">
+      <fe-group title="设置开始时间和结束日期 2015-11-11 ~ 2018-11-11">
         <fe-datetime v-model="limitHourValue" :start-date="startDate" :end-date="endDate" format="YYYY-MM-DD HH:mm" @on-change="change" title="开始时间"></fe-datetime>
       </fe-group>
 
-      <fe-group title="Format: format">
+      <fe-group title="只设置结束时间 + ' 2018-10-11'">
+        <fe-datetime v-model="onlySetEndDateValue"  :end-date="onlySetEndDate" format="YYYY-MM-DD HH:mm" @on-change="change" title="开始时间"></fe-datetime>
+      </fe-group>
+
+      <fe-group :title="'格式化' + ': ' + format">
         <fe-datetime v-model="value2" :format="format" @on-change="change" title="开始时间"></fe-datetime>
       </fe-group>
 
@@ -45,15 +49,15 @@
       </div>
 
       <fe-group title="提示文字">
-        <fe-datetime v-model="value3" default-selected-value="2017-06-18 13" format="YYYY-MM-DD HH" placeholder="请选择" @on-change="change" title="开始时间"></fe-datetime>
+        <fe-datetime v-model="value3" default-selected-value="2018-06-18 13" format="YYYY-MM-DD HH" placeholder="请选择" @on-change="change" title="开始时间"></fe-datetime>
       </fe-group>
 
-      <fe-group title="设置默认选中值为 2017-11-11">
-        <fe-datetime v-model="value3_1" default-selected-value="2017-11-11" format="YYYY-MM-DD" placeholder="请选择" @on-change="change" title="开始时间" :inline-desc=" '当前值'  + `: ${value3_1}`"></fe-datetime>
+      <fe-group title="设置默认选中值为 2018-11-11">
+        <fe-datetime v-model="value3_1" default-selected-value="2018-11-11" format="YYYY-MM-DD" placeholder="请选择" @on-change="change" title="开始时间" :inline-desc=" '当前值'  + `: ${value3_1}`"></fe-datetime>
       </fe-group>
 
       <fe-group title="设置开始和结束年份">
-        <fe-datetime v-model="value4" placeholder="请选择" :min-year=2000 :mafe-year=2016 format="YYYY-MM-DD HH:mm" @on-change="change" title="2000年以后的时间"></fe-datetime>
+        <fe-datetime v-model="value4" placeholder="请选择" :min-year=2000 :max-year=2018 format="YYYY-MM-DD HH:mm" @on-change="change" title="2000年以后的时间"></fe-datetime>
       </fe-group>
 
       <fe-group title="自定义小时列表生成逻辑">
@@ -65,7 +69,7 @@
       </fe-group>
 
       <fe-group title="自定义中文显示模板">
-        <fe-datetime v-model="value5" placeholder="请选择" :min-year=2000 :mafe-year=2016 format="YYYY-MM-DD HH:mm" @on-change="change" title="中文" year-row="{value}年" month-row="{value}月" day-row="{value}日" hour-row="{value}点" minute-row="{value}分" confirm-text="完成" cancel-text="取消"></fe-datetime>
+        <fe-datetime v-model="value5" placeholder="请选择" :min-year=2000 :max-year=2018 format="YYYY-MM-DD HH:mm" @on-change="change" title="中文" year-row="{value}年" month-row="{value}月" day-row="{value}日" hour-row="{value}点" minute-row="{value}分" confirm-text="完成" cancel-text="取消"></fe-datetime>
       </fe-group>
 
       <fe-group title="显示中间的清除按钮">
@@ -102,8 +106,8 @@ export default {
   data() {
     return {
       readonly: true,
-      minuteListValue: "2017-06-12 09:00",
-      hourListValue: "2017-06-12 09:00",
+      minuteListValue: "2018-06-12 09:00",
+      hourListValue: "2018-06-12 09:00",
       format: "YYYY-MM-DD HH:mm",
       value1: "2015-11-12",
       valueReadonly: "2015-11-12",
@@ -112,15 +116,15 @@ export default {
       value3_1: "",
       value4: "",
       value5: "",
-      value6: "2016-08-18",
+      value6: "2018-08-18",
       value7: "",
       value8: "",
       limitHourValue: "",
       startDate: "2015-11-11",
-      endDate: "2017-10-11",
-      formatValue: "2017-10-11",
+      endDate: "2018-11-11",
+      formatValue: "2018-11-11",
       formatValueFunction(val) {
-        return val.replace(/-/g, "$");
+        return val.replace(/-/g, "￥");
       },
       value9: "",
       visibility: false,
@@ -135,7 +139,9 @@ export default {
       },
       computeDaysFunction(options, generateRange) {
         return [options.month]; // if current month is n, days are [n]
-      }
+      },
+      onlySetEndDate: '2018-10-11',
+      onlySetEndDateValue: ''
     };
   },
   methods: {

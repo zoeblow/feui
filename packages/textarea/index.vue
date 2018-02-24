@@ -5,7 +5,7 @@
         <slot name="restricted-label"></slot>
       </div>
       <slot name="label">
-        <label class="weui-label" :style="{width: $parent.labelWidth || (labelWidth + 'em'), textAlign: $parent.labelAlign, marginRight: $parent.labelMarginRight}" v-if="title" v-html="title"></label>
+        <label class="weui-label" :class="labelClass" :style="{width: $parent.labelWidth || (labelWidth + 'em'), textAlign: $parent.labelAlign, marginRight: $parent.labelMarginRight}" v-if="title" v-html="title"></label>
         <inline-desc v-if="inlineDesc">{{inlineDesc}}</inline-desc>
       </slot>
     </div>
@@ -35,27 +35,27 @@
 </template>
 
 <script>
-import Base from '../utils/base'
-import InlineDesc from '../inline-desc'
-import Autosize from 'autosize' // prop.autosize
+import Base from "../utils/base";
+import InlineDesc from "../inline-desc";
+import Autosize from "autosize"; // prop.autosize
 
 export default {
-  name:'fe-textarea',
+  name: "fe-textarea",
   minxins: [Base],
-  mounted () {
-    if (this.$slots && this.$slots['restricted-label']) {
-      this.hasRestrictedLabel = true
+  mounted() {
+    if (this.$slots && this.$slots["restricted-label"]) {
+      this.hasRestrictedLabel = true;
     }
     // prop.autosize
     this.$nextTick(() => {
       if (this.autosize) {
-        this.bindAutosize()
+        this.bindAutosize();
       }
-    })
+    });
     // prop.autosize
   },
   components: {
-    [InlineDesc.name]:InlineDesc
+    [InlineDesc.name]: InlineDesc
   },
   props: {
     title: String,
@@ -81,94 +81,104 @@ export default {
     // https://github.com/yisibl/blog/issues/3
     autocomplete: {
       type: String,
-      default: 'off'
+      default: "off"
     },
     autocapitalize: {
       type: String,
-      default: 'off'
+      default: "off"
     },
     autocorrect: {
       type: String,
-      default: 'off'
+      default: "off"
     },
     spellcheck: {
       type: String,
-      default: 'false'
+      default: "false"
     },
     autosize: Boolean // prop.autosize
   },
-  created () {
-    this.currentValue = this.value
+  created() {
+    this.currentValue = this.value;
   },
   watch: {
     // prop.autosize
-    autosize (val) {
-      this.unbindAutosize()
+    autosize(val) {
+      this.unbindAutosize();
       if (val) {
-        this.bindAutosize()
+        this.bindAutosize();
       }
     },
     // prop.autosize
-    value (val) {
-      this.currentValue = val
+    value(val) {
+      this.currentValue = val;
     },
-    currentValue (newVal) {
+    currentValue(newVal) {
       if (this.max && newVal && newVal.length > this.max) {
-        this.currentValue = newVal.slice(0, this.max)
+        this.currentValue = newVal.slice(0, this.max);
       }
-      this.$emit('input', this.currentValue)
-      this.$emit('on-change', this.currentValue)
+      this.$emit("input", this.currentValue);
+      this.$emit("on-change", this.currentValue);
     }
   },
-  data () {
+  data() {
     return {
       hasRestrictedLabel: false,
-      currentValue: ''
-    }
+      currentValue: ""
+    };
   },
   computed: {
-    count () {
-      let len = 0
+    count() {
+      let len = 0;
       if (this.currentValue) {
-        len = this.currentValue.replace(/\n/g, 'aa').length
+        len = this.currentValue.replace(/\n/g, "aa").length;
       }
-      return len > this.max ? this.max : len
+      return len > this.max ? this.max : len;
     },
-    textareaStyle () {
+    textareaStyle() {
       if (this.height) {
         return {
           height: `${this.height}px`
-        }
+        };
       }
     },
-    labelStyles () {
+    labelStyles() {
       return {
-        width: this.$parent.labelWidth || (this.labelWidth + 'em'),
+        width: this.$parent.labelWidth || this.labelWidth + "em",
         textAlign: this.$parent.labelAlign,
         marginRight: this.$parent.labelMarginRight
-      }
+      };
     },
-    labelWidth () {
-      return this.title.replace(/[^x00-xff]/g, '00').length / 2 + 1
+    labelWidth() {
+      return this.title.replace(/[^x00-xff]/g, "00").length / 2 + 1;
+    },
+    labelClass() {
+      return {
+        "vux-cell-justify":
+          this.$parent.labelAlign === "justify" ||
+          this.$parent.$parent.labelAlign === "justify"
+      };
     }
   },
   methods: {
-    // prop.autosize
-    bindAutosize () {
-      Autosize(this.$refs.textarea)
-    },
-    unbindAutosize () {
-      Autosize.destroy(this.$refs.textarea)
+    updateAutosize() {
+      Autosize.update(this.$refs.textarea);
     },
     // prop.autosize
-    focus () {
-      this.$refs.textarea.focus()
+    bindAutosize() {
+      Autosize(this.$refs.textarea);
+    },
+    unbindAutosize() {
+      Autosize.destroy(this.$refs.textarea);
+    },
+    // prop.autosize
+    focus() {
+      this.$refs.textarea.focus();
     }
   },
   // prop.autosize
-  beforeDestroy () {
-    this.unbindAutosize()
+  beforeDestroy() {
+    this.unbindAutosize();
   }
   // prop.autosize
-}
+};
 </script>

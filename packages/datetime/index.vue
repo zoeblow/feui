@@ -127,6 +127,7 @@ export default {
   },
   data () {
     return {
+      currentShow: false,	
       currentValue: null,
       valid: true,
       errors: {}
@@ -178,12 +179,20 @@ export default {
         onClear (value) {
           _this.$emit('on-clear', value)
         },
-        onHide () {
+        onHide (type) {
+          _this.currentShow = false
           _this.$emit('update:show', false)
           _this.validate()
-          _this.$emit('on-hide')
+          _this.$emit('on-hide', type)
+          if (type === 'cancel') {
+            _this.$emit('on-cancel')
+          }
+          if (type === 'confirm') {
+            _this.$emit('on-confirm')
+          }
         },
         onShow () {
+          _this.currentShow = true
           _this.$emit('update:show', true)
           _this.$emit('on-show')
         }
@@ -240,6 +249,7 @@ export default {
       }
     },
     show (val) {
+      if (val === this.currentShow) return
       if (val) {
         this.picker && this.picker.show(this.currentValue)
       } else {
