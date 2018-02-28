@@ -16,6 +16,10 @@ import Flexbox from '../flexbox';
 import FlexboxItem from '../flexbox-item';
 export default {
   name:'fe-picker',
+	components: {
+    [Flexbox.name]: Flexbox,
+    [FlexboxItem.name]: FlexboxItem
+  },
   created () {
     if (this.columns !== 0) {
       const length = this.columns
@@ -23,11 +27,9 @@ export default {
       this.currentData = this.store.getColumns(this.value)
     }
   },
-  components: {
-    [Flexbox.name]: Flexbox,
-    [FlexboxItem.name]: FlexboxItem
-  },
+  
   mounted () {
+    this.uuid = Math.random().toString(36).substring(3, 8)
     this.$nextTick(() => {
       this.render(this.currentData, this.currentValue)
     })
@@ -82,11 +84,13 @@ export default {
         _this.scroller[i] = new Scroller(_this.getId(i), {
           data: data[i],
           defaultValue: value[i] || data[i][0].value,
-          itemClass: _this.item_class,
+          itemClass: _this.itemClass,
           onSelect (value) {
             _this.$set(_this.currentValue, i, value)
             if (!this.columns || (this.columns && _this.getValue().length === _this.store.count)) {
-              _this.$emit('on-change', _this.getValue())
+              _this.$nextTick(() => {
+                _this.$emit('on-change', _this.getValue())
+              })
             }
             if (_this.columns !== 0) {
               _this.renderChain(i + 1)
@@ -118,12 +122,19 @@ export default {
         itemClass: _this.item_class,
         onSelect (value) {
           _this.$set(_this.currentValue, i, value)
-          _this.$emit('on-change', _this.getValue())
+          _this.$nextTick(() => {
+            _this.$emit('on-change', _this.getValue())
+          })
           _this.renderChain(i + 1)
         }
       })
-      this.$set(this.currentValue, i, list[0].value)
-      this.renderChain(i + 1)
+// list is Array(empty) as maybe
+      if (list.length) {
+        this.$set(this.currentValue, i, list[0].value)
+        this.renderChain(i + 1)
+      } else {
+        this.$set(this.currentValue, i, null)
+      }
     },
     getValue () {
       let data = []
@@ -146,7 +157,7 @@ export default {
     return {
       scroller: [],
       count: 0,
-      uuid: Math.random().toString(36).substring(3, 8),
+      uuid: '',
       currentData: this.data,
       currentValue: this.value
     }
@@ -215,7 +226,7 @@ export default {
   },
   beforeDestroy () {
     for (let i = 0; i < this.count; i++) {
-      this.scroller[i].destroy()
+      this.scroller[i] && this.scroller[i].destroy()
       this.scroller[i] = null
     }
   }

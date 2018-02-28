@@ -8,7 +8,7 @@
 
         <!-- with icon -->
         <template v-if="displayStyle === 'default'">
-          <loading v-if="type === 'loading'" color="white" ></loading>
+          <loading v-if="type === 'loading'" :type='loadingType' :loadingColor="white" ></loading>
           <fe-icons v-else class="nuim-toast__icon" :type="iconName" ></fe-icons>
           <div v-if="message" class="nuim-toast__text">{{ message }}</div>
         </template>
@@ -38,6 +38,14 @@ export default {
     type: {
       type: String,
       default: 'text'
+    },
+    loadingType: {
+      type: String,
+      default: 'spinner'
+    },
+    loadingColor: {
+      type: String,
+      default: 'white'
     },
     position: {
       type: String,

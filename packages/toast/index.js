@@ -9,6 +9,8 @@ const defaultOptions = {
   visible: true,
   duration: 3000,
   position: "middle",
+  loadingType: "spinner",
+  loadingColor: "white",
   forbidClick: false,
   clear: () => {
     instance.visible = false;

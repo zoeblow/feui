@@ -4,6 +4,21 @@
     <div class="fe-content">
       <div style="margin:10px;">
         <fe-button type="primary" @click.native="showLoading">show Loading(2秒后关闭)</fe-button>
+        <fe-button type="primary" @click.native="gaoji">show Loading(2秒后关闭高级用法)</fe-button>
+        <br>
+        <divider>circular</divider> 
+        <loading type='circular' color='black'></loading>
+        <loading type='circular' color='white'></loading>
+        <br>
+        <br>
+        <divider>circle</divider> 
+        <loading type="circle" color="black" />
+        <loading type="circle" color="white" />
+        <br>
+        <br>
+        <divider>spinner</divider> 
+        <loading type="spinner" color="black" />
+        <loading type="spinner" color="white" />
       </div>
     </div>
   </div>
@@ -16,13 +31,38 @@ export default {
   created: function() {},
   methods: {
     showLoading() {
-      Toast.loading({ duration: 2000, mask: true});
+      Toast.loading({ duration: 3000,loadingType:'spinner', mask: true,message:'请骚等...'});
+    },
+    gaoji() {
+      const toast = Toast.loading({
+        duration: 0, // 持续展示 toast
+        forbidClick: true, // 禁用背景点击
+        mask: false,
+        message: "倒计时 3 秒"
+      });
 
-      // Loading.show({text:'显示咯'});
-      // setTimeout(function(){
-      //    Loading.hide()
-      // },2000)
+      let second = 3;
+      const timer = setInterval(() => {
+        second--;
+        if (second) {
+          toast.message = `倒计时 ${second} 秒`;
+        } else {
+          clearInterval(timer);
+          Toast.clear();
+        }
+      }, 1000);
     }
   }
 };
 </script>
+<style>
+.nuim-loading{
+  display: inline-block;
+  margin-left: 20px;
+}
+.nuim-loading--white {
+    padding: 10px;
+    border-radius: 3px;
+    background-color: rgba(0,0,0,.5);
+}
+</style>

@@ -9,11 +9,10 @@
 <script>
 export default {
   name: 'loading',
-
   props: {
     type: {
       type: String,
-      default: 'gradient-circle'
+      default: 'spinner'
     },
     color: {
       type: String,

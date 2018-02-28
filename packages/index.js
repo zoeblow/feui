@@ -48,7 +48,7 @@ import TabbarItem from './tabbar-item';
 import Textarea from './textarea';
 import Toast from './toast';
 
-const version = '0.4.2';
+const version = '0.4.4';
 const components = [
   Actionsheet,
   Address,

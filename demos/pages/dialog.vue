@@ -41,14 +41,14 @@ export default {
         skin: skin,
         message: "弹窗内容"
       })
-        .then(() => {
-          // on confirm
-          console.log("confirm");
-        })
-        .catch(() => {
-          // on cancel
-          console.log("cancel");
-        });
+      .then(() => {
+        // on confirm
+        console.log("confirm");
+      })
+      .catch(() => {
+        // on cancel
+        console.log("cancel");
+      });
 
       // Dialog({
       //   title: title,
