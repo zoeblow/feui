@@ -4,6 +4,14 @@
     <div class="fe-content">
       <fe-group title="单列">
         <popup-picker :title="title1" :data="list1" v-model="value1" @on-show="onShow" @on-hide="onHide" @on-change="onChange" placeholder="请选择"></popup-picker>
+        <popup-picker :popup-title="请选择" :title="title1" :data="list1" v-model="value1_1" @on-show="onShow" @on-hide="onHide" @on-change="onChange" placeholder="请选择">
+          <template slot="title" slot-scope="props"><!-- use scope="props" when vue < 2.5.0 -->
+            <span :class="props.labelClass" :style="props.labelStyle" style="height:24px;">
+              <span class="cell-icon iconfont feui-icon" style="font-size:20px;vertical-align:middle;"></span>
+              <span style="vertical-align:middle;">手机</span>
+            </span>
+          </template>
+        </popup-picker>
       </fe-group>
       <br>
       <div class="picker-buttons">
@@ -33,7 +41,7 @@
         <popup-picker v-if="!switch6" title="显示值" :data="['你猜猜我是谁啊'.split('')]" v-model="value6"></popup-picker>
       </fe-group>
       <fe-group title="显示格式化">
-        <popup-picker title="时间" :inline-desc="`当前值[${formatDemoValue}]`"v-model="formatDemoValue" :data="[['01','02','03'],['11','12','13']]" :display-format="format"></popup-picker>
+        <popup-picker title="时间" :inline-desc="`当前值[${formatDemoValue}]`" v-model="formatDemoValue" :data="[['01','02','03'],['11','12','13']]" :display-format="format"></popup-picker>
       </fe-group>
 
     </div>
@@ -152,9 +160,11 @@ export default {
           parent: "nyk"
         }
       ],
-      value1: ["iPhone"],
+      value1: ['iPhone'],
+      value1_1: ['iPhone'],
       value2: ["iPhone", "华为3"],
       value3: [],
+      value4: [],
       value4: [],
       showPopupPicker: false,
       value5: ["2"],
@@ -172,5 +182,8 @@ export default {
 <style scoped>
 .picker-buttons {
   margin: 0 15px;
+}
+.feui-icon{
+  color:red;
 }
 </style>

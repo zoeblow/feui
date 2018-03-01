@@ -1,6 +1,6 @@
 <template>
   <transition :name="`nuim-popup-animate-${position}`">
-    <div v-show="show" :style="styles" class="nuim-popup-dialog" :class="[`nuim-popup-${position}`, show ? 'nuim-popup-show' : '']">
+    <div v-show="show && !initialShow" :style="styles" class="nuim-popup-dialog" :class="[`nuim-popup-${position}`, show ? 'nuim-popup-show' : '']">
       <slot></slot>
     </div>
   </transition>
@@ -8,6 +8,7 @@
 
 <script>
 import Popup from './popup'
+import dom from '../utils/dom'
 
 export default {
   name:'fe-popup',
@@ -33,9 +34,22 @@ export default {
     position: {
       type: String,
       default: 'bottom'
+    },
+    maxHeight: String,
+    popupStyle: Object,
+    hideOnDeactivated: {
+      type: Boolean,
+      default: true
+    }
+  },
+  created () {
+    // get global layout config
+    if (this.$nuim && this.$nuim.config && this.$nuim.config.$layout === 'VIEW_BOX') {
+      this.layout = 'VIEW_BOX'
     }
   },
   mounted () {
+    this.$overflowScrollingList = document.querySelectorAll('.nuim-fix-safari-overflow-scrolling')
     this.$nextTick(() => {
       const _this = this
       this.popup = new Popup({
@@ -48,26 +62,45 @@ export default {
         },
         onClose () {
           _this.show = false
-          if (Object.keys(window.__$nuimPopups).length > 1) return
+	  if (window.__$nuimPopups && Object.keys(window.__$nuimPopups).length > 1) return
           if (document.querySelector('.nuim-popup-dialog.nuim-popup-mask-disabled')) return
           setTimeout(() => {
             _this.fixSafariOverflowScrolling('touch')
           }, 300)
         }
       })
-      this.$overflowScrollingList = document.querySelectorAll('.nuim-fix-safari-overflow-scrolling')
+      if (this.value) {
+        this.popup.show()
+      }
+      this.initialShow = false
     })
   },
-  methods: {
+  deactivated () {
+    if (this.hideOnDeactivated) {
+      this.show = false
+    }
+    this.removeModalClassName()
+    },   
+    methods: {
+    /**
+    * https://github.com/airyland/nuim/issues/311
+    * https://benfrain.com/z-index-stacking-contexts-experimental-css-and-ios-safari/
+    */
     fixSafariOverflowScrolling (type) {
       if (!this.$overflowScrollingList.length) return
+      // if (!/iphone/i.test(navigator.userAgent)) return
       for (let i = 0; i < this.$overflowScrollingList.length; i++) {
         this.$overflowScrollingList[i].style.webkitOverflowScrolling = type
       }
+    },
+    removeModalClassName () {
+      this.layout === 'VIEW_BOX' && dom.removeClass(document.body, 'nuim-modal-open')
     }
   },
   data () {
-    return {
+     return {
+      layout: '',
+      initialShow: true,
       hasFirstShow: false,
       show: this.value
     }

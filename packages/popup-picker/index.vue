@@ -2,7 +2,9 @@
   <div class="nuim-cell-box">
     <div class="weui-cell nuim-tap-active weui-cell_access" @click="onClick" v-show="showCell">
       <div class="weui-cell__hd">
-        <label class="weui-label" :style="{display: 'block', width: $parent.labelWidth || $parent.$parent.labelWidth, textAlign: $parent.labelAlign || $parent.$parent.labelAlign, marginRight: $parent.labelMarginRight || $parent.$parent.labelMarginRight}" v-if="title" v-html="title"></label>
+        <slot name="title" label-class="weui-label" :label-style="labelStyles" :label-title="title">
+          <label class="weui-label" :class="labelClass" :style="labelStyles" v-if="title" v-html="title"></label>
+        </slot>        
         <inline-desc v-if="inlineDesc">{{inlineDesc}}</inline-desc>
       </div>
       <div class="nuim-cell-primary  nuim-popup-picker-select-box">
@@ -10,7 +12,7 @@
           <span class="nuim-popup-picker-value" v-if="!displayFormat && !showName && value.length">{{value | array2string}}</span>
           <span class="nuim-popup-picker-value" v-if="!displayFormat && showName && value.length">{{value | value2name(data)}}</span>
           <span class="nuim-popup-picker-value" v-if="displayFormat && value.length">{{ displayFormat(value, value2name(value, data)) }}</span>
-          <span v-if="!value.length && placeholder" v-html="placeholder" class="nuim-popup-picker-placeholder"></span>
+          <span v-if="!value.length && placeholder" v-text="placeholder" class="nuim-popup-picker-placeholder"></span>
         </div>
       </div>
       <div class="weui-cell__ft">
@@ -18,7 +20,7 @@
     </div>
 
     <div v-transfer-dom="isTransferDom">
-      <fe-popup v-model="showValue" class="nuim-popup-picker" :id="`nuim-popup-picker-${uuid}`" @on-hide="onPopupHide" @on-show="onPopupShow">
+      <fe-popup v-model="showValue" class="nuim-popup-picker" :id="`nuim-popup-picker-${uuid}`" @on-hide="onPopupHide" @on-show="onPopupShow" :popup-style="popupStyle">
         <div class="nuim-popup-picker-container">
           <div class="nuim-popup-picker-header">
             <flexbox>
@@ -42,27 +44,27 @@
 </template>
 
 <script>
-import array2string from '../utils/array2String'
-import value2name from '../utils/value2name'
-import uuidMixin from '../utils/mixin_uuid'
-import TransferDom from '../utils/transfer-dom'
-import FlexboxItem from '../flexbox-item';
-import Flexbox from '../flexbox';
-import Popup from '../popup';
-import Picker from '../picker';
-import InlineDesc from '../inline-desc';
-const getObject = function (obj) {
-  return JSON.parse(JSON.stringify(obj))
-}
+import array2string from "../utils/array2String";
+import value2name from "../utils/value2name";
+import uuidMixin from "../utils/mixin_uuid";
+import TransferDom from "../utils/transfer-dom";
+import FlexboxItem from "../flexbox-item";
+import Flexbox from "../flexbox";
+import Popup from "../popup";
+import Picker from "../picker";
+import InlineDesc from "../inline-desc";
+const getObject = function(obj) {
+  return JSON.parse(JSON.stringify(obj));
+};
 
 export default {
   directives: {
     TransferDom
   },
-  name:'popup-picker',
-  created () {
-    if (typeof this.show !== 'undefined') {
-      this.showValue = this.show
+  name: "popup-picker",
+  created() {
+    if (typeof this.show !== "undefined") {
+      this.showValue = this.show;
     }
   },
   components: {
@@ -80,15 +82,15 @@ export default {
   props: {
     valueTextAlign: {
       type: String,
-      default: 'right'
+      default: "right"
     },
     title: String,
     cancelText: String,
     confirmText: String,
     data: {
       type: Array,
-      default () {
-        return []
+      default() {
+        return [];
       }
     },
     placeholder: String,
@@ -102,8 +104,8 @@ export default {
     },
     value: {
       type: Array,
-      default () {
-        return []
+      default() {
+        return [];
       }
     },
     showName: Boolean,
@@ -118,71 +120,98 @@ export default {
       type: Boolean,
       default: true
     },
-    columnWidth: Array
+    columnWidth: Array,
+    popupStyle: Object,
+    popupTitle: String
+  },
+  computed: {
+    labelStyles() {
+      return {
+        display: "block",
+        width:
+          this.$parent.labelWidth || this.$parent.$parent.labelWidth || "auto",
+        textAlign: this.$parent.labelAlign || this.$parent.$parent.labelAlign,
+        marginRight:
+          this.$parent.labelMarginRight || this.$parent.$parent.labelMarginRight
+      };
+    },
+    labelClass() {
+      return {
+        "vux-cell-justify":
+          this.$parent.labelAlign === "justify" ||
+          this.$parent.$parent.labelAlign === "justify"
+      };
+    }
   },
   methods: {
     value2name,
-    getNameValues () {
-      return value2name(this.currentValue, this.data)
+    getNameValues() {
+      return value2name(this.currentValue, this.data);
     },
-    onClick () {
-      this.showValue = true
+    onClick() {
+      this.showValue = true;
     },
-    onHide (type) {
-      this.showValue = false
+    onHide(type) {
+      this.showValue = false;
       if (type) {
-        this.closeType = true
-        this.currentValue = getObject(this.tempValue)
+        this.closeType = true;
+        this.currentValue = getObject(this.tempValue);
       }
       if (!type) {
-        this.closeType = false
+        this.closeType = false;
         if (this.value.length > 0) {
-          this.tempValue = getObject(this.currentValue)
+          this.tempValue = getObject(this.currentValue);
         }
       }
     },
-    onPopupShow () {
+    onPopupShow() {
       // reset close type to false
-      this.closeType = false
-      this.$emit('on-show')
+      this.closeType = false;
+      this.$emit("on-show");
     },
-    onPopupHide (val) {
+    onPopupHide(val) {
       if (this.value.length > 0) {
-        this.tempValue = getObject(this.currentValue)
+        this.tempValue = getObject(this.currentValue);
       }
-      this.$emit('on-hide', this.closeType)
+      this.$emit("on-hide", this.closeType);
     },
-    onPickerChange (val) {
+    onPickerChange(val) {
       if (JSON.stringify(this.currentValue) !== JSON.stringify(val)) {
         // if has value, replace it
         if (this.value.length) {
-          const nowData = JSON.stringify(this.data)
-          if (nowData !== this.currentData && this.currentData !== '[]') {
-            this.tempValue = getObject(val)
+          const nowData = JSON.stringify(this.data);
+          if (nowData !== this.currentData && this.currentData !== "[]") {
+            this.tempValue = getObject(val);
           }
-          this.currentData = nowData
-        } else { // if no value, stay quiet
+          this.currentData = nowData;
+        } else {
+          // if no value, stay quiet
           // if set to auto update, do update the value
         }
       }
-      this.$emit('on-shadow-change', getObject(val))
+      const _val = getObject(val);
+      this.$emit(
+        "on-shadow-change",
+        _val,
+        value2name(_val, this.data).split(" ")
+      );
     }
   },
   watch: {
-    value (val) {
+    value(val) {
       if (JSON.stringify(val) !== JSON.stringify(this.tempValue)) {
-        this.tempValue = getObject(val)
+        this.tempValue = getObject(val);
       }
     },
-    currentValue (val) {
-      this.$emit('on-change', getObject(val))
-      this.$emit('input', getObject(val))
+    currentValue(val) {
+      this.$emit("on-change", getObject(val));
+      this.$emit("input", getObject(val));
     },
-    show (val) {
-      this.showValue = val
+    show(val) {
+      this.showValue = val;
     }
   },
-  data () {
+  data() {
     return {
       onShowProcess: false,
       tempValue: getObject(this.value),
@@ -190,7 +219,7 @@ export default {
       currentData: JSON.stringify(this.data), // used for detecting if it is after data change
       showValue: false,
       currentValue: this.value
-    }
+    };
   }
-}
+};
 </script>
