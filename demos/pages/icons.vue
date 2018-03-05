@@ -31,12 +31,12 @@ export default {
         "qrcode",
         "loading",
         "success-no-circle2",
-        "success-circle",
         "map",
         "waiting-fail",
         "cancel",
         "notice",
         "back",
+        "camera",
         "info",
         "icons",
         "step",
@@ -50,15 +50,17 @@ export default {
         "right",
         "top",
         "bottom",
+        "upload",
         "delect",
         "warn",
         "clear",
         "circle",
         "success-no-circle",
         "waiting",
-        "upload-demo",
+        "download",
+        "success-circle",
         "feui",
-        "fy"
+        "fy",
       ]
     };
   }

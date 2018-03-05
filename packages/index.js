@@ -47,8 +47,9 @@ import Tabbar from './tabbar';
 import TabbarItem from './tabbar-item';
 import Textarea from './textarea';
 import Toast from './toast';
+import Uploader from './uploader';
 
-const version = '0.4.6';
+const version = '0.4.7';
 const components = [
   Actionsheet,
   Address,
@@ -94,7 +95,8 @@ const components = [
   TabItem,
   Tabbar,
   TabbarItem,
-  Textarea
+  Textarea,
+  Uploader
 ];
 
 const install = Vue => {
@@ -157,7 +159,8 @@ export {
   Tabbar,
   TabbarItem,
   Textarea,
-  Toast
+  Toast,
+  Uploader
 };
 
 export default {

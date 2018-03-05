@@ -245,6 +245,12 @@
         "name": "Toast",
         "description": "吐司",
         "icon": "toast"
+      },
+      {
+        "path": "/uploader",
+        "name": "Uploader",
+        "description": "上传",
+        "icon": "bottom"
       }
     ]
   }

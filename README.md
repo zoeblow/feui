@@ -78,8 +78,16 @@
 * [x] Tab-item
 * [x] Textarea
 * [x] Toast
+* [x] Uploader
 
 <br/><br/><br/>
+## V 0.4.7
+
+### 已完成
+
+> 添加uploader组件<br/>
+> 修改slidbtn组件部分功能<br/>
+
 ## V 0.4.6
 
 ### 已完成
