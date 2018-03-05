@@ -229,16 +229,16 @@
         "icon": "scrollable"
       },
       {
-        "path": "/swiper",
-        "name": "Swiper",
-        "description": "轮播",
-        "icon": "swipe"
-      },
-      {
         "path": "/slidbtn",
         "name": "Slidbtn",
         "description": "滑动操作",
         "icon": "sliderlr"
+      },
+      {
+        "path": "/swiper",
+        "name": "Swiper",
+        "description": "轮播",
+        "icon": "swipe"
       },
       {
         "path": "/toast",

@@ -9,7 +9,6 @@
     @touchcancel="endDrag"
   >
     <div class="fe-slidbtn_wrapper" :style="wrapperStyle" @transitionend="swipe = false">
-      
       <div class="fe-slidbtn_left" v-if="leftWidth"  :style="{backgroundColor: leftBgc}" @click="leftClick" >
         <slot name="left"></slot>
       </div>

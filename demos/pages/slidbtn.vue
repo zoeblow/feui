@@ -18,14 +18,14 @@
         </fe-group>
         <span slot="right" >删除</span>
       </fe-slidbtn>
-      <divider>做能左滑</divider>
+      <divider>只能左滑</divider>
       <fe-slidbtn :right-width="65" @on-click-left='clickLeft' @on-click-right='clickRight' >
         <fe-group>
           <fe-cell title="单元格1" value="单元格1内容"></fe-cell>
         </fe-group>
         <span slot="right" >删除</span>
       </fe-slidbtn>
-      <divider>做能右滑</divider>
+      <divider>只能右滑</divider>
       <fe-slidbtn :left-width="65" @on-click-left='clickLeft' @on-click-right='clickRight' >
         <span slot="left" >选择</span>
         <fe-group>
