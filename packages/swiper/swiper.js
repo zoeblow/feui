@@ -2,7 +2,7 @@ import objectAssign from 'object-assign'
 const arrayFrom = (nodeList) => Array.prototype.slice.call(nodeList)
 
 class Swiper {
-  constructor (options) {
+  constructor(options) {
     this._default = {
       container: '.nuim-swiper',
       item: '.nuim-swiper-item',
@@ -42,7 +42,7 @@ class Swiper {
     return this
   }
 
-  _auto () {
+  _auto() {
     const me = this
     me.stop()
     if (me._options.auto) {
@@ -52,20 +52,20 @@ class Swiper {
     }
   }
 
-  updateItemWidth () {
+  updateItemWidth() {
     this._width = this.$box.offsetWidth || document.documentElement.offsetWidth
     this._distance = this._options.direction === 'horizontal' ? this._width : this._height
   }
 
-  stop () {
+  stop() {
     this.timer && clearTimeout(this.timer)
   }
 
-  _loop () {
+  _loop() {
     return this._options.loop && this.realCount >= 3
   }
 
-  _onResize () {
+  _onResize() {
     const me = this
     this.resizeHandler = () => {
       setTimeout(() => {
@@ -77,7 +77,7 @@ class Swiper {
     window.addEventListener('orientationchange', this.resizeHandler, false)
   }
 
-  _init () {
+  _init() {
     this._height = this._options.height === 'auto' ? 'auto' : this._options.height - 0
     this.updateItemWidth()
     this._initPosition()
@@ -89,13 +89,13 @@ class Swiper {
     }
   }
 
-  _initPosition () {
+  _initPosition() {
     for (let i = 0; i < this.realCount; i++) {
       this._position.push(i)
     }
   }
 
-  _movePosition (position) {
+  _movePosition(position) {
     const me = this
     if (position > 0) {
       let firstIndex = me._position.splice(0, 1)
@@ -106,7 +106,7 @@ class Swiper {
     }
   }
 
-  _setOffset () {
+  _setOffset() {
     let me = this
     let index = me._position.indexOf(me._current)
     me._offset = []
@@ -115,7 +115,7 @@ class Swiper {
     })
   }
 
-  _setTransition (duration) {
+  _setTransition(duration) {
     duration = duration || (this._options.duration || 'none')
     let transition = duration === 'none' ? 'none' : duration + 'ms'
     arrayFrom(this.$items).forEach(function ($item, key) {
@@ -124,7 +124,7 @@ class Swiper {
     })
   }
 
-  _setTransform (offset) {
+  _setTransform(offset) {
     const me = this
     offset = offset || 0
     arrayFrom(me.$items).forEach(function ($item, key) {
@@ -138,7 +138,7 @@ class Swiper {
     })
   }
 
-  _bind () {
+  _bind() {
     const me = this
     me.touchstartHandler = (e) => {
       me.stop()
@@ -147,6 +147,9 @@ class Swiper {
       me._setTransition('none')
     }
     me.touchmoveHandler = (e) => {
+      if (me.count === 1) {
+        return
+      }
       me._move.x = e.changedTouches[0].pageX
       me._move.y = e.changedTouches[0].pageY
       let distanceX = me._move.x - me._start.x
@@ -168,6 +171,9 @@ class Swiper {
     }
 
     me.touchendHandler = (e) => {
+      if (me.count === 1) {
+        return
+      }
       me._end.x = e.changedTouches[0].pageX
       me._end.y = e.changedTouches[0].pageY
 
@@ -205,10 +211,9 @@ class Swiper {
     me.$items[1] && me.$items[1].addEventListener('webkitTransitionEnd', me.transitionEndHandler, false)
   }
 
-  _loopRender () {
+  _loopRender() {
     const me = this
     if (me._loop()) {
-      // issue #507 (delete cloneNode)
       if (me._offset[me._offset.length - 1] === 0) {
         me.$container.appendChild(me.$items[0])
         me._loopEvent(1)
@@ -219,7 +224,7 @@ class Swiper {
     }
   }
 
-  _loopEvent (num) {
+  _loopEvent(num) {
     const me = this
     me._itemDestoy()
     me.$items = me.$container.querySelectorAll(me._options.item)
@@ -229,7 +234,7 @@ class Swiper {
     me._setTransform()
   }
 
-  getDistance (distance) {
+  getDistance(distance) {
     if (this._loop()) {
       return distance
     } else {
@@ -243,7 +248,7 @@ class Swiper {
     }
   }
 
-  _moveIndex (num) {
+  _moveIndex(num) {
     if (num !== 0) {
       this._prev = this._current
       this._current += this.realCount
@@ -252,7 +257,7 @@ class Swiper {
     }
   }
 
-  _activate (index) {
+  _activate(index) {
     let clazz = this._options.activeClass
     Array.prototype.forEach.call(this.$items, ($item, key) => {
       $item.classList.remove(clazz)
@@ -262,7 +267,7 @@ class Swiper {
     })
   }
 
-  go (index) {
+  go(index) {
     const me = this
     me.stop()
 
@@ -279,17 +284,17 @@ class Swiper {
     return this
   }
 
-  next () {
+  next() {
     this.move(1)
     return this
   }
 
-  move (num) {
+  move(num) {
     this.go(this._current + num)
     return this
   }
 
-  on (event, callback) {
+  on(event, callback) {
     if (this._eventHandlers[event]) {
       console.error(`[swiper] event ${event} is already register`)
     }
@@ -300,13 +305,13 @@ class Swiper {
     return this
   }
 
-  _itemDestoy () {
+  _itemDestoy() {
     this.$items.length && arrayFrom(this.$items).forEach(item => {
       item.removeEventListener('webkitTransitionEnd', this.transitionEndHandler, false)
     })
   }
 
-  destroy () {
+  destroy() {
     this.stop()
     this._current = 0
     this._setTransform(0)

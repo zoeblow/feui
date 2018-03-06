@@ -2,7 +2,7 @@
   <div class="page">
     <fe-header slot="header" style="width:100%;position:absolute;left:0;top:0;z-index:100;">Swiper</fe-header>
     <div class="fe-content">
-      <fe-swiper :list="demo01_list" v-model="demo02_index" @on-index-change="demo01_onIndexChange"></fe-swiper>
+      <fe-swiper :list="demo01_list" v-model="demo02_index" show-desc-mask @on-index-change="demo01_onIndexChange"></fe-swiper>
       <br>
       <divider>根据宽度计算高度</divider> 
       <fe-swiper :list="demo02_list" style="width:85%;margin:0 auto;" :aspect-ratio="300/800" dots-position="center"></fe-swiper>
@@ -36,7 +36,7 @@
         <swiper-item><p><a href='http://ifuyuan.wang'>比尔盖茨凭什么能当中国工程院院士？</a></p></swiper-item>
       </fe-swiper>
       <br>
-      <divider>循环模式（只有两个且可点击）</divider>
+      <divider>循环模式</divider>
       <fe-swiper loop auto :list="demo07_list" :index="demo07_index" @on-index-change="demo07_onIndexChange"></fe-swiper>
       <p>current index: {{demo07_index}}</p>
       <br>

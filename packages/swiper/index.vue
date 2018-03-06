@@ -2,7 +2,6 @@
   <div class="nuim-slider">
     <div class="nuim-swiper" :style="{height: xheight}">
       <slot></slot>
-
       <div
       class="nuim-swiper-item"
       v-for="(item, index) in list"
@@ -182,7 +181,7 @@ export default {
       xheight: 'auto',
       length: this.list.length,
       index: 0,
-      listTwoLoopItem: [] // issue #1484
+      listTwoLoopItem: [] 
     }
   },
   watch: {
