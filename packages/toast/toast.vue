@@ -25,12 +25,10 @@ import Loading from '../loading';
 const DEFAULT_STYLE_LIST = ['success', 'fail', 'loading', 'info'];
 export default {
   name: 'nuim-toast',
-
   components: {
     [Icon.name]: Icon,
     [Loading.name]: Loading
   },
-
   props: {
     mask: Boolean,
     message: String,
