@@ -8,7 +8,7 @@
           <fe-icons type="camera" />
         </fe-uploader>
       </div>
-      <divider>设置 input 属性</divider>
+      <divider>设置input属性</divider>
       <div class="demo-uploader-container">
         <fe-uploader :after-read="logContent" accept="image/gif ,image/png, image/jpeg" multiple>
           <fe-icons type="camera" />
@@ -54,7 +54,6 @@ export default {
   box-sizing: border-box;
   .demo-img{
     max-width: 100%;
-    
   }
 }
 </style>
