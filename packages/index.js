@@ -22,6 +22,7 @@ import Indexlist from './indexlist';
 import InlineDesc from './inline-desc';
 import Inlinecalendar from './inlinecalendar';
 import Input from './input';
+import Keyboard from './keyboard';
 import Lazyload from './lazyload';
 import Loading from './loading';
 import Noticebar from './noticebar';
@@ -29,6 +30,7 @@ import Picker from './picker';
 import Popup from './popup';
 import PopupPicker from './popup-picker';
 import Pullrefresh from './pullrefresh';
+import Pwdinput from './pwdinput';
 import Qrcode from './qrcode';
 import Radio from './radio';
 import Range from './range';
@@ -49,7 +51,7 @@ import Textarea from './textarea';
 import Toast from './toast';
 import Uploader from './uploader';
 
-const version = '0.4.10';
+const version = '0.4.11';
 const components = [
   Actionsheet,
   Address,
@@ -73,12 +75,14 @@ const components = [
   InlineDesc,
   Inlinecalendar,
   Input,
+  Keyboard,
   Loading,
   Noticebar,
   Picker,
   Popup,
   PopupPicker,
   Pullrefresh,
+  Pwdinput,
   Qrcode,
   Radio,
   Range,
@@ -135,6 +139,7 @@ export {
   InlineDesc,
   Inlinecalendar,
   Input,
+  Keyboard,
   Lazyload,
   Loading,
   Noticebar,
@@ -142,6 +147,7 @@ export {
   Popup,
   PopupPicker,
   Pullrefresh,
+  Pwdinput,
   Qrcode,
   Radio,
   Range,

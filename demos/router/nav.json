@@ -158,6 +158,12 @@
         "icon": "Pullrefresh"
       },
       {
+        "path": "/pwdinput",
+        "name": "Pwdinput",
+        "description": "密码输入",
+        "icon": "password"
+      },
+      {
         "path": "/radio",
         "name": "Radio",
         "description": "单选",

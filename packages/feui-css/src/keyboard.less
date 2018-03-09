@@ -1,0 +1,106 @@
+@import './variable.less';
+@import './others.less';
+
+@nuim-keyboard-key-height: 54px;
+
+.nuim-keyboard {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  user-select: none;
+  background-color: @white;
+  animation-timing-function: ease-out;
+
+  &__title {
+    height: 30px;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    position: relative;
+    color: @gray-darker;
+  }
+
+  &__body {
+    box-sizing: border-box;
+  }
+
+  &__close {
+    right: 0;
+    color: @blue;
+    font-size: 14px;
+    padding: 0 15px;
+    position: absolute;
+
+    &:active {
+      background-color: #e8e8e8;
+    }
+  }
+
+  &__sidebar {
+    right: 0;
+    bottom: 0;
+    width: 25%;
+    position: absolute;
+    height: calc(@nuim-keyboard-key-height * 4);
+  }
+
+  &--custom {
+    .nuim-keyboard__body {
+      padding-right: 25%;
+    }
+  }
+}
+
+.nuim-key {
+  width: calc(100%/3);
+  font-size: 24px;
+  font-style: normal;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  height: @nuim-keyboard-key-height;
+  line-height: @nuim-keyboard-key-height;
+
+  &::after {
+    border-width: 1px 1px 0 0;
+  }
+
+  &--middle {
+    width: calc(200%/3);
+  }
+
+  &--big {
+    width: 100%;
+    height: calc(@nuim-keyboard-key-height * 2);
+    line-height: calc(@nuim-keyboard-key-height * 2);
+  }
+
+  &--green {
+    font-size: 20px;
+    color: @white;
+    background-color: @green;
+
+    &.nuim-key--active {
+      background-color: #308305;
+    }
+
+    &::after {
+      border-color: @green;
+    }
+  }
+
+  &--delete {
+    font-size: 0;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAOVBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC8dlA9AAAAEnRSTlMAwBDQMGDw75/gsIBQkG8g36ADZQQbAAAA1UlEQVRIx+3T2Q7CIBCF4WGgC9hFef+HFUPwdOIIEq80PXdN/i+hG537h22mvjDIfo7NXTr7aETfBXiOXYBt7AAvfWC+HW90twBa7yltKFfDIwDQzjMxROoF0M8/01MMsjBqDzEu6DNQewhXegDZY4bFEwcw8c0soz+C5jsy8UPgXQbOS2ArJ1LvwY2V3ilPCULppykLcwAQSh9jFhQAVLFT2pL6ItgDKMKWLwnCAmhiQ5/EQnTBkXRhr+LKfv+LQrQBRAeAaINOsZIQYaznfmU695u7A61vRe7MXzMXAAAAAElFTkSuQmCC") no-repeat center center;
+    background-size: auto 25px;
+  }
+
+  &--gray {
+    background-color: #F3F3F6;
+  }
+
+  &--active {
+    background-color: #e8e8e8;
+  }
+}
