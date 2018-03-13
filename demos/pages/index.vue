@@ -1,9 +1,8 @@
 <template>
   <div class="page">
     <div class="page__hd">
-      <!-- <img :src="logoImg" alt="" class="logo"> -->
       <i class="cell-icon iconfont feui-feui"></i>
-      <h1 class="page__title">Feui</h1>
+      <h1 class="page__title">Feui <span class="version">V{{version}}</span></h1>
     </div>
     <fe-group :title="navGroup.groupTitle" v-for="navGroup in navs" :key="navGroup.index">
       <fe-cell v-for="nav in navGroup.navItems" :key="nav.name" :link="nav.path" is-link :title="nav.name" >
@@ -16,12 +15,15 @@
 
 <script>
 import { navs } from "../router/index.js";
+const version = process.env.VERSION || require("../../package.json").version;
+
 export default {
   data() {
     return {
       navs,
       keyword: "",
-      componentList: []
+      componentList: [],
+      version: version
     };
   },
   mounted() {
@@ -62,6 +64,11 @@ export default {
   display: block;
   margin: 0 auto;
   width: 75px;
+}
+.version{    
+  font-size: 12px;
+  vertical-align: middle;
+  color: #41b883;
 }
 .page__hd {
   padding: 40px;
