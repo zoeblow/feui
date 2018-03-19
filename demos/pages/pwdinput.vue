@@ -5,7 +5,7 @@
       <br>
       <divider>基础用法</divider>
       <fe-pwdinput :value="value" info="密码为 6 位数字" @focus="showKeyboard = true" ></fe-pwdinput>
-      <p>{{value}}</p>
+      <p class="pwd">Password:<span>{{value}}</span></p>
 
       <fe-keyboard :show="showKeyboard" @input="onInput" @delete="onDelete" @blur="showKeyboard = false"></fe-keyboard>
     </div>
@@ -19,11 +19,9 @@ export default {
       showKeyboard: true
     };
   },
-
   methods: {
     onInput(key) {
       this.value = (this.value + key).slice(0, 6);
-
     },
     onDelete() {
       this.value = this.value.slice(0, this.value.length - 1);
@@ -32,4 +30,13 @@ export default {
 };
 </script>
 <style scoped lang="less">
+.pwd{
+  text-align:center;
+  color:#999;
+  span{
+    display: inline-block;
+    width: 65px;
+    text-align: left;
+  }
+}
 </style>
