@@ -3,7 +3,7 @@
     <img src="./static/feui.png" width="180" alt="">
   </a>
 </div>
-<div align="center">Feui 是爱信诺前端组移动组依据现有业务逻辑，基于VUE制作的一套UI组件</div>
+<div align="center">Feui是诺诺网前端组(<a href='https://github.com/nuofe' target='_black'>Nuofe</a>)移动组依据现有业务逻辑，基于VUE制作的一套UI组件</div>
 <br>
 <div align="center">
 
@@ -13,7 +13,7 @@
   <br>
 <div align="center">
    <a href="https://feui.gitee.io">
-    <img src="./static/feui-qrcode.png" width="180" alt="">
+    <img src="./static/feui-qrcode.png" width="180" alt="" />
   </a>
   <br>
   <a href="https://feui.gitee.io">
@@ -53,6 +53,7 @@
 * [x] Inlinecalendar
 * [x] Inline-desc
 * [x] Input
+* [x] Keyboard
 * [x] Lazyload
 * [x] Loading
 * [x] Noticebar
@@ -82,6 +83,12 @@
 * [x] Uploader
 
 <br/><br/><br/>
+## V 0.4.12
+
+### 已完成
+
+> 修改Pwdinput组件部分功能<br/>
+
 ## V 0.4.11
 
 ### 已完成

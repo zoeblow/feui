@@ -1,9 +1,11 @@
+@import './variable.less';
+
 .nuim-toast {
   position: fixed;
   top: 50%;
   left: 50%;
   display: flex;  
-  color: #fff;
+  color: @white;
   z-index: 3001;
   font-size: 15px;
   line-height: 1.2;
@@ -45,7 +47,7 @@
 
     .nuim-toast__icon {
       font-size: 50px;
-      color: #fff;
+      color: @white;
     }
 
     .nuim-loading {

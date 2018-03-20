@@ -1,6 +1,8 @@
+@import './variable.less';
+
 .nuim-steps {
   overflow: hidden;
-  background-color: #fff;
+  background-color: @white;
 
   &--horizontal {
     padding: 0 10px;
@@ -45,7 +47,7 @@
   &__desc {
     font-size: 12px;
     line-height: 1.5;
-    color: #999;
+    color: @gray-dark;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -56,7 +58,7 @@
   flex: 1;
   font-size: 14px;
   position: relative;
-  color: #999;
+  color: @gray-dark;
   
   &--horizontal {
     float: left;
@@ -93,7 +95,7 @@
       top: 28px;
       left: -8px;
       padding: 0 8px;
-      background-color: #fff;
+      background-color: @white;
       z-index: 1;
     }
 
@@ -110,7 +112,7 @@
       top: 30px;
       width: 100%;
       height: 1px;
-      background-color: #e5e5e5;
+      background-color: @gray-light;
     }
 
     &.nuim-step--finish {
@@ -118,7 +120,7 @@
 
       .nuim-step__circle,
       .nuim-step__line {
-        background-color: #4a90e2;
+        background-color: @theme-color;
       }
     }
 
@@ -131,7 +133,7 @@
 
       .nuim-icon {
         font-size: 12px;
-        color: #4a90e2;
+        color: @theme-color;
         display: block;
       }
     }
@@ -162,7 +164,7 @@
         position: absolute;
         width: 1px;
         height: 20px;
-        background-color: #fff;
+        background-color: @white;
         top: 0;
         left: -15px;
         z-index: 1;
@@ -192,7 +194,7 @@
       left: -15px;
       width: 1px;
       height: 100%;
-      background-color: #e5e5e5;
+      background-color: @gray-light;
     }
   }
 }

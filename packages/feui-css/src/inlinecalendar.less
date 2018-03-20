@@ -43,7 +43,7 @@
 }
 .inline-calendar a {
   text-decoration: none;
-  tap-highlight-color: rgba(0, 0, 0, 0);
+  tap-highlight-color: @black;
 }
 .calendar-year, .calendar-month {
   position: relative;
@@ -80,7 +80,7 @@
 }
 .switch-btn:active, .calendar-title:active, .calendar-header a.active {
   background-color: #39b5b8;
-  color: #fff;
+  color: @white;
 }
 .calendar-week {
   overflow: hidden;
@@ -110,7 +110,7 @@
   left:30px;
   top: -10px;
   content: "";
-  border:5px solid rgba(0, 0, 0, 0);
+  border:5px solid @black;
   border-bottom-color: #DEDEDE;
 }
 .calendar:after {
@@ -118,8 +118,8 @@
   left:30px;
   top: -9px;
   content: "";
-  border:5px solid rgba(0, 0, 0, 0);
-  border-bottom-color: #fff;
+  border:5px solid @black;
+  border-bottom-color: @white;
 }
 .inline-calendar table {
   clear: both;
@@ -154,7 +154,7 @@
 }
 .inline-calendar td.current > span.nuim-calendar-each-date {
   background-color: @calendar-selected-bg-color;
-  color: #fff!important;
+  color: @white!important;
 }
 .inline-calendar th {
   color: @calendar-header-day-item-color;

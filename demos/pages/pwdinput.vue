@@ -2,12 +2,14 @@
   <div class="page">
     <fe-header slot="header" style="width:100%;position:absolute;left:0;top:0;z-index:100;">Pwdinput</fe-header>
     <div class="fe-content">
-      <br>
       <divider>基础用法</divider>
       <fe-pwdinput :value="value" info="密码为 6 位数字" @focus="showKeyboard = true" ></fe-pwdinput>
+      <divider>输入明文</divider>
+      <fe-pwdinput :value="value" info="" @focus="showKeyboard = true" :isPwd='false'></fe-pwdinput>
+      <divider>当前输入颜色提示</divider>
+      <fe-pwdinput :value="value" info="密码为 6 位数字" @focus="showKeyboard = true" currentColor='#4a90e2'></fe-pwdinput>
       <p class="pwd">Password:<span>{{value}}</span></p>
-
-      <fe-keyboard :show="showKeyboard" @input="onInput" @delete="onDelete" @blur="showKeyboard = false"></fe-keyboard>
+      <fe-keyboard :show="showKeyboard" @input="onInput" @delete="onDelete" @blur="showKeyboard = false"  extra-key='X'></fe-keyboard>
     </div>
   </div>
 </template>

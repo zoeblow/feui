@@ -17,7 +17,7 @@ module.exports = {
     filename: "[name].js"
   },
   devServer: {
-    host: "127.0.0.1",
+    host: "0.0.0.0",
     port: "7788",
     historyApiFallback: true,
     // open: true,
