@@ -2,7 +2,7 @@
   <div class="nuim-password-input">
     <ul class="nuim-password-input__security nuim-hairline--surround" @touchstart.stop="$emit('focus')">
       <li v-for="(visibility,index) in points" class="nuim-hairline"  :style="`borderBottom: 2px solid  ${currentColor}`" :class="{'current':'current' == `${visibility.crt}` && currentColor}" :key="index">
-        <i :style="`visibility: ${visibility.dis}`" v-if="isPwd"/>
+        <i :style="`visibility: ${visibility.dis}`" v-if="isPwd"></i>
         <span class="code" v-else-if="visibility.ipt">{{visibility.ipt}}</span>
       </li>
     </ul>
