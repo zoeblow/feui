@@ -100,7 +100,7 @@ export default {
 
   methods: {
     onClickIcon() {
-      console.log(this.type)
+      //console.log(this.type)
       this.showNoticeBar = this.type !== 'beclosed';
     },
     onAnimationEnd() {

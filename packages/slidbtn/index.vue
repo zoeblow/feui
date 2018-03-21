@@ -112,11 +112,11 @@ export default {
       };
     },
     rightClick(){
-      console.log('right-Slider');
+      //console.log('right-Slider');
       this.$emit('on-click-right')
     },
     leftClick(){
-      console.log('left-Slider')
+      //console.log('left-Slider')
       this.$emit('on-click-left')
     }
   }
