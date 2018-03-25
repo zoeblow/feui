@@ -2,7 +2,7 @@
   <div class="page">
     <fe-header slot="header" style="width:100%;position:absolute;left:0;top:0;z-index:100;">Swiper</fe-header>
     <div class="fe-content">
-      <fe-swiper :list="demo01_list" v-model="demo02_index" show-desc-mask @on-index-change="demo01_onIndexChange"></fe-swiper>
+      <fe-swiper :list="demo01_list" v-model="demo02_index" :index='swiperItemIndex' show-desc-mask @on-index-change="demo01_onIndexChange"></fe-swiper>
       <br>
       <divider>根据宽度计算高度</divider> 
       <fe-swiper :list="demo02_list" style="width:85%;margin:0 auto;" :aspect-ratio="300/800" dots-position="center"></fe-swiper>

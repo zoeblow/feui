@@ -211,6 +211,12 @@
         "icon": "dialog"
       },
       {
+        "path": "/imgpreview",
+        "name": "ImgPreview",
+        "description": "图片预览",
+        "icon": "swipe"
+      },
+      {
         "path": "/loading",
         "name": "Loading",
         "description": "loading",

@@ -18,6 +18,7 @@ import FlexboxItem from './flexbox-item';
 import Group from './group';
 import Header from './header';
 import Icons from './icons';
+import ImgPreview from './img-preview';
 import Indexlist from './indexlist';
 import InlineDesc from './inline-desc';
 import Inlinecalendar from './inlinecalendar';
@@ -71,6 +72,7 @@ const components = [
   Group,
   Header,
   Icons,
+  ImgPreview,
   Indexlist,
   InlineDesc,
   Inlinecalendar,
@@ -135,6 +137,7 @@ export {
   Group,
   Header,
   Icons,
+  ImgPreview,
   Indexlist,
   InlineDesc,
   Inlinecalendar,

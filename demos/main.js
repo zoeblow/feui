@@ -3,7 +3,7 @@ import VueRouter from "vue-router";
 import App from "./App.vue";
 import router from "./router/index.js";
 
-import feui, { Toast, Dialog, Lazyload, Loading } from "../packages/index.js";
+import feui, { Toast, Dialog, Lazyload } from "../packages/index.js";
 Vue.use(Lazyload, {
   lazyComponent: true,
   error: "https://i.loli.net/2018/01/29/5a6e858413275.png",
