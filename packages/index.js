@@ -52,7 +52,7 @@ import Textarea from './textarea';
 import Toast from './toast';
 import Uploader from './uploader';
 
-const version = '0.4.13';
+const version = '0.4.14';
 const components = [
   Actionsheet,
   Address,
