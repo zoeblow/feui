@@ -14,7 +14,6 @@ import { ImgPreview } from 'packages';
 export default {
   methods: {
     showImgPreview(position){
-      console.log(position)
       const instance = ImgPreview([
         'https://i.loli.net/2018/03/23/5ab4981e8a9af.jpg',
         'https://i.loli.net/2018/03/23/5ab4981e683d6.jpg',
