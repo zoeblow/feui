@@ -78,11 +78,22 @@
 * [x] Tabbar
 * [x] Tabbar-item
 * [x] Tab-item
-* [x] Textarea
+* [x] Textrea
 * [x] Toast
 * [x] Uploader
 
 <br/><br/><br/>
+## V 0.4.15
+
+### 已完成
+
+> img-preview图片预览组件修改<br/>
+
+## V 0.4.14
+
+### 已完成
+
+> 添加img-preview图片预览组件<br/>
 
 ## V 0.4.13
 

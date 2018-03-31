@@ -16,7 +16,7 @@ const ImgPreviewBox = (images, startPosition = 0) => {
   if (!instance) {
     initInstance();
   }
-
+  
   instance.images = images;
   instance.startPosition = startPosition;
   instance.value = true;
@@ -26,7 +26,6 @@ const ImgPreviewBox = (images, startPosition = 0) => {
   instance.close =function(){
     instance.value = false;
   }
-
   return instance;
 };
 
