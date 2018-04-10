@@ -1,0 +1,118 @@
+ul,li{
+  list-style: none;
+}
+.mod_address_slide{
+  position: fixed;
+  top: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 110;
+}
+.mod_address_slide_mask{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    opacity: 1;
+    tap-highlight-color: transparent;
+    z-index: 121;
+    -webkit-transition: opacity .4s;
+    transition: opacity .4s;
+}
+.mod_address_slide.show{
+  top: 0;
+}
+.mod_address_slide_main{
+  position: absolute;
+  -webkit-transform: translate3d(0,420px,0);
+  transform: translate3d(0,420px,0);
+  -webkit-transition: -webkit-transform .2s cubic-bezier(0,0,.25,1);
+  transition: -webkit-transform .2s cubic-bezier(0,0,.25,1);
+  transition: transform .2s cubic-bezier(0,0,.25,1);
+  transition: transform .2s cubic-bezier(0,0,.25,1),-webkit-transform .2s cubic-bezier(0,0,.25,1);
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 130
+}
+.mod_address_slide_main.show{
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.mod_address_slide_head:after,.mod_address_slide_tabs_1:after {
+  content: '\20';
+  display: block;
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  background: #ddd;
+  height: 1px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-color: #ccc;
+}
+.title_head{
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 10px;
+  color: #333;
+  font-size: 14px;
+  background-color: #f3f2f8;
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 22px;
+    line-height: 40px;
+  }
+}
+.title_body {
+  .mod_address_slide_tabs_1{
+    overflow: hidden;
+    padding: 0 10px;
+    position: relative;
+    li.area {
+      font-size: 14px;
+      float: left;
+      margin-right: 10px;
+      span{
+        position: relative;
+        display: inline-block;
+        height: 42px;
+        line-height: 42px;
+      }
+    }
+  }
+  .mod_address_slide_list_2 {
+    font-size: 14px;
+    height: 300px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 5px 10px;
+    li{
+      position: relative;
+      padding: 10px 0;
+      font-size: 12px;
+      .checked {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          right: 0;
+          top: 50%;
+          margin-top: -10px;
+          width: 20px;
+          height: 20px;
+      }
+    }
+  }
+}
