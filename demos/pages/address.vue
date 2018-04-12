@@ -9,7 +9,7 @@
 
       <div style="padding: 15px;">
         <fe-address style="display:none;" popup-title="选择地址" :title="title" v-model="value" :list="addressData" placeholder="请选择地址" :show.sync="showAddress"></fe-address>
-        <fe-button type="primary" @click.native="doShowAddress">单独控制显示(2s后关闭)</fe-button>
+        <fe-button type="primary" native="doShowAddress">单独控制显示(2s后关闭)</fe-button>
       </div>
       <fe-group>
         <fe-address :title="title" @on-hide="logHide" v-model="value_0_1" :list="addressData" placeholder="请选择地址">

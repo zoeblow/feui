@@ -53,7 +53,7 @@ import Toast from './toast';
 import Uploader from './uploader';
 import XAddress from './x-address';
 
-const version = '0.4.16';
+const version = '0.4.17';
 const components = [
   Actionsheet,
   Address,
