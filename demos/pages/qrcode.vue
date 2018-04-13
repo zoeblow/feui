@@ -3,10 +3,15 @@
     <fe-header slot="header" style="width:100%;position:absolute;left:0;top:0;z-index:100;">QRcode</fe-header>
     <div class="fe-content">
       <divider>默认类型为 img，可长按识别</divider>
-      <fe-qrcode value="https://feui.gitee.io" type="img"></fe-qrcode>
+      <fe-qrcode value="https://feui.gitee.io" :type="img"></fe-qrcode>
       <br>
+
+      <divider>大小200px</divider>
+      <fe-qrcode value="https://feui.gitee.io" :size="200"></fe-qrcode>
+      <br>
+      
       <divider>类型为 canvas</divider>
-      <fe-qrcode value="https://feui.gitee.io"></fe-qrcode>
+      <fe-qrcode value="https://feui.gitee.io" :type='canvas'></fe-qrcode>
       <br>
       <fe-qrcode :value="value" :fg-color="fgColor"></fe-qrcode>
       <br>
