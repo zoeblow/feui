@@ -90,7 +90,7 @@ export default {
   mounted() {
     const offsetWidth = this.$refs.content.getBoundingClientRect().width;
     const wrapWidth = this.$refs.contentWrap.getBoundingClientRect().width;
-    if (this.scrollable && offsetWidth > wrapWidth) {
+    if (this.scrollable) {
       this.wrapWidth = wrapWidth;
       this.offsetWidth = offsetWidth;
       this.duration = offsetWidth / this.speed;
