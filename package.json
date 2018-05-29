@@ -1,6 +1,6 @@
 {
   "name": "feui",
-  "version": "0.4.18",
+  "version": "0.4.19",
   "description": "vue+weui+nuim组件库",
   "main": "lib/feui.js",
   "style": "lib/feui-css/index.css",
