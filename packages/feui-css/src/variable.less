@@ -1,12 +1,11 @@
-
 /* feui */
+
 @namespace: feui;
-
-@theme-color: #4a90e2;
+@theme-color: #1990FA;
 @opacity-disabled: 0.5;
-@warn-color: #E64340;
-
+@warn-color: #fe2018;
 /* color variables */
+
 @black: #000;
 @white: #fff;
 @red: #f44;
@@ -17,44 +16,44 @@
 @gray-light: #e5e5e5;
 @gray-darker: #666;
 @gray-dark: #999;
-
 /**
 * actionsheet
 */
+
 @actionsheet-label-primary-color: @theme-color;
 @actionsheet-label-warn-color: @warn-color;
 @actionsheet-label-default-color: @black;
 @actionsheet-label-disabled-color: #ccc;
-
 /**
 * datetime
 */
+
 @datetime-header-item-font-color: @theme-color;
 @datetime-header-item-cancel-font-color: @datetime-header-item-font-color;
 @datetime-header-item-confirm-font-color: @datetime-header-item-font-color;
-
 /**
 * tabbar
 */
-@tabbar-text-active-color: @theme-color;
 
+@tabbar-text-active-color: @theme-color;
 /**
 * tab
 */
+
 @tab-text-disabled-color: #ddd;
 @tab-text-default-color: @gray-darker;
 @tab-text-active-color: @theme-color;
 @tab-bar-active-color: @theme-color;
-
 /**
 * dialog
 */
+
 @dialog-button-text-primary-color: @theme-color;
 @dialog-button-text-default-color: #353535;
-
 /**
 * x-number
 */
+
 @number-button-font-color: @theme-color;
 @number-input-font-color: @gray-darker;
 @number-button-enabled-border-color: #ececec;
@@ -62,63 +61,62 @@
 @number-round-button-enabled-border-color: @number-button-font-color;
 @number-button-disabled-border-color: @number-button-enabled-border-color;
 @number-round-button-disabled-border-color: @number-button-enabled-border-color;
-
 /**
 * checkbox
 */
-@checkbox-icon-color-checked: @theme-color;
 
+@checkbox-icon-color-checked: @theme-color;
 /**
 * check-icon
 */
-@check-icon-color-checked: @checkbox-icon-color-checked;
 
+@check-icon-color-checked: @checkbox-icon-color-checked;
 /**
 * Cell
 */
+
 @cell-label-color: @black;
 @cell-font-size: 16px;
 @cell-tips-font-size: 14px;
 @cell-value-color: @gray-dark;
 @cell-placeholder-color: @gray-dark;
-
 /**
 * Mask
 */
-@dialog-mask-background: rgba(0, 0, 0, .6);
 
+@dialog-mask-background: rgba(0, 0, 0, .6);
 /**
 * Range
 */
+
 @range-disabled-opacity: @opacity-disabled;
 @range-bar-default-color: #a9acb1;
 @range-bar-active-color: @theme-color;
-
 /**
 * Tabbar
 */
-@tabbar-index: 100;
 
+@tabbar-index: 100;
 /**
 * Header
 */
+
 @header-background-color: @theme-color;
 @header-title-color: @white;
 @header-text-color: @white;
 @header-arrow-color: @white;
-
 /**
 * Timeline
 */
-@timeline-item-bg-color: @theme-color;
 
+@timeline-item-bg-color: @theme-color;
 /**
 * Switch
 */
+
 @switch-checked-bg-color: @theme-color;
 @switch-checked-border-color: @theme-color;
 @switch-disabled-opacity: 0.6;
-
 /**
 * Button
 */
@@ -127,133 +125,126 @@
 @button-global-font-color: @white;
 @button-global-margin-top: 15px;
 @button-global-height: 42px;
-@button-global-disabled-font-color: rgba(255,255,255,.6);
-@button-global-active-font-color: rgba(255,255,255,.6);
+@button-global-disabled-font-color: rgba(255, 255, 255, .6);
+@button-global-active-font-color: rgba(255, 255, 255, .6);
 @button-global-font-size: 18px;
-
 @button-warn-bg-color: @warn-color;
-@button-warn-active-color: #CE3C39;
-
+@button-warn-active-color: rgba(254, 32, 24, .7);
 @button-default-bg-color: #F8F8F8;
 @button-default-font-color: @black;
 @button-default-active-bg-color: #DEDEDE;
-@button-default-disabled-font-color: rgba(0,0,0,.3);
+@button-default-disabled-font-color: rgba(0, 0, 0, .3);
 @button-default-disabled-bg-color: #F7F7F7;
-@button-default-active-font-color: rgba(0,0,0,.6);
-
+@button-default-active-font-color: rgba(0, 0, 0, .6);
 @button-primary-bg-color: @theme-color;
-@button-primary-active-bg-color: #4182ce;
-
+@button-primary-active-bg-color: rgba(25, 144, 250, .7);
 /**
 * swipeout
 */
+
 @swipeout-button-primary-bg-color: @button-primary-bg-color;
 @swipeout-button-warn-bg-color: @button-warn-bg-color;
 @swipeout-button-default-bg-color: #c8c7cd;
-
 @swipeout-content-bg-color: @white;
 @swipeout-button-font-color: @white;
-
 /**
 * Cell
 */
-@cell-body-label-color: @black;
 
+@cell-body-label-color: @black;
 /**
 * Badge
 */
-@badge-bg-color: #f74c31;
 
+@badge-bg-color: #f74c31;
 /**
 * Popover
 */
+
 @popover-bg-color: #35495e;
 @popover-font-color: @white;
 @popover-border-radius: 3px;
 @popover-border-width: 5px;
-
 /**
 * Button tab
 */
+
 @button-tab-border-width: 1px;
 @button-tab-border-radius: 16px;
-
 @button-tab-border-color: @theme-color;
 @button-tab-default-border-color: @button-tab-border-color;
 @button-tab-active-border-color: @button-tab-border-color;
-
 @button-tab-default-background-color: #fdfdfd;
 @button-tab-active-background-color: @theme-color;
+@button-tab-active-font-color: @white;
+/* alias */
 
-@button-tab-active-font-color: @white; /* alias */
 @button-tab-active-text-color: @button-tab-active-font-color;
 @button-tab-default-text-color: @gray-dark;
-
 @button-tab-height: 30px;
 @button-tab-line-height: 31px;
-
 /**
 * Swiper
 */
-@swiper-indicator-active-color: @theme-color;
 
+@swiper-indicator-active-color: @theme-color;
 /**
 * checklist
 */
-@checklist-icon-active-color: @theme-color;
 
+@checklist-icon-active-color: @theme-color;
 /**
 * popup-picker
 */
+
 @popup-picker-header-text-color: @theme-color;
 @popup-picker-header-bg-color: #fbf9fe;
 @popup-picker-header-font-size: 16px;
 @popup-picker-header-cancel-text-color: #828282;
-
 /**
 * popup
 */
-@popup-background-color: #eee;
 
+@popup-background-color: #eee;
 /**
 * form-preview
 */
-@form-preview-button-primary-color: @theme-color;
 
+@form-preview-button-primary-color: @theme-color;
 /**
 * load-more
 */
-@load-more-line-color: #E5E5E5;
 
+@load-more-line-color: #E5E5E5;
 /**
 * sticky
 */
-@sticky-zindex: 500;
 
+@sticky-zindex: 500;
 /**
 * group
 */
+
 @group-title-margin-top: .5em;
 @group-title-margin-bottom: .3em;
-
 /**
 * toast
 */
+
 @toast-content-font-size: 16px;
 @toast-top: 180px;
 @toast-position-top-offset: 10px;
 @toast-position-bottom-offset: 10px;
 @toast-z-index: 5000;
-
-
 /**
 * icon
 */
-@icon-success-color: @theme-color;
 
+@icon-success-color: @theme-color;
 /**
 * calendar
 */
+
 @calendar-arrow-color: @theme-color;
 @calendar-highlight-color: #E59313;
 @calendar-selected-bg-color: @theme-color;
@@ -264,16 +255,15 @@
 @calendar-each-date-item-size: 26px;
 @calendar-each-date-item-line-height: 25px;
 @calendar-header-day-item-color: @black;
-
 /**
 * search
 */
+
 @search-cancel-font-color: @theme-color;
 @search-bg-color: #EFEFF4;
 @search-placeholder-font-color: #9B9B9B;
-
-
 /**
 * radio
 */
+
 @radio-icon-checked: @theme-color;
