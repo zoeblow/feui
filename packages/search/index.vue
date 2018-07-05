@@ -54,8 +54,8 @@
       <slot></slot>
       <div
         class="weui-cell weui-cell_access"
-        v-for="item in results"
-        @click="handleResultClick(item)" :key='item'>
+        v-for="(item,index) in results"
+        @click="handleResultClick(item)" :key='index'>
         <div class="weui-cell__bd weui-cell_primary">
           <p>{{item.title}}</p>
         </div>

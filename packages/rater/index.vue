@@ -1,8 +1,8 @@
 <template>
   <div class="nuim-rater">
     <input v-model="currentValue" style="display:none">
-    <a class="nuim-rater-box" v-for="i in max" @click="handleClick(i-1)" :key='i' :class="{'is-active':currentValue > i-1}" :style="{color: colors && colors[i-1] ? colors[i-1] : '#ccc',marginRight:margin+'px',fontSize: fontSize + 'px', width: fontSize + 'px', height: fontSize + 'px', lineHeight: fontSize + 'px'}">
-      <span class="nuim-rater-inner">{{star}}<span class="nuim-rater-outer" :style="{color: activeColor, width: cutPercent + '%'}" v-if="cutPercent > 0 && cutIndex === i-1">{{star}}</span></span>
+    <a class="nuim-rater-box" v-for="(item,index) in max" @click="handleClick(item-1)" :key='index' :class="{'is-active':currentValue > item-1}" :style="{color: colors && colors[item-1] ? colors[item-1] : '#ccc',marginRight:margin+'px',fontSize: fontSize + 'px', width: fontSize + 'px', height: fontSize + 'px', lineHeight: fontSize + 'px'}">
+      <span class="nuim-rater-inner">{{star}}<span class="nuim-rater-outer" :style="{color: activeColor, width: cutPercent + '%'}" v-if="cutPercent > 0 && cutIndex === item-1">{{star}}</span></span>
     </a>
   </div>
 </template>
