@@ -1,5 +1,10 @@
 <template>
-	<div class="nuim-fe-input weui-cell" :class="{'weui-cell_warn': showWarn, 'disabled': disabled}">
+	<div class="nuim-fe-input weui-cell" 
+	  :class="{
+			'weui-cell_warn': showWarn,
+			'disabled': disabled,
+			'nuim-input-has-right-full': hasRightFullHeightSlot
+		}">
     <div class="weui-cell__hd">
       <div :style="labelStyles" v-if="hasRestrictedLabel">
         <slot name="restricted-label"></slot>
@@ -117,8 +122,7 @@
       ref="input"/>
     </div>
     <div class="weui-cell__ft">
-      <!-- //v-show="!equalWith && showClear && currentValue && !readonly && !disabled && isFocus" -->
-      <fe-icons type="clear" v-show="!equalWith && showClear && currentValue && !readonly && !disabled && isFocus" @click.native="clear"></fe-icons>
+      <fe-icons type="clear" v-show="!hasRightFullHeightSlot && !equalWith && showClear && currentValue !== '' && !readonly && !disabled && isFocus" @click.native="clear"></fe-icons>
       <fe-icons @click.native="onClickErrorIcon" class="nuim-input-icon" type="warn" :title="!valid ? firstError : ''" v-show="showWarn"></fe-icons>
       <fe-icons @click.native="onClickErrorIcon" class="nuim-input-icon" type="warn" v-if="!novalidate && hasLengthEqual && dirty && equalWith && !valid"></fe-icons>
       <fe-icons type="success" v-show="!novalidate && equalWith && equalWith === currentValue && valid"></fe-icons>
@@ -127,6 +131,9 @@
       <fe-icons type="warn" class="nuim-input-icon" v-show="novalidate && iconType === 'error'"></fe-icons>
 
       <slot name="right"></slot>
+      <div v-if="hasRightFullHeightSlot" class="nuim-input-right-full">
+        <slot name="right-full-height"></slot>
+      </div>
     </div>
   </div>
 </template>
@@ -162,7 +169,7 @@
     name: 'fe-input',
     created () {
       this.currentValue = (this.value === undefined || this.value === null) ? '' : (this.mask ? this.maskValue(this.value) : this.value)
-      if (this.required && typeof this.currentValue === 'undefined') {
+      if (this.required && (typeof this.currentValue === 'undefined' || this.currentValue === '')) {
         this.valid = false
       }
       this.handleChangeEvent = true
@@ -181,11 +188,15 @@
       if (this.$slots && this.$slots['restricted-label']) {
         this.hasRestrictedLabel = true
       }
+      if (this.$slots && this.$slots['right-full-height']) {
+        this.hasRightFullHeightSlot = true
+      }
     },
     beforeDestroy () {
       if (this._debounce) {
         this._debounce.cancel()
       }
+      window.removeEventListener('resize', this.scrollIntoView)
     },
     mixins: [Base],
     props: {
@@ -282,7 +293,19 @@
         return !this.novalidate && !this.equalWith && !this.valid && this.firstError && (this.touched || this.forceShowError)
       }
     },
+  mounted () {
+    window.addEventListener('resize', this.scrollIntoView)
+  },
     methods: {
+      scrollIntoView (time = 0) {
+        setTimeout(() => {
+          if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') {
+            setTimeout(() => {
+              document.activeElement.scrollIntoViewIfNeeded()
+            }, time)
+          }
+        })
+      },
       onClickErrorIcon () {
         if (this.shouldToastError && this.firstError) {
           Toast({
@@ -305,6 +328,7 @@
       clear () {
         this.currentValue = ''
         this.focus()
+        this.$emit('on-click-clear-icon')
       },
       focus () {
         //console.log('fff-focus')
@@ -314,13 +338,14 @@
         this.$refs.input.blur()
       },
       focusHandler ($event) {
-        this.isFocus = true;
         this.$emit('on-focus', this.currentValue, $event)
+        this.isFocus = true
+        this.scrollIntoView(500)
       },
       onBlur ($event) {
-        this.isFocus = false;
         this.setTouched()
         this.validate()
+        this.isFocus = false
         this.$emit('on-blur', this.currentValue, $event)
       },
       onKeyUp (e) {
@@ -435,6 +460,7 @@
     },
     data () {
       let data = {
+      	hasRightFullHeightSlot: false,
         isFocus:false,
         hasRestrictedLabel: false,
         firstError: '',

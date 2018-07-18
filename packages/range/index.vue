@@ -67,6 +67,10 @@ export default {
       const handleTop = (this.rangeHandleHeight - this.rangeBarHeight) / 2
       this.$el.querySelector('.range-handle').style.top = `-${handleTop}px`
       this.$el.querySelector('.range-bar').style.height = `${this.rangeBarHeight}px`
+      this.handleOrientationchange = () => {
+        this.update()
+      }
+      window.addEventListener('orientationchange', this.handleOrientationchange, false)
     })
   },
   methods: {
@@ -112,6 +116,9 @@ export default {
     max () {
       this.update()
     }
+  },
+  beforeDestroy () {
+    window.removeEventListener('orientationchange', this.handleOrientationchange, false)
   }
 }
 </script>

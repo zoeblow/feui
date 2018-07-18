@@ -2,27 +2,48 @@
 @import './weui/widget/weui_cell/weui_cell_global';
 @import './weui/widget/weui_cell/weui_form/weui_form_common';
 @import './weui/widget/weui_cell/weui_form/weui_vcode';
-
 .nuim-fe-input .nuim-fe-input-placeholder-right input::-webkit-input-placeholder {
   text-align: right;
 }
+
 .nuim-fe-input .nuim-fe-input-placeholder-center input::-webkit-input-placeholder {
   text-align: center;
 }
+
 .nuim-fe-input .nuim-input-icon {
   font-size: 21px;
 }
-.nuim-input-icon.weui-icon-warn:before, .nuim-input-icon.weui-icon-success:before {
+
+.nuim-input-icon.weui-icon-warn:before,
+.nuim-input-icon.weui-icon-success:before {
   font-size: 21px;
 }
+
 .nuim-fe-input .weui-icon {
   padding-left: 5px;
 }
+
 .nuim-fe-input.weui-cell_vcode {
   padding-top: 0;
   padding-right: 0;
   padding-bottom: 0;
 }
+
 .nuim-fe-input.disabled {
   color: rgba(0, 0, 0, 0.3);
+}
+
+.nuim-input-right-full {
+  margin-left: 5px;
+  height: @weuiCellHeight;
+  vertical-align: middle;
+  & img {
+    height: @weuiCellHeight;
+  }
+}
+
+.nuim-input-has-right-full {
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
 }
