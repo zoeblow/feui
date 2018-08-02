@@ -10,6 +10,7 @@ const defaultConfig = {
   skin:'ios',
   overlay: true,
   lockOnScroll: true,
+  beforeClose: null,
   confirmButtonText: "确定",
   cancelButtonText: "取消",
   showConfirmButton: true,

@@ -22,6 +22,7 @@
       skin: String,
       title: String,
       message: String,
+      beforeClose: Function,
       confirmButtonText: String,
       cancelButtonText: String,
       showConfirmButton: {
@@ -42,11 +43,9 @@
 
     methods: {
       handleAction (action) {
-        this.value = false
-        if (action === 'confirm') {
-          let callback = this.callback
-          callback(action)
-        }
+        this.value = false;
+        let callback = this.callback
+        callback(action)
       }
     }
   }
