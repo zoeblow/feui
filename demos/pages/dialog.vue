@@ -31,7 +31,7 @@ export default {
         message: "弹窗内容",
         confirmButtonText: "确实"
       }).then(() => {
-        // on close
+        console.log("close");
       });
     },
     showDialog(skin, title) {

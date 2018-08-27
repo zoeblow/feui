@@ -1,24 +1,33 @@
 @import "fn";
-
 html {
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
+
 body {
-    line-height: 1.6;
-    font-family: @nuimFontDefault;
+  line-height: 1.6;
+  font-family: @nuimFontDefault;
 }
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 a img {
-    border: 0;
+  border: 0;
 }
 
 a {
-    text-decoration: none;
-    .setTapColor();
+  text-decoration: none;
+  .setTapColor();
+}
+
+.nuim-tap-active {
+  tap-highlight-color: rgba(0, 0, 0, 0);
+  user-select: none;
+}
+
+.nuim-tap-active:active {
+  background-color: #ECECEC;
 }

@@ -37,6 +37,7 @@
 * [x] Cell
 * [x] Cell-box
 * [x] Checkicon
+* [x] Checker
 * [x] Checklist
 * [x] Count
 * [x] Countup
@@ -84,6 +85,12 @@
 * [x] X-address
 
 <br/><br/><br/>
+## V 0.5.5
+
+### 已完成
+
+> 添加checker组件 <br/>
+
 ## V 0.5.4
 
 ### 已完成

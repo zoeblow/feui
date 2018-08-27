@@ -6,6 +6,8 @@ import Button from './button';
 import Calendar from './calendar';
 import Cell from './cell';
 import CellBox from './cell-box';
+import Checker from './checker';
+import CheckerItem from './checker-item';
 import Checkicon from './checkicon';
 import Checklist from './checklist';
 import Count from './count';
@@ -53,7 +55,7 @@ import Toast from './toast';
 import Uploader from './uploader';
 import XAddress from './x-address';
 
-const version = '0.5.4';
+const version = '0.5.5';
 const components = [
   Actionsheet,
   Address,
@@ -62,6 +64,8 @@ const components = [
   Calendar,
   Cell,
   CellBox,
+  Checker,
+  CheckerItem,
   Checkicon,
   Checklist,
   Count,
@@ -127,6 +131,8 @@ export {
   Calendar,
   Cell,
   CellBox,
+  Checker,
+  CheckerItem,
   Checkicon,
   Checklist,
   Count,

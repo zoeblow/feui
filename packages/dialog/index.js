@@ -1,33 +1,33 @@
-import Vue from "vue";
-import DialogComponent from "./dialog";
+import Vue from 'vue';
+import DialogComponent from './dialog';
 
 let instance;
 
 const defaultConfig = {
   value: true,
-  title: "",
-  message: "",
-  skin:'ios',
+  title: '',
+  message: '',
+  skin: 'ios',
   overlay: true,
   lockOnScroll: true,
   beforeClose: null,
-  confirmButtonText: "确定",
-  cancelButtonText: "取消",
+  confirmButtonText: '确定',
+  cancelButtonText: '取消',
   showConfirmButton: true,
   showCancelButton: false,
   closeOnClickOverlay: false,
   callback: action => {
-    instance[action === "confirm" ? "resolve" : "reject"](action);
+    instance[action === 'confirm' ? 'resolve' : 'reject'](action);
   }
 };
 
 const initInstance = () => {
   const DialogConstructor = Vue.extend(DialogComponent);
   instance = new DialogConstructor({
-    el: document.createElement("div")
+    el: document.createElement('div')
   });
 
-  instance.$on("input", value => {
+  instance.$on('input', value => {
     instance.value = value;
   });
 

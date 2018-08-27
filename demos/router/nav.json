@@ -104,6 +104,13 @@
         "icon": "checknormal"
       },
       {
+        "path": "/checker",
+        "name": "Checker",
+        "description": "选择",
+        "icon": "check"
+      },
+      
+      {
         "path": "/checklist",
         "name": "Checklist",
         "description": "单选复选",
