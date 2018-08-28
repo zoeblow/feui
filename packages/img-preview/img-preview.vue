@@ -32,9 +32,9 @@ export default create({
   },
   data() {
     return {
-      images: [],
-      showPop:true,
-      startPosition: 0
+      // images: [],
+      // showPop:true,
+      // startPosition: 0
     };
   },
   methods: {
@@ -54,7 +54,8 @@ export default create({
       event.preventDefault();
       // prevent long tap to close component
       const deltaTime = new Date() - this.touchStartTime;
-      if (deltaTime < 100 && Math.abs(this.deltaX) < 20 && Math.abs(this.deltaY) < 20) {
+      console.log(deltaTime,Math.abs(this.deltaX), Math.abs(this.deltaY))
+      if (deltaTime < 150 && Math.abs(this.deltaX) < 20 && Math.abs(this.deltaY) < 20) {
         this.close();
       }
     }

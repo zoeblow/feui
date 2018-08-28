@@ -12,13 +12,14 @@ const initInstance = () => {
   document.body.appendChild(instance.$el);
 };
 
-const ImgPreviewBox = (images, startPosition = 0) => {
+const ImgPreviewBox = (images, startPosition) => {
   if (!instance) {
     initInstance();
   }
-  
-  instance.images = images;
-  instance.startPosition = startPosition;
+  const config = Array.isArray(images) ? { images, startPosition } : images;
+  // console.log(config)
+  instance.images = config.images;
+  instance.startPosition = config.startPosition || 0;
   instance.value = true;
   instance.$on('input', show => {
     instance.value = show;
@@ -26,7 +27,7 @@ const ImgPreviewBox = (images, startPosition = 0) => {
   instance.close =function(){
     instance.value = false;
   }
+  console.log(instance)
   return instance;
 };
-
 export default ImgPreviewBox;
