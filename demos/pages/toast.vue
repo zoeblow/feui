@@ -8,6 +8,7 @@
           <fe-button @click.native="showWarn">警告提示</fe-button>
           <fe-button @click.native="showText">提示文字</fe-button>
           <fe-button @click.native="showLoading">Loading</fe-button>
+          <fe-button @click.native="img">自定义图标</fe-button>
           <br>
           <fe-button @click.native="gaoji">高级用法</fe-button>
         </div>
@@ -47,6 +48,15 @@ export default {
       Toast({
         duration: 1500,
         message: "显示文字咯咯咯.."
+      });
+    },
+    img() {
+      Toast({
+        duration: 1500,
+        forbidClick: true, // 禁用背景点击
+        type: "img",
+        // imgUrl: "//feui.oschina.io/docs/images/logo.png",
+        message: "显示文字<p style='text-align:center'>1s</p>"
       });
     },
     gaoji() {

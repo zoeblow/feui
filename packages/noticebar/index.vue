@@ -6,31 +6,31 @@
     :style="barStyle"
     @click="$emit('on-click')"
   >
-    <div class="nuim-notice-bar__left-icon" v-if="leftIcon || leftImg">
-      <img :src="leftImg" v-if='leftImg'/>
-      <fe-icons class="left-icon" :type="leftIcon" v-else />
-    </div>
-    <div class="nuim-notice-bar__content-wrap" ref="contentWrap">
-      <div
-        ref="content"
-        class="nuim-notice-bar__content"
-        :class="animationClass"
-        :style="contentStyle"
-        @animationend="onAnimationEnd"
-        @webkitAnimationEnd="onAnimationEnd"
-      >
-        <slot>{{ text }}</slot>
+      <div class="nuim-notice-bar__left-icon" v-if="leftIcon || leftImg">
+        <img :src="leftImg" v-if='leftImg'/>
+        <fe-icons class="left-icon" :type="leftIcon" v-else />
       </div>
-    </div>
-    <fe-icons class="nuim-notice-bar__right-icon" :type="iconName" v-if="iconName" @click.native="onClickIcon" />
+      <div class="nuim-notice-bar__content-wrap" ref="contentWrap">
+        <div
+          ref="content"
+          class="nuim-notice-bar__content"
+          :class="animationClass"
+          :style="contentStyle"
+          @animationend="onAnimationEnd"
+          @webkitAnimationEnd="onAnimationEnd"
+        >
+          <slot>{{ text }}</slot>
+        </div>
+      </div>
+      <fe-icons class="nuim-notice-bar__right-icon" :type="iconName" v-if="iconName" @click.native="onClickIcon" />
   </div>
 </template>
 
 <script>
-import Icon from '../icons';
+import Icon from "../icons";
 
 export default {
-  name: 'fe-noticebar',
+  name: "fe-noticebar",
 
   components: {
     [Icon.name]: Icon
@@ -38,6 +38,7 @@ export default {
 
   props: {
     text: String,
+    link: String,
     type: String,
     leftIcon: String,
     leftImg: String,
@@ -64,13 +65,17 @@ export default {
       duration: 0,
       offsetWidth: 0,
       showNoticeBar: true,
-      animationClass: ''
+      animationClass: ""
     };
   },
 
   computed: {
     iconName() {
-      return this.type === 'beclosed' ? 'cancel' : this.type === 'link' ? 'next' : '';
+      return this.type === "beclosed"
+        ? "cancel"
+        : this.type === "link"
+          ? "next"
+          : "";
     },
     barStyle() {
       return {
@@ -80,9 +85,9 @@ export default {
     },
     contentStyle() {
       return {
-        paddingLeft: this.firstRound ? 0 : this.wrapWidth + 'px',
-        animationDelay: (this.firstRound ? this.delay : 0) + 's',
-        animationDuration: this.duration + 's'
+        paddingLeft: this.firstRound ? 0 : this.wrapWidth + "px",
+        animationDelay: (this.firstRound ? this.delay : 0) + "s",
+        animationDuration: this.duration + "s"
       };
     }
   },
@@ -94,20 +99,20 @@ export default {
       this.wrapWidth = wrapWidth;
       this.offsetWidth = offsetWidth;
       this.duration = offsetWidth / this.speed;
-      this.animationClass = 'nuim-notice-bar__play';
+      this.animationClass = "nuim-notice-bar__play";
     }
   },
 
   methods: {
     onClickIcon() {
       //console.log(this.type)
-      this.showNoticeBar = this.type !== 'beclosed';
+      this.showNoticeBar = this.type !== "beclosed";
     },
     onAnimationEnd() {
       this.firstRound = false;
       this.$nextTick(() => {
         this.duration = (this.offsetWidth + this.wrapWidth) / this.speed;
-        this.animationClass = 'nuim-notice-bar__play--infinite';
+        this.animationClass = "nuim-notice-bar__play--infinite";
       });
     }
   }
