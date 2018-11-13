@@ -85,12 +85,17 @@
 * [x] X-address
 
 <br/><br/><br/>
+## V 0.5.7
+
+### 已完成
+
+> 修改 toast ios下 width:max-content bug<br/>
+
 ## V 0.5.6
 
 ### 已完成
 
-> 添加toast组件 <br/>
-
+> 丰富toast组件 <br/>
 ## V 0.5.5
 
 ### 已完成
