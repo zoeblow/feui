@@ -89,7 +89,7 @@
 
 ### 已完成
 
-> Xaddress 能否增加第四列，可选 <br/>
+> Xaddress 能否增加第四列，可选,增加jdAddress demo <br/>
 
 ## V 0.5.7
 

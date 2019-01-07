@@ -199,6 +199,11 @@
         "name": "Xaddress",
         "description": "地址",
         "icon": "map"
+      }, {
+        "path": "/jd-address",
+        "name": "JDaddress",
+        "description": "地址",
+        "icon": "map"
       }
     ]
   },

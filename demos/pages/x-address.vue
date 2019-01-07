@@ -3,7 +3,7 @@
     <fe-header slot="header" style="width:100%;position:absolute;left:0;top:0;z-index:100;">Myadd</fe-header>
     <div class="fe-content">
       <div style="margin:10px">
-        <fe-button type='primary' @click.native='choseAdd'>显示</fe-button>
+        <!-- <fe-button type='primary' @click.native='choseAdd'>显示</fe-button> -->
       </div>
       <fe-group>
         <x-address title="请选择" placeholder="请选择地区" addTitle='您住哪儿?' :info='info' inlineDesc='必须选择地区哦' @on-show='onShow' @on-hide='onHide' :showClose='true' :clickMaskClose='false' :showMask='true' color='#4a90e2' ></x-address>
