@@ -250,7 +250,9 @@ export default {
       this.$emit("on-hide", this.showChose);
     },
     _getAddList(code) {
+      // 获取本省信息
       const addx = require(`../../assets/datas/jd/${code}.json`);
+      // 吧数据存入window对象
       window["district_data_" + code] = addx;
       return addx;
     },
@@ -263,7 +265,7 @@ export default {
 
       var result = [];
       switch (level) {
-        case 2:
+        case 2: // 获取市一级数据
           provinceData = addrProData;
           let cityName;
           for (const i in provinceData) {
@@ -277,9 +279,10 @@ export default {
           console.log(result, 2);
 
           break;
-        case 3:
+        case 3: // 获取区县一级数据
           cityData = addrProData[code][1];
           let townName;
+          // 判断有无下一辖区数据
           if (
             !(typeof addrProData[code] === "string") ||
             typeof addrProData[code] === "object"
@@ -295,13 +298,14 @@ export default {
           } else {
             result = false;
           }
-
-          console.log(result, 3);
           break;
-        case 4:
+        case 4: // 获取村镇一级数据
           let lastName;
-          if (! (typeof addrProData[this.city][1][code] === "string") ||
-            typeof addrProData[code] === "object" ) {
+          // 判断有无下一辖区数据
+          if (
+            !(typeof addrProData[this.city][1][code] === "string") ||
+            typeof addrProData[code] === "object"
+          ) {
             townData = addrProData[this.city][1][code][1];
             for (const i in townData) {
               lastName = townData[i];
@@ -313,7 +317,7 @@ export default {
         default:
           break;
       }
-
+      document.querySelector(".mod_address_slide_list_2").scrollTop = 0;
       return result;
     },
     getProvinceId: function(code, input, index) {
@@ -328,6 +332,8 @@ export default {
         this.province,
         this.province
       );
+
+      // document.querySelector(".mod_address_slide_list_2").scrollIntoView(true);
 
       // 点击选择当前
       this.info.map(a => (a.selected = false));
@@ -362,6 +368,8 @@ export default {
         this.city,
         this.province
       );
+
+      // document.querySelector(".mod_address_slide_list_2").scrollIntoView(true);
       // 选择当前添加active
       this.showCityList.map(a => (a.selected = false));
       this.showCityList[index].selected = true;
@@ -402,6 +410,7 @@ export default {
         this.district,
         this.province
       );
+      // document.querySelector(".mod_address_slide_list_2").scrollIntoView(true);
       if (!this.showStreetList) {
         this.closeAdd();
         this.showArea();
@@ -462,10 +471,11 @@ export default {
 };
 </script>
 <style lang='less' scoped>
-  ul,li{
+ul,
+li {
   list-style: none;
 }
-.mod_address_slide{
+.mod_address_slide {
   position: fixed;
   top: 100%;
   bottom: 0;
@@ -473,42 +483,44 @@ export default {
   right: 0;
   z-index: 110;
 }
-.mod_address_slide_mask{
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,.5);
-    opacity: 1;
-    tap-highlight-color: transparent;
-    z-index: 121;
-    -webkit-transition: opacity .4s;
-    transition: opacity .4s;
+.mod_address_slide_mask {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  tap-highlight-color: transparent;
+  z-index: 121;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
 }
-.mod_address_slide.show{
+.mod_address_slide.show {
   top: 0;
 }
-.mod_address_slide_main{
+.mod_address_slide_main {
   position: absolute;
-  -webkit-transform: translate3d(0,420px,0);
-  transform: translate3d(0,420px,0);
-  -webkit-transition: -webkit-transform .2s cubic-bezier(0,0,.25,1);
-  transition: -webkit-transform .2s cubic-bezier(0,0,.25,1);
-  transition: transform .2s cubic-bezier(0,0,.25,1);
-  transition: transform .2s cubic-bezier(0,0,.25,1),-webkit-transform .2s cubic-bezier(0,0,.25,1);
+  -webkit-transform: translate3d(0, 420px, 0);
+  transform: translate3d(0, 420px, 0);
+  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0, 0, 0.25, 1);
+  transition: -webkit-transform 0.2s cubic-bezier(0, 0, 0.25, 1);
+  transition: transform 0.2s cubic-bezier(0, 0, 0.25, 1);
+  transition: transform 0.2s cubic-bezier(0, 0, 0.25, 1),
+    -webkit-transform 0.2s cubic-bezier(0, 0, 0.25, 1);
   bottom: 0;
   width: 100%;
   background-color: #fff;
-  z-index: 130
+  z-index: 130;
 }
-.mod_address_slide_main.show{
+.mod_address_slide_main.show {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
-.mod_address_slide_head:after,.mod_address_slide_tabs_1:after {
-  content: '\20';
+.mod_address_slide_head:after,
+.mod_address_slide_tabs_1:after {
+  content: "\20";
   display: block;
   position: absolute;
   z-index: 1;
@@ -520,7 +532,7 @@ export default {
   bottom: 0;
   border-color: #ccc;
 }
-.title_head{
+.title_head {
   position: relative;
   height: 40px;
   line-height: 40px;
@@ -540,7 +552,7 @@ export default {
   }
 }
 .title_body {
-  .mod_address_slide_tabs_1{
+  .mod_address_slide_tabs_1 {
     overflow: hidden;
     padding: 0 10px;
     position: relative;
@@ -548,7 +560,7 @@ export default {
       font-size: 14px;
       float: left;
       margin-right: 10px;
-      span{
+      span {
         position: relative;
         display: inline-block;
         height: 42px;
@@ -562,20 +574,20 @@ export default {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     padding: 5px 10px;
-    li{
+    li {
       position: relative;
       padding: 10px 0;
       font-size: 12px;
       .checked {
-          display: inline-block;
-          width: 20px;
-          height: 20px;
-          position: absolute;
-          right: 0;
-          top: 50%;
-          margin-top: -10px;
-          width: 20px;
-          height: 20px;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        margin-top: -10px;
+        width: 20px;
+        height: 20px;
       }
     }
   }
