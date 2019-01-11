@@ -1,8 +1,6 @@
-[
-  {
+[{
     "groupTitle": "基础组件",
-    "navItems": [
-      {
+    "navItems": [{
         "path": "/badge",
         "name": "Badge",
         "description": "角标",
@@ -84,8 +82,7 @@
   },
   {
     "groupTitle": "表单",
-    "navItems": [
-      {
+    "navItems": [{
         "path": "/address",
         "name": "Address",
         "description": "地址选择",
@@ -109,7 +106,7 @@
         "description": "选择",
         "icon": "check"
       },
-      
+
       {
         "path": "/checklist",
         "name": "Checklist",
@@ -209,8 +206,7 @@
   },
   {
     "groupTitle": "反馈",
-    "navItems": [
-      {
+    "navItems": [{
         "path": "/actionsheet",
         "name": "Actionsheet",
         "description": "上拉菜单",
@@ -225,6 +221,11 @@
       {
         "path": "/dialog",
         "name": "Dialog",
+        "description": "弹窗",
+        "icon": "dialog"
+      }, {
+        "path": "/xdialog",
+        "name": "XDialog",
         "description": "弹窗",
         "icon": "dialog"
       },

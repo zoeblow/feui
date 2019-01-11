@@ -1,3 +1,15 @@
 @import './transition.less';
 @import './weui/widget/weui_tips/weui_mask';
 @import './weui/widget/weui_tips/weui_dialog';
+.weui-dialog {
+  .weui-dialog__btn.loading {
+    color: #353535;
+    background: #e6e6e6;
+  }
+  &.weui-skin_android {
+    .weui-dialog__btn.loading {
+      color: grey;
+      background: transparent;
+    }
+  }
+}
