@@ -3,7 +3,10 @@
     <fe-header slot="header" style="width:100%;position:absolute;left:0;top:0;z-index:100;">Datetime</fe-header>
     <div class="fe-content">
       <fe-group title="默认格式: YYYY-MM-DD">
-        <fe-datetime v-model="value1" @on-change="change" title="生日"></fe-datetime>
+        <fe-datetime v-model="value1" @on-change="change" format="YYYY-MM-DD"  title="生日"></fe-datetime>
+      </fe-group>
+      <fe-group title="更改格式: YYYY-MM-DD HH:mm:ss">
+        <fe-datetime v-model="value1" @on-change="change" format="YYYY-MM-DD HH:mm:ss"  title="生日"></fe-datetime>
       </fe-group>
       <fe-group title="自定义分钟列表（每15分钟）">
         <fe-datetime v-model="minuteListValue" format="YYYY-MM-DD HH:mm" :minute-list="['00', '15', '30', '45']" @on-change="change" title="生日"></fe-datetime>
