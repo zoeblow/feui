@@ -122,6 +122,7 @@
       ref="input"/>
     </div>
     <div class="weui-cell__ft">
+      <!-- @touchend.native="clear" -->
       <fe-icons type="clear" v-show="!hasRightFullHeightSlot && !equalWith && showClear && currentValue !== '' && !readonly && !disabled && isFocus" @click.native="clear"></fe-icons>
       <fe-icons @click.native="onClickErrorIcon" class="nuim-input-icon" type="warn" :title="!valid ? firstError : ''" v-show="showWarn"></fe-icons>
       <fe-icons @click.native="onClickErrorIcon" class="nuim-input-icon" type="warn" v-if="!novalidate && hasLengthEqual && dirty && equalWith && !valid"></fe-icons>
@@ -293,18 +294,18 @@
         return !this.novalidate && !this.equalWith && !this.valid && this.firstError && (this.touched || this.forceShowError)
       }
     },
-  mounted () {
-    window.addEventListener('resize', this.scrollIntoView)
-  },
+    mounted () {
+      window.addEventListener('resize', this.scrollIntoView)
+    },
     methods: {
       scrollIntoView (time = 0) {
-        setTimeout(() => {
-          if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') {
-            setTimeout(() => {
-              document.activeElement.scrollIntoViewIfNeeded()
-            }, time)
-          }
-        })
+        if (/iphone/i.test(navigator.userAgent)) {
+        }
+        if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') {
+          setTimeout(() => {
+            this.$refs.input.scrollIntoViewIfNeeded(true)
+          }, time)
+        }
       },
       onClickErrorIcon () {
         if (this.shouldToastError && this.firstError) {
@@ -340,7 +341,9 @@
       focusHandler ($event) {
         this.$emit('on-focus', this.currentValue, $event)
         this.isFocus = true
-        this.scrollIntoView(500)
+        setTimeout(() => {
+          this.$refs.input.scrollIntoViewIfNeeded(false)
+        }, 1000)
       },
       onBlur ($event) {
         this.setTouched()
@@ -456,21 +459,36 @@
             delete this.errors.equal
           }
         }
+      },
+      // #2810
+      self_getInputMaskSelection (selection, direction, maskVal, loop) {
+        if (!this.mask || (loop && direction === 0)) {
+          return selection
+        }
+        if (direction === 0) {
+          direction = this.lastDirection
+        }
+        if (direction > 0) {
+          const maskChar = this.mask.substr(selection - direction, 1)
+          if (!maskChar.match(/[9SA]/)) {
+            return this.self_getInputMaskSelection(selection + 1, direction, maskVal, true)
+          }
+        }
+        return selection
       }
     },
     data () {
-      let data = {
-      	hasRightFullHeightSlot: false,
-        isFocus:false,
+      return {
+        hasRightFullHeightSlot: false,
         hasRestrictedLabel: false,
         firstError: '',
         forceShowError: false,
         hasLengthEqual: false,
         valid: true,
         currentValue: '',
-        showErrorToast: false
+        showErrorToast: false,
+        isFocus: false
       }
-      return data
     },
     watch: {
       mask (val) {
@@ -494,7 +512,7 @@
           this.validate()
         }
       },
-      currentValue (newVal) {
+      currentValue (newVal, oldVal) {
         if (!this.equalWith && newVal) {
           this.validateEqual()
         }
@@ -506,7 +524,22 @@
         } else {
           this.validate()
         }
+        let selection = this.$refs.input.selectionStart
+        let direction = newVal.length - oldVal.length
+        selection = this.self_getInputMaskSelection(selection, direction, this.maskValue(newVal))
+        this.lastDirection = direction
         this.$emit('input', this.maskValue(newVal))
+
+        this.$nextTick(() => {
+          if (this.$refs.input.selectionStart !== selection) {
+            this.$refs.input.selectionStart = selection
+            this.$refs.input.selectionEnd = selection
+          }
+          if (this.currentValue !== this.maskValue(newVal)) {
+            this.currentValue = this.maskValue(newVal)
+          }
+        })
+      
         if (this._debounce) {
           this._debounce()
         } else {

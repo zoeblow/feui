@@ -18,6 +18,7 @@ const TEMPLATE = `<div class="dp-container">
     <div class="dp-item" data-role="day"></div>
     <div class="dp-item" data-role="hour"></div>
     <div class="dp-item" data-role="minute"></div>
+    <div class="dp-item" data-role="second"></div>
   </div>
 </div>`
 
@@ -29,7 +30,8 @@ const TYPE_MAP = {
   month: ['MM', 'M'],
   day: ['DD', 'D'],
   hour: ['HH', 'H'],
-  minute: ['mm', 'm']
+  minute: ['mm', 'm'],
+  second: ['ss', 's']
 }
 
 let MASK = null
@@ -50,6 +52,7 @@ const DEFAULT_CONFIG = {
   maxHour: 23,
   hourList: null,
   minuteList: null,
+  secondList: null,
   startDate: null,
   endDate: null,
   yearRow: '{value}',
@@ -57,6 +60,7 @@ const DEFAULT_CONFIG = {
   dayRow: '{value}',
   hourRow: '{value}',
   minuteRow: '{value}',
+  secondRow: '{value}',
   format: 'YYYY-MM-DD',
   value: NOW.getFullYear() + '-' + (NOW.getMonth() + 1) + '-' + NOW.getDate(),
   onSelect() { },
@@ -347,6 +351,9 @@ DatetimePicker.prototype = {
     } else if (type === 'minute') {
       min = 0
       max = 59
+    } else if (type === 'second') {
+      min = 0
+      max = 59
     }
     for (let i = min; i <= max; i++) {
       let name
@@ -403,6 +410,14 @@ DatetimePicker.prototype = {
         return {
           name: parseRow(config['minuteRow'], minute),
           value: addZero(minute)
+        }
+      })
+    }
+    if (type === 'second' && this.config.secondList) {
+      data = this.config.secondList.map(second => {
+        return {
+          name: parseRow(config['secondRow'], second),
+          value: addZero(second)
         }
       })
     }
