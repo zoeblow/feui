@@ -1,10 +1,5 @@
 import uuidMixin from "./mixin_uuid";
 
-var data = {
-  errors: {},
-  prisine: true,
-  touched: false
-};
 export default {
   mixins: [uuidMixin],
   props: {
@@ -13,26 +8,31 @@ export default {
       default: false
     }
   },
-  created: function() {
+  created() {
     this.handleChangeEvent = false;
   },
   computed: {
-    dirty: function() {
-      return !this.prisine;
+    dirty: {
+      get: function() {
+        return !this.pristine;
+      },
+      set: function(newValue) {
+        this.pristine = !newValue;
+      }
     },
-    invalid: function() {
+    invalid() {
       return !this.valid;
     }
   },
   methods: {
-    setTouched: function() {
+    setTouched() {
       this.touched = true;
     }
   },
   watch: {
-    value: function(newVal) {
-      if (this.prisine === true) {
-        this.prisine = false;
+    value(newVal) {
+      if (this.pristine === true) {
+        this.pristine = false;
       }
       if (!this.handleChangeEvent) {
         this.$emit("on-change", newVal);
@@ -40,7 +40,11 @@ export default {
       }
     }
   },
-  data: function() {
-    return data;
+  data() {
+    return {
+      errors: {},
+      pristine: true,
+      touched: false
+    };
   }
 };

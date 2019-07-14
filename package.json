@@ -1,35 +1,32 @@
 {
   "name": "feui",
-  "version": "0.6.0",
+  "version": "0.6.5",
   "description": "vue+weui+nuim组件库",
   "main": "lib/feui.js",
   "style": "lib/feui-css/index.css",
   "unpkg": "lib/index.js",
-  "files": [
-    "lib",
-    "src",
-    "packages"
-  ],
+  "files": ["lib", "src", "packages"],
   "scripts": {
-    "dev": "npm run build:file && webpack-dev-server --inline --config build/webpack.config.dev.js --content-base ./",
+    "dev":
+      "npm run build:file && webpack-dev-server --inline --config build/webpack.config.dev.js --content-base ./",
     "build:file": "node build/bin/build-entry.js",
     "build:components": "node build/bin/build-components.js --color",
-    "build:feui-css": "gulp build --gulpfile packages/feui-css/gulpfile.js --color",
-    "build:feui": "cross-env NODE_ENV=production webpack --progress --hide-modules --color --config build/webpack.build.js && cross-env NODE_ENV=production webpack -p --progress --hide-modules --color --config build/webpack.build.js",
-    "build:style-entry": "cross-env VUE_ENV=server node build/bin/build-style-entry.js",
+    "build:feui-css":
+      "gulp build --gulpfile packages/feui-css/gulpfile.js --color",
+    "build:feui":
+      "cross-env NODE_ENV=production webpack --progress --hide-modules --color --config build/webpack.build.js && cross-env NODE_ENV=production webpack -p --progress --hide-modules --color --config build/webpack.build.js",
+    "build:style-entry":
+      "cross-env VUE_ENV=server node build/bin/build-style-entry.js",
     "dist": "node build/bin/build-lib.js",
-    "prod": "rimraf dist && cross-env NODE_ENV=production webpack --progress --hide-modules --config  build/webpack.config.prod.js",
+    "prod":
+      "rimraf dist && cross-env NODE_ENV=production webpack --progress --hide-modules --config  build/webpack.config.prod.js",
     "clean": "rimraf lib && rimraf packages/*/lib"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/zoeblow/feui"
   },
-  "keywords": [
-    "feui",
-    "vue",
-    "component"
-  ],
+  "keywords": ["feui", "vue", "component"],
   "author": "zoeblow",
   "license": "MIT",
   "dependencies": {
@@ -38,6 +35,7 @@
     "lodash.debounce": "^4.0.8",
     "qr.js": "0.0.0",
     "validator": "^9.1.2",
+    "vanilla-masker": "^1.2.0",
     "vue-lazyload": "^1.1.4"
   },
   "peerDependencies": {

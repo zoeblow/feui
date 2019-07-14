@@ -27,6 +27,7 @@ import Inlinecalendar from './inlinecalendar';
 import Input from './input';
 import Keyboard from './keyboard';
 import Lazyload from './lazyload';
+import List from './list';
 import Loading from './loading';
 import Noticebar from './noticebar';
 import Picker from './picker';
@@ -55,7 +56,7 @@ import Toast from './toast';
 import Uploader from './uploader';
 import XAddress from './x-address';
 
-const version = '0.6.3';
+const version = '0.6.5';
 const components = [
   Actionsheet,
   Address,
@@ -83,6 +84,7 @@ const components = [
   Inlinecalendar,
   Input,
   Keyboard,
+  List,
   Loading,
   Noticebar,
   Picker,
@@ -152,6 +154,7 @@ export {
   Input,
   Keyboard,
   Lazyload,
+  List,
   Loading,
   Noticebar,
   Picker,

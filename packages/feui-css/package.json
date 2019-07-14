@@ -23,5 +23,8 @@
     "md5-file": "^3.2.3",
     "postcss-easy-import": "^3.0.0",
     "precss": "^2.0.0"
+  },
+  "dependencies": {
+    "natives": "^1.1.6"
   }
 }

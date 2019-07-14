@@ -1,0 +1,29 @@
+@import './variable.less';
+
+.fe-list {
+
+    &-loading-text,
+    &-finished-text,
+    &-error-text {
+        color: @list-text-color;
+        font-size: @list-text-font-size;
+        line-height: @list-text-line-height;
+        text-align: center;
+    }
+
+    &-loading {
+        text-align: center;
+
+        &-icon,
+        &-text {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        &-icon {
+            width: @list-icon-size;
+            height: @list-icon-size;
+            margin-right: @list-icon-margin-right;
+        }
+    }
+}
