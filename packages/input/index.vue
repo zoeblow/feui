@@ -262,7 +262,7 @@ export default {
     if (this._debounce) {
       this._debounce.cancel();
     }
-    window.removeEventListener("resize", this.scrollIntoView);
+    // window.removeEventListener("resize", this.scrollIntoView);
   },
   mixins: [Base],
   props: {
@@ -372,7 +372,18 @@ export default {
     }
   },
   mounted() {
-    window.addEventListener("resize", this.scrollIntoView);
+    // window.addEventListener("resize", this.scrollIntoView);
+    // fixed ios12+
+    document.body.addEventListener("focusout", () => {
+      if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+        // 软键盘收起的事件处理
+        setTimeout(() => {
+          const scrollHeight =
+            document.documentElement.scrollTop || document.body.scrollTop || 0;
+          window.scrollTo(0, Math.max(scrollHeight - 1, 0));
+        }, 100);
+      }
+    });
   },
   methods: {
     scrollIntoView(time = 0) {
@@ -408,14 +419,14 @@ export default {
     },
     clear() {
       this.currentValue = "";
-      setTimeout(() => {
-        this.isFocus = true;
-      }, 10);
+      this.isFocus = true;
       this.focus();
       this.$emit("on-click-clear-icon");
     },
     focus() {
-      this.$refs.input.focus();
+      setTimeout(() => {
+        this.$refs.input.focus();
+      }, 0);
     },
     focusHandler($event) {
       this.$emit("on-focus", this.currentValue, $event);
@@ -423,16 +434,15 @@ export default {
       setTimeout(() => {
         // 因为有1秒的延迟，如果切换了页面，input已经不存在，所以加个判断
         !this.$refs.input || this.$refs.input.scrollIntoViewIfNeeded(false);
-      }, 1000);
+      }, 400);
     },
     onBlur($event) {
-      this.setTouched();
-      this.validate();
-      // this.isFocus = false;
       setTimeout(() => {
+        this.setTouched();
+        this.validate();
         this.isFocus = false;
-      }, 1);
-      this.$emit("on-blur", this.currentValue, $event);
+        this.$emit("on-blur", this.currentValue, $event);
+      }, 0);
     },
     onKeyUp(e) {
       if (e.key === "Enter") {

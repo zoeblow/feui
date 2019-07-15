@@ -6,10 +6,10 @@ export const navs = Navs;
 Vue.use(VueRouter);
 
 const registerRoute = groups => {
-  let routes = [];
+  const routes = [];
 
   groups.map(group => {
-    let groupItems = group.navItems;
+    const groupItems = group.navItems;
 
     groupItems.map(nav => {
       try {

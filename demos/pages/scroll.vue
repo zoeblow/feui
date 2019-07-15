@@ -7,7 +7,7 @@
                 :on-refresh="onRefresh"
                 :on-infinite="onInfinite"
                 :hasHeader="hasHeader">
-          <div v-for="(item, index) in items" :key="index" @click.native="onItemClick(index)" class='item' :class="{'item-stable': index % 2 == 0}">
+          <div v-for="(item, index) in items" :key="index" @click="onItemClick(index)" class='item' :class="{'item-stable': index % 2 == 0}">
             {{ item }}
           </div>
           <div v-if="infiniteCount >= 2" slot="infinite" class="text-center">没有更多数据</div>

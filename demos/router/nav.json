@@ -266,6 +266,12 @@
         "icon": "scrollable"
       },
       {
+        "path": "/list",
+        "name": "List",
+        "description": "列表",
+        "icon": "scrollable"
+      },
+      {
         "path": "/slidbtn",
         "name": "Slidbtn",
         "description": "滑动操作",
