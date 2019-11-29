@@ -25,93 +25,109 @@
   </a>
   <br>
   <br>
+  <h2 align="center">Feart</h2>  
+  <p align="center">另一个好用的基于Vue 的移动端组件库--Feart</p> 
+  <p align="center">
+  🏠 <a href="https://nuofe.github.io/feart" target="_blank">文档网站</a>
+  &nbsp;
+  🏡 <a href="https://nuofe.github.io/feart/mobile" target="_blank">Demo展示</a>
+</p>
 </div>
 
 ## Todo List
 
-* [x] Actionsheet
-* [x] Address
-* [x] Badge
-* [x] Button
-* [x] Calendar
-* [x] Cell
-* [x] Cell-box
-* [x] Checkicon
-* [x] Checker
-* [x] Checklist
-* [x] Count
-* [x] Countup
-* [x] Datetime
-* [x] Dialog
-* [x] Divider
-* [x] Flexbox
-* [x] Flexbox-item
-* [x] Group
-* [x] Header
-* [x] Icon
-* [x] Icons
-* [x] Indexlist
-* [x] Inlinecalendar
-* [x] Inline-desc
-* [x] Input
-* [x] Keyboard
-* [x] Lazyload
-* [x] Loading
-* [x] Noticebar
-* [x] Picker
-* [x] Popup
-* [x] Popup-picker
-* [x] Pullrefresh
-* [x] Pwdinput
-* [x] Qrcode
-* [x] Radio
-* [x] Range
-* [x] Rater
-* [x] Scroll
-* [x] Search
-* [x] Slidbtn
-* [x] Step
-* [x] Steps
-* [x] Swiper
-* [x] Swiper-item
-* [x] Switch
-* [x] Tab
-* [x] Tabbar
-* [x] Tabbar-item
-* [x] Tab-item
-* [x] Textrea
-* [x] Toast
-* [x] Uploader
-* [x] X-address
+- [x] Actionsheet
+- [x] Address
+- [x] Badge
+- [x] Button
+- [x] Calendar
+- [x] Cell
+- [x] Cell-box
+- [x] Checkicon
+- [x] Checker
+- [x] Checklist
+- [x] Count
+- [x] Countup
+- [x] Datetime
+- [x] Dialog
+- [x] Divider
+- [x] Flexbox
+- [x] Flexbox-item
+- [x] Group
+- [x] Header
+- [x] Icon
+- [x] Icons
+- [x] Indexlist
+- [x] Inlinecalendar
+- [x] Inline-desc
+- [x] Input
+- [x] Keyboard
+- [x] Lazyload
+- [x] Loading
+- [x] Noticebar
+- [x] Picker
+- [x] Popup
+- [x] Popup-picker
+- [x] Pullrefresh
+- [x] Pwdinput
+- [x] Qrcode
+- [x] Radio
+- [x] Range
+- [x] Rater
+- [x] Scroll
+- [x] Search
+- [x] Slidbtn
+- [x] Step
+- [x] Steps
+- [x] Swiper
+- [x] Swiper-item
+- [x] Switch
+- [x] Tab
+- [x] Tabbar
+- [x] Tabbar-item
+- [x] Tab-item
+- [x] Textrea
+- [x] Toast
+- [x] Uploader
+- [x] X-address
 
 <br/><br/><br/>
+
+## V 0.6.8
+
+### 已完成
+
+> checklist 组件修复单选 <br/>
+
+## V 0.6.7
+
+### 已完成
+
+> Tab 组件滑动问题 <br/>
 
 ## V 0.6.4 ~ V 0.6.6
 
 ### 已完成
 
-> Input组件点击删除按钮失效的问题，页面resize问题 <br/>
+> Input 组件点击删除按钮失效的问题，页面 resize 问题 <br/>
 
 ## V 0.6.3
 
 ### 已完成
 
-> Datetime组件增加秒选项支持 <br/>
+> Datetime 组件增加秒选项支持 <br/>
 
 ## V 0.6.1 ~ V 0.6.2
 
 ### 已完成
 
-> Input修改 <br/>
-
-
+> Input 修改 <br/>
 
 ## V 0.6.0
 
 ### 已完成
 
 > Toast 文字轻提示样式修改 <br/>
-
 
 ## V 0.5.9
 
@@ -123,24 +139,25 @@
 
 ### 已完成
 
-> Xaddress 能否增加第四列，可选,增加jdAddress demo <br/>
+> Xaddress 能否增加第四列，可选,增加 jdAddress demo <br/>
 
 ## V 0.5.7
 
 ### 已完成
 
-> 修改 toast ios下 width:max-content bug<br/>
+> 修改 toast ios 下 width:max-content bug<br/>
 
 ## V 0.5.6
 
 ### 已完成
 
-> 丰富toast组件 <br/>
+> 丰富 toast 组件 <br/>
+
 ## V 0.5.5
 
 ### 已完成
 
-> 添加checker组件 <br/>
+> 添加 checker 组件 <br/>
 
 ## V 0.5.4
 
@@ -158,27 +175,27 @@
 
 ### 已完成
 
-> 对部分组件 v-for进修改<br/>
+> 对部分组件 v-for 进修改<br/>
 
-## V 0.5.0 
+## V 0.5.0
 
 ### 已完成
 
 > 修改主题颜色<br/>
 
-## V 0.4.19 
+## V 0.4.19
 
 ### 已完成
 
-> 订正页面部分初始化css<br/>
+> 订正页面部分初始化 css<br/>
 
-## V 0.4.18 
+## V 0.4.18
 
 ### 已完成
 
 > noticebar 在文字不超过的情况下也可以滚动<br/>
 
-## V 0.4.17 
+## V 0.4.17
 
 ### 已完成
 
@@ -188,111 +205,111 @@
 
 ### 已完成
 
-> x-address 添加类似jd移动端地址选择的组件<br/>
-> 优化tosat显示宽度<br/>
+> x-address 添加类似 jd 移动端地址选择的组件<br/>
+> 优化 tosat 显示宽度<br/>
 
 ## V 0.4.15
 
 ### 已完成
 
-> img-preview图片预览组件修改<br/>
+> img-preview 图片预览组件修改<br/>
 
 ## V 0.4.14
 
 ### 已完成
 
-> 添加img-preview图片预览组件<br/>
+> 添加 img-preview 图片预览组件<br/>
 
 ## V 0.4.13
 
 ### 已完成
 
-> 修改Pwdinput组件支持明文显示<br/>
+> 修改 Pwdinput 组件支持明文显示<br/>
 
 ## V 0.4.12
 
 ### 已完成
 
-> 修改Pwdinput组件部分功能<br/>
+> 修改 Pwdinput 组件部分功能<br/>
 
 ## V 0.4.11
 
 ### 已完成
 
-> 添加Pwdinput组件部分功能<br/>
+> 添加 Pwdinput 组件部分功能<br/>
 
 ## V 0.4.10
 
 ### 已完成
 
-> 修改Uploader组件部分功能<br/>
+> 修改 Uploader 组件部分功能<br/>
 
 ## V 0.4.9
 
 ### 已完成
 
-> 修改Toast组件部分功能<br/>
+> 修改 Toast 组件部分功能<br/>
 
 ## V 0.4.8
 
 ### 已完成
 
-> 修改Swiper组件部分功能<br/>
+> 修改 Swiper 组件部分功能<br/>
 
 ## V 0.4.7
 
 ### 已完成
 
-> 添加uploader组件<br/>
-> 修改slidbtn组件部分功能<br/>
+> 添加 uploader 组件<br/>
+> 修改 slidbtn 组件部分功能<br/>
 
 ## V 0.4.6
 
 ### 已完成
 
-> 修改popuppicker组件部分功能<br/>
+> 修改 popuppicker 组件部分功能<br/>
 
 ## V 0.4.5
 
 ### 已完成
 
-> 修改popup组件部分功能<br/>
+> 修改 popup 组件部分功能<br/>
 
 ## V 0.4.4
 
 ### 已完成
 
-> 修改picker组件部分功能<br/>
+> 修改 picker 组件部分功能<br/>
 
 ## V 0.4.3
 
 ### 已完成
 
-> 修改dialog，loading组件部分功能<br/>
+> 修改 dialog，loading 组件部分功能<br/>
 
 ## V 0.4.2
 
 ### 已完成
 
-> 修改datetime组件功能<br/>
+> 修改 datetime 组件功能<br/>
 
 ## V 0.4.1
 
 ### 已完成
 
-> 修改textarea组件功能<br/>
+> 修改 textarea 组件功能<br/>
 
 ## V 0.4.0
 
 ### 已完成
 
-> 修改switch组件功能，添加部分功能 <br/>
+> 修改 switch 组件功能，添加部分功能 <br/>
 
 ## V 0.3.9
 
 ### 已完成
 
-> 重写actionsheet部分功能，添加部分功能 <br/>
+> 重写 actionsheet 部分功能，添加部分功能 <br/>
 
 ## V 0.3.8
 
