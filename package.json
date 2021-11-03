@@ -37,7 +37,7 @@
     "iscroll": "^4.2.5",
     "lodash.debounce": "^4.0.8",
     "qr.js": "0.0.0",
-    "validator": "^9.1.2",
+    "validator": "^13.7.0",
     "vanilla-masker": "^1.2.0",
     "vue-lazyload": "^1.1.4"
   },
