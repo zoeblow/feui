@@ -96,7 +96,7 @@
     "karma-webpack": "^2.0.6",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
-    "markdown-it": "^8.4.0",
+    "markdown-it": "^12.3.2",
     "markdown-it-container": "^2.0.0",
     "mocha": "^3.4.2",
     "object-assign": "^4.1.1",
